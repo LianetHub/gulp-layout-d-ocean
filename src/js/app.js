@@ -20,6 +20,7 @@ $(function () {
     });
 
 
+    // sliders
 
     if ($('.promo__slider').length) {
         new Swiper('.promo__slider', {
@@ -76,7 +77,7 @@ $(function () {
             speed: 800,
             loop: true,
             autoplay: {
-                delay: 3000,
+                delay: 2000,
                 stopOnLastSlide: false,
             },
         })
@@ -101,5 +102,104 @@ $(function () {
             }
         })
     }
+
+    // amination
+
+    // benefits image animation
+
+    const benefitsSection = $('.benefits');
+    if (benefitsSection.length) {
+
+        const benefitsLists = $('.benefits__list');
+        const benefitsPicture = $('.benefits__picture');
+
+        // image rotation animation
+
+        const maxRotation = 8;
+
+        benefitsSection.on('mousemove', function (e) {
+            const width = benefitsSection.width();
+            const height = benefitsSection.height();
+            const left = benefitsSection.offset().left;
+            const top = benefitsSection.offset().top;
+
+            const mouseX = e.pageX - left - width / 2;
+            const mouseY = e.pageY - top - height / 2;
+
+            const rotateY = (mouseX / (width / 2)) * maxRotation;
+            const rotateX = (mouseY / (height / 2)) * -maxRotation;
+
+            benefitsPicture.css('transform', `
+            perspective(1000px) 
+            rotateX(${rotateX}deg) 
+            rotateY(${rotateY}deg)
+        `);
+        });
+
+        benefitsSection.on('mouseleave', function () {
+            benefitsPicture.css('transform', `
+            perspective(1000px)
+            rotateX(0deg) 
+            rotateY(0deg)
+        `);
+        });
+
+
+        benefitsLists.each(function () {
+            const startValue = $(this).attr('start');
+
+            if (startValue) {
+                $(this).css('--start-num', parseInt(startValue) - 1);
+            }
+        });
+
+        benefitsSection.on('pointerenter', '.benefits__item', function (event) {
+
+            if (event.pointerType === 'mouse') {
+                const currentItem = $(this);
+                const currentDescription = currentItem.find('.benefits__item-description');
+
+                $('.benefits__item').removeClass('active');
+                currentItem.addClass('active');
+
+                $('.benefits__item-description').not(currentDescription).stop().slideUp(150);
+                currentDescription.stop().slideDown(150);
+            }
+        });
+
+
+        benefitsLists.on('pointerleave', '.benefits__item', function (event) {
+            if (event.pointerType === 'mouse') {
+                const currentDescription = $(this).find('.benefits__item-description');
+                $(this).removeClass('active');
+                currentDescription.stop().slideUp(150);
+            }
+        });
+
+
+        benefitsSection.on('click', '.benefits__item', function (e) {
+            e.preventDefault();
+
+            const currentItem = $(this);
+            const currentDescription = currentItem.find('.benefits__item-description');
+
+            if (currentItem.hasClass('active')) {
+
+                currentItem.removeClass('active');
+                currentDescription.stop().slideUp(300);
+
+            } else {
+                $('.benefits__item').removeClass('active');
+                currentItem.addClass('active');
+
+                $('.benefits__item-description').not(currentDescription).stop().slideUp(300);
+                currentDescription.stop().slideDown(300);
+            }
+        });
+
+    }
+
+
+
 
 });

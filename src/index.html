@@ -84,7 +84,7 @@
                         <div class="goods__content">
                             <div class="goods__slider swiper">
                                 <div class="swiper-wrapper">
-                                    @@loop('./html/templates/_product.html', './html/json/_home-products.json')
+                                    @@loop('./html/templates/_good-item.html', './html/json/_home-goods.json')
                                 </div>
                             </div>
                             <div class="goods__controls">
@@ -96,63 +96,69 @@
                 </div>
                 <section class="products">
                     <div class="products__container">
-                        <div class="products__hint">Что мы производим?</div>
+                        <div class="products__hint hint">Что мы производим?</div>
                         <h2 class="products__title title">Наша продукция</h2>
                         <ul class="products__list">
-                            <li class="products__item">
-                                <div class="products__item-main">
-                                    <div class="products__image products__image--yellow-light-shadow">
-                                        <img src="@img/products/rattlins.png" alt="Фото категории товара">
-                                    </div>
-                                    <h3 class="products__name">Раттлины</h3>
-                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
-                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
-                                </div>
-                            </li>
-                            <li class="products__item">
-                                <div class="products__item-main">
-                                    <div class="products__image products__image--red-shadow">
-                                        <img src="@img/products/wobblers.png" alt="Фото категории товара">
-                                    </div>
-                                    <h3 class="products__name">Воблеры</h3>
-                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
-                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
-                                </div>
-                            </li>
-                            <li class="products__item">
-                                <div class="products__item-main">
-                                    <div class="products__image products__image--yellow-dark-shadow">
-                                        <img src="@img/products/spoons.png" alt="Фото категории товара">
-                                    </div>
-                                    <h3 class="products__name">Блесны</h3>
-                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
-                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
-                                </div>
-                            </li>
-                            <li class="products__item">
-                                <div class="products__item-main">
-                                    <div class="products__image products__image--red-shadow">
-                                        <img src="@img/products/tail-spinners.png" alt="Фото категории товара">
-                                    </div>
-                                    <h3 class="products__name">Тейл-спиннеры</h3>
-                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
-                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
-                                </div>
-                            </li>
-                            <li class="products__item products__item--large">
-                                <div class="products__item-main">
-                                    <div class="products__image products__image--yellow-light-shadow">
-                                        <img src="@img/products/equipment.png" alt="Фото категории товара">
-                                    </div>
-                                    <h3 class="products__name">Оснастка</h3>
-                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
-                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
-                                </div>
-                                <div class="products__picture">
-                                    <img src="@img/decor/cat.png" alt="Рисунок кота">
-                                </div>
-                            </li>
+                            @@loop('./html/templates/_product.html', './html/json/_home-products.json')
                         </ul>
+                    </div>
+                </section>
+                <section class="benefits">
+                    <div class="benefits__container">
+                        <div class="benefits__header">
+                            <h2 class="benefits__hint hint">Преимущества продукции</h2>
+                            <p class="benefits__caption title">Приманки D-Ocean</p>
+                            <p class="benefits__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров</p>
+                        </div>
+                        <div class="benefits__body">
+                            <ol class="benefits__list">
+                                <li class="benefits__item">
+                                    <div class="benefits__item-title">Особый состав краски</div>
+                                    <p class="benefits__item-description">
+                                        Используем люминесцентную краску, которая не только ярко светится, но и обладает высокой адгезией. Это значит, что покрытие не сотрется даже после множества забросов и атак хищника, сохраняя привлекательный вид.
+                                    </p>
+                                </li>
+                                <li class="benefits__item">
+                                    <div class="benefits__item-title">Собственное производство в России</div>
+                                    <p class="benefits__item-description">
+                                        Наше производство находится в России, что позволяет нам полностью контролировать качество на каждом этапе. От разработки до финального продукта — мы следим за тем, чтобы каждая приманка соответствовала высоким стандартам.
+                                    </p>
+                                </li>
+                                <li class="benefits__item">
+                                    <div class="benefits__item-title">Инновационный состав пластика в наших изделиях</div>
+                                    <p class="benefits__item-description">
+                                        Мы разработали уникальный пластик, который отличается повышенной прочностью и устойчивостью к деформациям. Приманки D-Ocean выдерживают самые сильные удары, сохраняя свою форму и игру.
+                                    </p>
+                                </li>
+                            </ol>
+                            <div class="benefits__picture">
+                                <img src="@img/promo/slider/04.png" alt="Вобблер">
+                                <div class="benefits__picture-decor">
+                                    <img src="@img/decor/benefits-picture-decor.svg" alt="Декор">
+                                </div>
+                            </div>
+                            <ol start="4" class="benefits__list">
+                                <li class="benefits__item">
+                                    <div class="benefits__item-title">Люминесцентные элементы на наших приманках</div>
+                                    <p class="benefits__item-description">
+                                        Наши приманки оснащены люминесцентными элементами, которые делают их заметными даже в мутной воде или на большой глубине. Это значительно повышает шансы привлечь рыбу и получить отличный улов.
+                                    </p>
+                                </li>
+                                <li class="benefits__item">
+                                    <div class="benefits__item-title">Высокое качество стали</div>
+                                    <p class="benefits__item-description">
+                                        Крючки на наших воблерах изготовлены из высококачественной стали, что обеспечивает их остроту, прочность и устойчивость к коррозии. Они не подведут вас в самый ответственный момент, надежно удерживая трофей.
+                                    </p>
+                                </li>
+                                <li class="benefits__item">
+                                    <div class="benefits__item-title">Отлаженное распределение веса изделия</div>
+                                    <p class="benefits__item-description">
+                                        Мы тщательно проработали балансировку каждой приманки. Благодаря оптимальному распределению веса, они обладают идеальной игрой в воде и позволяют выполнять точные и дальние забросы.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="" class="benefits__btn btn btn-primary icon-chevron-right">смотреть КАТАЛОГ</a>
                     </div>
                 </section>
             </main>

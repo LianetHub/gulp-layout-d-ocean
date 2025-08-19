@@ -2,6 +2,27 @@
 	color: #ff7dbc;
 }
 
+.hint {
+	color: #ff7dbc;
+	text-align: center;
+	line-height: 140%;
+	font-size: 0.875rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: rem(8);
+	@media (min-width: $md4) {
+		font-size: 1.125rem;
+	}
+	&::before {
+		content: "";
+		width: 0.75rem;
+		height: 0.75rem;
+		border-radius: 50%;
+		background: currentColor;
+	}
+}
+
 .title {
 	text-align: center;
 	font-family: $font-dela;
@@ -22,6 +43,60 @@
 	@media (max-width: $md2) {
 		display: none;
 	}
+}
+
+@keyframes infiniteRotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	&::after {
+		display: none;
+	}
+	position: relative;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	top: auto;
+	margin: 0;
+	transform: none;
+	transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+	z-index: 2;
+	width: 3.25rem;
+	height: 3.25rem;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	color: #000;
+	border-radius: 50%;
+
+	&:disabled,
+	&.swiper-button-disabled,
+	&[aria-disabled="true"] {
+		pointer-events: none;
+		opacity: 0.7;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: #ff7dbc;
+		}
+	}
+}
+
+.swiper-button-prev {
+	@extend %ic, .icon-prev;
+}
+.swiper-button-next {
+	@extend %ic, .icon-next;
 }
 
 // .rate {

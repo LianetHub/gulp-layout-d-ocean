@@ -189,7 +189,16 @@
 		padding: 1rem 1.125rem;
 	}
 
+	&.icon-chevron-right {
+		&:hover {
+			&::before {
+				transform: translateX(0.25rem);
+			}
+		}
+	}
+
 	&::before {
+		transition: transform 0.3s ease;
 		order: 1;
 	}
 

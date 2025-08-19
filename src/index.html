@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Главная страница'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page">
+                <section class="promo">
+                    <div class="promo__slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="promo__slide promo__slide--video swiper-slide">
+                                <div class="promo__container">
+                                    <div class="promo__offer promo__offer--small">
+                                        <div class="promo__offer-logo">
+                                            <img src="@img/logo-prod.svg" alt="Логотип Произведено в РФ">
+                                        </div>
+                                        <h1 class="promo__offer-title">Компания <span>D-OCEAN</span></h1>
+                                        <p class="promo__offer-subtitle">Российский производитель и поставщик приманок для рыбной ловли</p>
+                                        <a href="" class="promo__offer-btn btn btn-primary icon-chevron-right">смотреть КАТАЛОГ</a>
+                                    </div>
+                                </div>
+                                <video class="promo__video" playsinline autoplay muted loop poster="@img/promo/promo-poster.jpg">
+                                    <source src="files/promo-video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="promo__slide swiper-slide">
+                                <div class="promo__container">
+                                    <div class="promo__row">
+                                        <div class="promo__offer">
+                                            <div class="promo__offer-logo desktop-only">
+                                                <img src="@img/logo-prod.svg" alt="Логотип Произведено в РФ">
+                                            </div>
+                                            <div class="promo__offer-title promo__offer-title--small">
+                                                Первым оптовым клиентам скидка <span class="color-accent">15%</span> на весь ассортимент
+                                            </div>
+                                            <p class="promo__offer-subtitle">Подробности акции узнавайте у наших менеджеров. Скидка действует до конца 2025 года и только для новых клиентов.</p>
+                                            <a href="" class="promo__offer-btn btn btn-primary icon-chevron-right">Узнать больше</a>
+                                        </div>
+                                        <div class="promo__categories swiper">
+                                            <div class="swiper-wrapper">
+                                                <div class="promo__categories-item swiper-slide">
+                                                    <img src="@img/promo/slider/01.png" alt="Наш товар">
+                                                </div>
+                                                <div class="promo__categories-item swiper-slide">
+                                                    <img src="@img/promo/slider/02.png" alt="Наш товар">
+                                                </div>
+                                                <div class="promo__categories-item swiper-slide">
+                                                    <img src="@img/promo/slider/03.png" alt="Наш товар">
+                                                </div>
+                                                <div class="promo__categories-item swiper-slide">
+                                                    <img src="@img/promo/slider/04.png" alt="Наш товар">
+                                                </div>
+                                                <div class="promo__categories-item swiper-slide">
+                                                    <img src="@img/promo/slider/05.png" alt="Наш товар">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="promo__slide promo__slide--image swiper-slide" style="background-image: url('@img/promo/slide3-bg.png');">
+                                <div class="promo__container">
+                                    <div class="promo__offer promo__offer--centered">
+                                        <div class="promo__offer-title promo__offer-title--small">
+                                            Новые артикулы раттлинов прямо <br> из Японии уже <br> в продаже!
+                                        </div>
+                                        <p class="promo__offer-subtitle">Подробности акции узнавайте у наших менеджеров. <br class="desktop-only"> Скидка действует до конца 2025 года и только для новых клиентов.</p>
+                                        <a href="" class="promo__offer-btn btn btn-primary icon-chevron-right">Узнать больше</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo__controls">
+                            <button type="button" class="promo__controls-next swiper-button-next"></button>
+                            <button type="button" class="promo__controls-prev swiper-button-prev"></button>
+                        </div>
+                        <div class="promo__pagination swiper-pagination"></div>
+                    </div>
+                </section>
+                <div class="goods">
+                    <div class="goods__container">
+                        <div class="goods__content">
+                            <div class="goods__slider swiper">
+                                <div class="swiper-wrapper">
+                                    @@loop('./html/templates/_product.html', './html/json/_home-products.json')
+                                </div>
+                            </div>
+                            <div class="goods__controls">
+                                <button type="button" class="goods__prev swiper-button-prev"></button>
+                                <button type="button" class="goods__next swiper-button-next"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="products">
+                    <div class="products__container">
+                        <div class="products__hint">Что мы производим?</div>
+                        <h2 class="products__title title">Наша продукция</h2>
+                        <ul class="products__list">
+                            <li class="products__item">
+                                <div class="products__item-main">
+                                    <div class="products__image products__image--yellow-light-shadow">
+                                        <img src="@img/products/rattlins.png" alt="Фото категории товара">
+                                    </div>
+                                    <h3 class="products__name">Раттлины</h3>
+                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
+                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
+                                </div>
+                            </li>
+                            <li class="products__item">
+                                <div class="products__item-main">
+                                    <div class="products__image products__image--red-shadow">
+                                        <img src="@img/products/wobblers.png" alt="Фото категории товара">
+                                    </div>
+                                    <h3 class="products__name">Воблеры</h3>
+                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
+                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
+                                </div>
+                            </li>
+                            <li class="products__item">
+                                <div class="products__item-main">
+                                    <div class="products__image products__image--yellow-dark-shadow">
+                                        <img src="@img/products/spoons.png" alt="Фото категории товара">
+                                    </div>
+                                    <h3 class="products__name">Блесны</h3>
+                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
+                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
+                                </div>
+                            </li>
+                            <li class="products__item">
+                                <div class="products__item-main">
+                                    <div class="products__image products__image--red-shadow">
+                                        <img src="@img/products/tail-spinners.png" alt="Фото категории товара">
+                                    </div>
+                                    <h3 class="products__name">Тейл-спиннеры</h3>
+                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
+                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
+                                </div>
+                            </li>
+                            <li class="products__item products__item--large">
+                                <div class="products__item-main">
+                                    <div class="products__image products__image--yellow-light-shadow">
+                                        <img src="@img/products/equipment.png" alt="Фото категории товара">
+                                    </div>
+                                    <h3 class="products__name">Оснастка</h3>
+                                    <p class="products__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и параметров, с воблерами рыбачат как с заросшего берега, так и с лодки посреди моря</p>
+                                    <a href="" class="products__link icon-chevron-right">в КАТАЛОГ</a>
+                                </div>
+                                <div class="products__picture">
+                                    <img src="@img/decor/cat.png" alt="Рисунок кота">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.html', {})
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

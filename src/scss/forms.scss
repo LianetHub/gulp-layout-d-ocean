@@ -1,0 +1,284 @@
+// .form {
+// 	// .form__control
+// 	&__control {
+// 		text-overflow: ellipsis;
+// 		transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+// 		width: 100%;
+// 		border-radius: 0.5rem;
+// 		padding: 1em 1.75em;
+// 		background: $black;
+// 		color: $white;
+// 		border: rem(1) solid;
+// 		font-size: 1rem;
+// 		line-height: 150%;
+// 		padding: 1.15rem 1.25rem;
+// 		min-height: rem(64);
+
+// 		&::placeholder {
+// 			opacity: 1;
+// 			color: #dbdbdb;
+// 		}
+// 		&:hover,
+// 		&:focus {
+// 			border-color: #000;
+// 		}
+// 		&:disabled {
+// 			background: #ddd;
+// 			border-color: #ddd;
+// 		}
+// 		&._error {
+// 			outline: 1px solid #ba2028;
+// 			background: #fff1ed;
+// 		}
+// 		&:is(textarea) {
+// 			height: 9.125rem;
+// 			border-radius: 1.5rem;
+// 			resize: none;
+// 		}
+// 		&:is(select) {
+// 			font-family: inherit;
+// 			font-weight: 400;
+// 			position: relative;
+// 			appearance: none;
+// 			min-height: rem(36);
+// 		}
+// 	}
+
+// 	// .form__checkbox
+// 	&__checkbox {
+// 		margin-top: 0.75rem;
+// 		display: inline-block;
+// 		width: fit-content;
+// 	}
+// 	// .form__checkbox-input
+// 	&__checkbox-input {
+// 		&:checked {
+// 			& + .form__checkbox-text {
+// 				&::before {
+// 					@extend %ic, .icon-check;
+// 				}
+// 			}
+// 		}
+// 		// &.error {
+// 		// 	& + .form__checkbox-text {
+// 		// 		&::before {
+// 		// 			border: rem(1) solid red;
+// 		// 		}
+// 		// 	}
+// 		// }
+// 	}
+// 	// .form__checkbox-text
+// 	&__checkbox-text {
+// 		position: relative;
+// 		display: block;
+// 		width: fit-content;
+
+// 		padding: 0 0 0 2rem;
+// 		line-height: 100%;
+// 		cursor: pointer;
+// 		user-select: none;
+// 		font-size: 0.75rem;
+// 		@media (min-width: $md4) {
+// 			font-size: 0.875rem;
+// 		}
+
+// 		&::before {
+// 			content: "";
+// 			position: absolute;
+// 			top: 50%;
+// 			transform: translateY(-50%);
+// 			left: 0;
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;
+// 			border: rem(1) solid $white;
+// 			width: 1.25rem;
+// 			height: 1.25rem;
+
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;
+// 		}
+// 		& a {
+
+// 			@media (any-hover: hover) {
+// 				&:hover {
+// 					text-decoration: underline;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	// .form__btn
+// 	&__btn {
+// 		margin-top: 0.5rem;
+// 	}
+// 	// .form__select
+// 	&__select {
+// 		position: relative;
+// 		&.focus {
+// 			&::before {
+// 				transform: translateY(-50%) rotate(180deg);
+// 			}
+// 			select {
+// 				border-
+// 			}
+// 		}
+
+// 		&::before {
+// 			@extend %ic, .icon-down;
+// 			position: absolute;
+// 			top: 50%;
+// 			right: 1rem;
+// 			font-size: 1.5rem;
+// 			color: currentColor;
+// 			transform: translateY(-50%);
+// 			transition: transform 0.3s ease;
+// 		}
+// 		& select {
+// 			appearance: none;
+// 			background: transparent;
+// 			border: rem(1) solid $white;
+// 			background: $black;
+// 			border-radius: rem(6);
+// 			color: $white;
+// 			display: block;
+// 			font-size: 1rem;
+// 			line-height: 150%;
+// 			padding: 1.15rem 1.25rem;
+// 			outline: none;
+// 			width: 100%;
+// 		}
+// 	}
+// 	// .form__select-icon
+// 	&__select-icon {
+// 	}
+// 	// .form__price
+// 	&__price {
+// 		font-size: 1.25rem;
+// 	}
+// 	// .form__price-value
+// 	&__price-value {
+
+// 		font-weight: 700;
+// 		font-size: 1.5rem;
+// 	}
+// }
+
+.btn {
+	position: relative;
+	z-index: 1;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	user-select: none;
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	line-height: 150%;
+	text-transform: uppercase;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	font-size: 1rem;
+	@media (min-width: $md4) {
+		font-size: 1.125rem;
+		padding: 0.875rem;
+	}
+
+	@media (min-width: $md2) {
+		padding: 1rem 1.125rem;
+	}
+
+	&::before {
+		order: 1;
+	}
+
+	&:focus-visible {
+		box-shadow: 0 0 rem(1) rem(1) $black;
+	}
+
+	&.btn-primary {
+		background: #ff7dbc;
+		color: #101828;
+
+		&:hover,
+		&:active {
+			background: #ff91c6;
+			box-shadow: rem(6) rem(6) rem(12) 0 rgba(0, 0, 0, 0.22);
+		}
+	}
+
+	&.btn-sm {
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 150%;
+		padding: 0.75rem;
+	}
+
+	&:disabled,
+	&[aria-disabled="true"] {
+		cursor: default;
+		opacity: 0.7;
+		pointer-events: none;
+	}
+}
+
+// .switcher {
+// 	// .switcher__input
+// 	&__input {
+// 		&:checked {
+// 			& + .switcher__btn {
+// 				&::before {
+// 					left: rem(2);
+// 				}
+// 				background: #81a6ca;
+// 			}
+// 		}
+// 	}
+// 	// .switcher__btn
+// 	&__btn {
+// 		position: relative;
+// 		width: rem(35);
+// 		height: rem(20);
+// 		border-radius: 6.25rem;
+// 		background: #81a6ca;
+// 		display: block;
+// 		cursor: pointer;
+// 		transition: background-color 0.3s ease 0s;
+// 		&::before {
+// 			content: "";
+// 			position: absolute;
+// 			top: rem(2);
+// 			left: rem(17);
+// 			width: rem(16);
+// 			transition: left 0.3s ease 0s;
+// 			border-radius: 50%;
+// 			background: #fff;
+// 			height: calc(100% - rem(4));
+// 		}
+// 	}
+// }
+
+// .iti__selected-flag {
+// 	background-color: rgba(0, 0, 0, 0.05);
+// }
+
+// .select {
+// 	position: relative;
+// 	& select {
+// 		appearance: none;
+// 		background: transparent;
+// 		border: rem(1) solid $yellow;
+// 		border-radius: rem(6);
+// 		color: $white;
+// 		font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+// 			"Segoe UI Symbol", "Noto Color Emoji";
+// 		display: block;
+// 		font-size: 1rem;
+// 		font-weight: 500;
+// 		height: 100%;
+// 		outline: none;
+// 		padding: 1em em(37) 1em em(23);
+// 		width: 100%;
+// 	}
+// }

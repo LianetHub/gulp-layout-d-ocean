@@ -18,6 +18,12 @@
 	}
 }
 
+.icon-search:before {
+	content: "\e90f";
+}
+.icon-cross:before {
+	content: "\e90e";
+}
 .icon-chevron-down:before {
 	content: "\e903";
 }

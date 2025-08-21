@@ -33,7 +33,7 @@ $containerPadding: 30;
 
 // ЦВЕТА
 
-$white: #feffff;
+$pink: #ff7dbc;
 $black: #101828;
 
 $header: var(--header-height, 11.375rem);
@@ -53,6 +53,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 @import "forms";
 @import "common";
 @import "header";
+@import "modules/catalog";
 // @import "footer";
 
 //=======================================

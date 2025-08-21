@@ -93,6 +93,10 @@
 	color: #000;
 	border-radius: 50%;
 
+	&.swiper-button-lock {
+		display: none;
+	}
+
 	&:disabled,
 	&.swiper-button-disabled,
 	&[aria-disabled="true"] {

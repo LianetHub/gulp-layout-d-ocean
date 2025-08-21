@@ -11,9 +11,7 @@
 }
 
 .fancybox__backdrop {
-	background: rgba(30, 30, 30, 0.4);
-	backdrop-filter: blur(12.5px);
-	-webkit-backdrop-filter: blur(12.5px);
+	background: rgba(30, 30, 30, 0.6);
 }
 
 .fancybox__content {
@@ -27,57 +25,8 @@
 }
 
 .popup {
-	position: relative;
 	display: none;
-	width: 100%;
-	max-width: rem(728);
-	background: #000000;
-	color: $white;
-	padding: rem(118) rem(20) rem(67);
-	@media (min-width: $md4) {
-		padding: rem(144) rem(84) rem(102);
-	}
-	// .popup__body
-	&__body {
-	}
-	// .popup__close
-	&__close {
-		position: absolute;
-		top: rem(30);
-		right: rem(30);
-		font-size: rem(35);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: color 0.3s ease 0s;
-		@media (min-width: $md4) {
-			top: rem(40);
-			right: rem(50);
-		}
-		@media (any-hover: hover) {
-			&:hover {
-			}
-		}
-	}
-
-	// .popup__title
-	&__title {
-	}
-	// .popup__subtitle
-	&__subtitle {
-		margin-top: rem(14);
-		@media (min-width: $md4) {
-			margin-top: 1.88rem;
-		}
-	}
-	// .popup__form
-	&__form {
-		display: flex;
-		flex-direction: column;
-		gap: 0.81rem;
-		margin-top: rem(46);
-		@media (min-width: $md4) {
-			margin-top: 1.94rem;
-		}
+	// .popup__catalog
+	&__catalog {
 	}
 }

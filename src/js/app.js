@@ -1,7 +1,5 @@
 "use strict";
 
-import * as devFunctions from "./modules/functions.js";
-
 $(function () {
 
 
@@ -12,12 +10,67 @@ $(function () {
         });
     }
 
-    /* event handlers */
+    /* =========== Event Handlers ============== */
+
     $(document).on("click", function (e) {
+        const $target = $(e.target);
 
-        const target = $(e.target);
+        // Close the modal catalog on button click or outside click
+        if ($target.is(".catalog__close") || (!$target.closest(".catalog").length && $(".catalog").hasClass("catalog--open"))) {
+            $(".catalog").removeClass("catalog--open");
+            $("body").removeClass("catalog-lock");
+        }
 
+        // Open the modal catalog when a user clicks the button
+        if ($target.is(".header__catalog")) {
+            $(".catalog").addClass("catalog--open");
+            $("body").addClass("catalog-lock");
+        }
+
+        // Clear search input and hide the search bar within the modal catalog
+        if ($target.closest(".catalog__search-reset").length) {
+            $(".catalog__search-input").val("").trigger("input");
+            $(".catalog__searchbar").removeClass("active");
+        }
+
+        // Handle tabs inside the modal catalog
+        if ($target.closest(".catalog__categories-btn").length) {
+            const $button = $target.closest(".catalog__categories-btn");
+            const index = $button.parent().index();
+
+            $(".catalog__categories-btn").removeClass("active");
+            $button.addClass("active");
+
+            $(".catalog__block").removeClass("active");
+            $(".catalog__block").eq(index).addClass("active");
+        }
     });
+
+
+    $(document).on("keydown", function (e) {
+        if (e.key === "Escape" && $(".catalog").hasClass("catalog--open")) {
+            $(".catalog").removeClass("catalog--open");
+            $("body").removeClass("catalog-lock");
+        }
+    });
+
+    // searchbar logic
+    $(".catalog__search-input").on("input", function () {
+        const query = $(this).val().toLowerCase();
+        const $resetBtn = $(".catalog__search-reset");
+        if (query.length > 0) {
+            $resetBtn.addClass("active");
+            $(".catalog__searchbar").addClass("active");
+        } else {
+            $resetBtn.removeClass("active");
+            $(".catalog__searchbar").removeClass("active");
+        }
+    });
+
+
+    /* =========== Event Handlers ============== */
+
+
 
 
     // sliders
@@ -93,6 +146,7 @@ $(function () {
             },
         })
     }
+
     if ($('.goods__slider').length) {
         new Swiper('.goods__slider', {
             slidesPerView: "auto",
@@ -112,6 +166,37 @@ $(function () {
             }
         })
     }
+
+    if ($('.catalog__block').length) {
+        $('.catalog__block').each(function (index, element) {
+
+            const $block = $(element);
+            const slider = $block.find('.catalog__block-slider')[0];
+            const nextBtn = $block.find('.catalog__block-next')[0];
+            const prevBtn = $block.find('.catalog__block-prev')[0];
+
+            new Swiper(slider, {
+                slidesPerView: 4,
+                spaceBetween: 16,
+                watchOverflow: true,
+                navigation: {
+                    nextEl: nextBtn,
+                    prevEl: prevBtn
+                },
+                breakpoints: {
+                    1661.98: {
+                        slidesPerView: 4,
+                    },
+                    1819.98: {
+                        slidesPerView: 5,
+                    }
+                }
+            })
+        })
+
+
+    }
+
 
     // amination
 

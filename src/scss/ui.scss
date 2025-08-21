@@ -173,6 +173,38 @@
 	}
 }
 
+.label {
+	display: inline-block;
+	min-height: rem(32);
+	padding: 0.25rem 0.52rem;
+	font-size: 1rem;
+	border-radius: 0.5rem;
+	line-height: 150%;
+	// .label--small
+	&--small {
+		border-radius: 0.375rem;
+		padding: 0.25rem 0.375rem;
+		min-height: rem(18);
+		line-height: 0.7;
+		font-size: 0.875rem;
+	}
+	// .label--violet
+	&--violet {
+		background: #d6bbfb;
+		color: #181d27;
+	}
+	// .label--yellow
+	&--yellow {
+		background: #f4d400;
+		color: #181d27;
+	}
+	// .label--pink
+	&--pink {
+		background: #ff7dbc;
+		color: #181d27;
+	}
+}
+
 // .rate {
 // 	display: flex;
 // 	align-items: center;

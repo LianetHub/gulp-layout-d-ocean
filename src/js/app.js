@@ -71,12 +71,73 @@ $(function () {
     /* =========== Event Handlers ============== */
 
 
+    // floating Labels
+    $('.form__field > .form__control').on('input blur focus change keyup mouseup', function () {
+        if ($(this).val().length > 0) {
+            $(this).addClass('_input');
+        } else {
+            $(this).removeClass('_input');
+        }
+    }).each(function () {
+        if ($(this).val().length > 0) {
+            $(this).addClass('_input');
+        }
+    });
+
 
 
     // sliders
 
+    // Extend Class for Swiper.js add wrap progress
+
+    class SwiperWithProgress {
+        constructor(selector, options) {
+            this.selector = selector;
+            this.options = options;
+            this.init();
+        }
+
+        init() {
+            if ($(this.selector).length) {
+                new Swiper(this.selector, {
+                    ...this.options,
+                    pagination: {
+                        el: this.options.paginationEl,
+                        type: "fraction",
+                        formatFractionCurrent: (number) => {
+                            return number < 10 ? '0' + number : number;
+                        },
+                        formatFractionTotal: (number) => {
+                            return number < 10 ? '0' + number : number;
+                        },
+                        renderFraction: (currentClass, totalClass) => {
+                            return '<span class="' + currentClass + '"></span>' +
+                                ' <span class="swiper-pagination-progress"></span> ' +
+                                '<span class="' + totalClass + '"></span>';
+                        }
+                    },
+                    on: {
+                        init: (swiper) => {
+                            const progressEl = swiper.pagination.el.querySelector('.swiper-pagination-progress');
+                            let speed = swiper.params.speed;
+                            let autoplaySpeed = swiper.params.autoplay.delay;
+                            progressEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
+                            progressEl.classList.add('counting');
+                        },
+                        slideChangeTransitionStart: (swiper) => {
+                            const progressEl = swiper.pagination.el.querySelector('.swiper-pagination-progress');
+                            progressEl.classList.remove('counting');
+                            void progressEl.offsetWidth;
+                            progressEl.classList.add('counting');
+                        }
+                    }
+                });
+            }
+        }
+    }
+
     if ($('.promo__slider').length) {
-        new Swiper('.promo__slider', {
+        new SwiperWithProgress('.promo__slider', {
             slidesPerView: 1,
             speed: 800,
             autoplay: {
@@ -91,36 +152,7 @@ $(function () {
                 prevEl: '.promo__controls-prev',
                 nextEl: '.promo__controls-next'
             },
-            pagination: {
-                el: ".promo__pagination",
-                type: "fraction",
-                formatFractionCurrent: function (number) {
-                    return number < 10 ? '0' + number : number;
-                },
-                formatFractionTotal: function (number) {
-                    return number < 10 ? '0' + number : number;
-                },
-                renderFraction: function (currentClass, totalClass) {
-                    return '<span class="' + currentClass + '"></span>' +
-                        ' <span class="swiper-pagination-progress"></span> ' +
-                        '<span class="' + totalClass + '"></span>';
-                }
-            },
-            on: {
-                init: (swiper) => {
-                    const progressEl = swiper.pagination.el.querySelector('.swiper-pagination-progress');
-                    let speed = swiper.params.speed;
-                    let autoplaySpeed = swiper.params.autoplay.delay;
-                    progressEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
-                    progressEl.classList.add('counting');
-                },
-                slideChangeTransitionStart: (swiper) => {
-                    const progressEl = swiper.pagination.el.querySelector('.swiper-pagination-progress');
-                    progressEl.classList.remove('counting');
-                    void progressEl.offsetWidth;
-                    progressEl.classList.add('counting');
-                }
-            }
+            paginationEl: '.promo__pagination'
         });
     }
 
@@ -196,6 +228,7 @@ $(function () {
 
 
     }
+
 
 
     // amination
@@ -296,6 +329,81 @@ $(function () {
 
 
 
+    // Phone Russia Mask
 
+    var phoneInputs = document.querySelectorAll('input[type="tel"]');
+
+    var getInputNumbersValue = function (input) {
+        // Return stripped input value — just numbers
+        return input.value.replace(/\D/g, '');
+    }
+
+    var onPhonePaste = function (e) {
+        var input = e.target,
+            inputNumbersValue = getInputNumbersValue(input);
+        var pasted = e.clipboardData || window.clipboardData;
+        if (pasted) {
+            var pastedText = pasted.getData('Text');
+            if (/\D/g.test(pastedText)) {
+                // Attempt to paste non-numeric symbol — remove all non-numeric symbols,
+                // formatting will be in onPhoneInput handler
+                input.value = inputNumbersValue;
+                return;
+            }
+        }
+    }
+
+    var onPhoneInput = function (e) {
+        var input = e.target,
+            inputNumbersValue = getInputNumbersValue(input),
+            selectionStart = input.selectionStart,
+            formattedInputValue = "";
+
+        if (!inputNumbersValue) {
+            return input.value = "";
+        }
+
+        if (input.value.length != selectionStart) {
+            // Editing in the middle of input, not last symbol
+            if (e.data && /\D/g.test(e.data)) {
+                // Attempt to input non-numeric symbol
+                input.value = inputNumbersValue;
+            }
+            return;
+        }
+
+        if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
+            if (inputNumbersValue[0] == "9") inputNumbersValue = "7" + inputNumbersValue;
+            var firstSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7";
+            formattedInputValue = input.value = firstSymbols + " ";
+            if (inputNumbersValue.length > 1) {
+                formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+            }
+            if (inputNumbersValue.length >= 5) {
+                formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+            }
+            if (inputNumbersValue.length >= 8) {
+                formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+            }
+            if (inputNumbersValue.length >= 10) {
+                formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+            }
+        } else {
+            formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
+        }
+        input.value = formattedInputValue;
+    }
+    var onPhoneKeyDown = function (e) {
+        // Clear input after remove last symbol
+        var inputValue = e.target.value.replace(/\D/g, '');
+        if (e.keyCode == 8 && inputValue.length == 1) {
+            e.target.value = "";
+        }
+    }
+    for (var phoneInput of phoneInputs) {
+        phoneInput.addEventListener('keydown', onPhoneKeyDown);
+        phoneInput.addEventListener('input', onPhoneInput, false);
+        phoneInput.addEventListener('paste', onPhonePaste, false);
+    }
 
 });

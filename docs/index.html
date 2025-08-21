@@ -47,13 +47,13 @@
             <header class="header">
                 <div class="header__wrapper">
                     <button type="button" class="header__catalog btn btn-white btn-large icon-grid">КАТАЛОГ</button>
-                    <nav class="header__menu menu">
+                    <nav aria-label="Основное меню" class="header__menu menu">
                         <ul class="menu__list">
                             <li class="menu__item">
                                 <a href="/" class="menu__link">Главная</a>
                             </li>
                             <li class="menu__item">
-                                <a href="" class="menu__link">О компании</a>
+                                <a href="" class="menu__link">О&nbsp;компании</a>
                             </li>
                             <li class="menu__item menu__item--parent">
                                 <button type="button" class="menu__btn icon-chevron-down">Помощь</button>
@@ -170,7 +170,7 @@
                                     <li class="catalog__searchbar-product search-product">
                                         <div class="search-product__side">
                                             <div class="search-product__labels">
-                                                <span class="search-product__label search-product__label--violet">Новинка</span>
+                                                <span class="search-product__label label label--small label--violet">Новинка</span>
                                             </div>
                                             <a href="" class="search-product__image">
                                                 <img src="img/goods/01.png" alt="Фото товара">
@@ -192,7 +192,7 @@
                                     <li class="catalog__searchbar-product search-product">
                                         <div class="search-product__side">
                                             <div class="search-product__labels">
-                                                <span class="search-product__label search-product__label--yellow">Хит</span>
+                                                <span class="search-product__label label label--small label--yellow">Хит</span>
                                             </div>
                                             <a href="" class="search-product__image">
                                                 <img src="img/goods/03.png" alt="Фото товара">
@@ -214,7 +214,7 @@
                                     <li class="catalog__searchbar-product search-product">
                                         <div class="search-product__side">
                                             <div class="search-product__labels">
-                                                <span class="search-product__label search-product__label--yellow">Хит</span>
+                                                <span class="search-product__label label label--small label--yellow">Хит</span>
                                             </div>
                                             <a href="" class="search-product__image">
                                                 <img src="img/goods/04.png" alt="Фото товара">
@@ -832,14 +832,414 @@
                 </section>
                 <section class="about">
                     <div class="about__container">
+                        <div class="about__hint hint">Преимущества компании</div>
+                        <h2 class="about__title title">О компании D-Ocean</h2>
+                        <p class="about__subtitle">Расскажем кратко о сильных сторонах нашей компании</p>
+                        <ul class="about__list">
+                            <li class="about__item">
+                                <div class="about__item-thumb">
+                                    <img src="img/about/01.jpg" alt="Фото">
+                                </div>
+                                <div class="about__item-title">Лучшая цена</div>
+                                <div class="about__item-description">Описание преимущества исходя из реальных, подтверждаемых фактов, для повышения уровня доверия покупателей и оптовых клиентов</div>
+                            </li><li class="about__item">
+                                <div class="about__item-thumb">
+                                    <img src="img/about/02.jpg" alt="Фото">
+                                </div>
+                                <div class="about__item-title">Свое производство</div>
+                                <div class="about__item-description">Описание преимущества исходя из реальных, подтверждаемых фактов, для повышения уровня доверия покупателей и оптовых клиентов</div>
+                            </li><li class="about__item">
+                                <div class="about__item-thumb">
+                                    <img src="img/about/03.jpg" alt="Фото">
+                                </div>
+                                <div class="about__item-title">Гарантия 1 год</div>
+                                <div class="about__item-description">Описание преимущества исходя из реальных, подтверждаемых фактов, для повышения уровня доверия покупателей и оптовых клиентов</div>
+                            </li><li class="about__item">
+                                <div class="about__item-thumb">
+                                    <img src="img/about/04.jpg" alt="Фото">
+                                </div>
+                                <div class="about__item-title">Доставка в любой регион</div>
+                                <div class="about__item-description">Описание преимущества исходя из реальных, подтверждаемых фактов, для повышения уровня доверия покупателей и оптовых клиентов</div>
+                            </li><li class="about__item">
+                                <div class="about__item-thumb">
+                                    <img src="img/about/05.jpg" alt="Фото">
+                                </div>
+                                <div class="about__item-title">Большой выбор</div>
+                                <div class="about__item-description">Описание преимущества исходя из реальных, подтверждаемых фактов, для повышения уровня доверия покупателей и оптовых клиентов</div>
+                            </li><li class="about__item">
+                                <div class="about__item-thumb">
+                                    <img src="img/about/06.jpg" alt="Фото">
+                                </div>
+                                <div class="about__item-title">Спец. условия для опта</div>
+                                <div class="about__item-description">Описание преимущества исходя из реальных, подтверждаемых фактов, для повышения уровня доверия покупателей и оптовых клиентов</div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="gallery">
+                    <div class="gallery__container">
+                        <div class="gallery__hint hint">Наши товары наглядно</div>
+                        <h2 class="gallery__title title">Фото и видеогалерея</h2>
+                        <p class="gallery__subtitle">Мы подготовили качественные фото и видео нашей продукции</p>
+                        <div class="gallery__content">
+                            <div class="gallery__slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="" data-fancybox="gallery" class="gallery__slide">
+                                        <img src="img/gallery/01.jpg" class="cover-image" alt="Фото">
+                                        <span class="gallery__slide-label label label--pink">Производство</span>
+                                        <span class="gallery__slide-text">Рыбалка на Камчатке с приманками D-Ocean</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <button type="button" class="gallery__prev swiper-button-prev"></button>
+                            <button type="button" class="gallery__next swiper-button-next"></button>
+                            <div class="gallery__pagination swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="reviews">
+                    <div class="reviews__container">
+                        <h2 class="reviews__hint hint">Отзывы клиентов</h2>
+                        <div class="reviews__caption title">Что говорят о нас</div>
+                        <p class="reviews__subtitle">Более 1000 довольных покупателей</p>
+                        <div class="reviews__content">
+                            <div class="reviews__slider swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="review swiper-slider">
 
+                                        
+                                        <div class="review__images swiper">
+                                            <div class="swiper-wrapper">
+                                                 <a href="img/reviews/01.jpg" data-fancybox="review-gallery-1" class="review__image swiper-slide">
+                                                    <img src="img/reviews/01.jpg" alt="Фото отзыва">
+                                                    </a>
+                                                     <a href="img/reviews/02.jpg" data-fancybox="review-gallery-1" class="review__image swiper-slide">
+                                                    <img src="img/reviews/02.jpg" alt="Фото отзыва">
+                                                    </a>
+                                                     <a href="img/reviews/03.jpg" data-fancybox="review-gallery-1" class="review__image swiper-slide">
+                                                    <img src="img/reviews/03.jpg" alt="Фото отзыва">
+                                                    </a>
+                                                     <a href="img/reviews/04.jpg" data-fancybox="review-gallery-1" class="review__image swiper-slide">
+                                                    <img src="img/reviews/04.jpg" alt="Фото отзыва">
+                                                    </a>
+                                                     <a href="img/reviews/05.jpg" data-fancybox="review-gallery-1" class="review__image swiper-slide">
+                                                    <img src="img/reviews/05.jpg" alt="Фото отзыва">
+                                                    </a>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+
+                                        <blockquote class="review__text">Супер самый уловистый, 3 раза ездил и каждый раз с рыбой. Но в последний раз оторвал за кусок сети зацепился на дне плетёнка не выдержала, оторвалась. Супер самый уловистый, 3 раза ездил и каждый раз с рыбой. Но в последний раз оторвал за кусок сети зацепился на дне плетёнка не выдержала, оторвалась.</blockquote>
+                                        <div class="review__footer">
+                                            <div class="review__author">
+                                                <div class="review__author-thumb">
+                                                    <img src="img/reviews/thumbs/01.jpg" alt="Фото автора">
+                                                </div>
+                                                <div class="review__author-content">
+                                                    <div class="review__author-name">Александр</div>
+                                                    <time datetime="2025-03-09T00:00:00">9 марта 2025</time>
+                                                </div>
+                                            </div>
+                                            <a href="" class="review__link">
+                                                <img src="img/logo-ozon.svg" alt="ozon лого">
+                                            </a>
+                                        </div>
+                                    </div><div class="review swiper-slider">
+
+                                        
+                                        <div class="review__images swiper">
+                                            <div class="swiper-wrapper">
+                                                 <a href="img/reviews/06.jpg" data-fancybox="review-gallery-2" class="review__image swiper-slide">
+                                                    <img src="img/reviews/06.jpg" alt="Фото отзыва">
+                                                    </a>
+                                                     <a href="img/reviews/07.jpg" data-fancybox="review-gallery-2" class="review__image swiper-slide">
+                                                    <img src="img/reviews/07.jpg" alt="Фото отзыва">
+                                                    </a>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+
+                                        <blockquote class="review__text">Супер самый уловистый, 3 раза ездил и каждый раз с рыбой. Но в последний раз оторвал за кусок сети зацепился на дне плетёнка не выдержала, оторвалась. Супер самый уловистый, 3 раза ездил и каждый раз с рыбой. Но в последний раз оторвал за кусок сети зацепился на дне плетёнка не выдержала, оторвалась.</blockquote>
+                                        <div class="review__footer">
+                                            <div class="review__author">
+                                                <div class="review__author-thumb">
+                                                    <img src="img/reviews/thumbs/02.jpg" alt="Фото автора">
+                                                </div>
+                                                <div class="review__author-content">
+                                                    <div class="review__author-name">Валентин</div>
+                                                    <time datetime="2025-03-08T00:00:00">8 марта 2025</time>
+                                                </div>
+                                            </div>
+                                            <a href="" class="review__link">
+                                                <img src="img/logo-ozon.svg" alt="ozon лого">
+                                            </a>
+                                        </div>
+                                    </div><div class="review swiper-slider">
+
+                                        
+                                        <div class="review__images swiper">
+                                            <div class="swiper-wrapper">
+                                                 <a href="img/reviews/08.jpg" data-fancybox="review-gallery-3" class="review__image swiper-slide">
+                                                    <img src="img/reviews/08.jpg" alt="Фото отзыва">
+                                                    </a>
+                                                    
+                                            </div>
+                                        </div>
+                                        
+
+                                        <blockquote class="review__text">Супер самый уловистый, 3 раза ездил и каждый раз с рыбой. Но в последний раз оторвал за кусок сети зацепился на дне плетёнка не выдержала, оторвалась.</blockquote>
+                                        <div class="review__footer">
+                                            <div class="review__author">
+                                                <div class="review__author-thumb">
+                                                    <img src="img/reviews/thumbs/03.jpg" alt="Фото автора">
+                                                </div>
+                                                <div class="review__author-content">
+                                                    <div class="review__author-name">Константин</div>
+                                                    <time datetime="2025-03-07T00:00:00">7 марта 2025</time>
+                                                </div>
+                                            </div>
+                                            <a href="" class="review__link">
+                                                <img src="img/logo-ozon.svg" alt="ozon лого">
+                                            </a>
+                                        </div>
+                                    </div><div class="review swiper-slider">
+
+                                        
+
+                                        <blockquote class="review__text">В разделе видеообзоры можно наглядно посмотреть популярные продукты известных брендов и получить подробную информацию о товаре перед его покупкой. В коротких роликах наши эксперты расскажут обо всех тонкостях и нюансах рыболовных снастей, что позволит тебе подобрать необходимый товар.</blockquote>
+                                        <div class="review__footer">
+                                            <div class="review__author">
+                                                <div class="review__author-thumb">
+                                                    <img src="img/reviews/thumbs/04.jpg" alt="Фото автора">
+                                                </div>
+                                                <div class="review__author-content">
+                                                    <div class="review__author-name">Victor Dolgorukiy</div>
+                                                    <time datetime="2025-03-06T00:00:00">6 марта 2025</time>
+                                                </div>
+                                            </div>
+                                            <a href="" class="review__link">
+                                                <img src="img/logo-ozon.svg" alt="ozon лого">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="reviews__prev swiper-button-prev"></button>
+                            <button type="button" class="reviews__next swiper-button-next"></button>
+                            <div class="reviews__pagination swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="about-shop">
+                    <div class="about-shop__container">
+                        <div class="about-shop__body">
+                            <h2 class="about-shop__hint hint">О нашем магазине</h2>
+                            <div class="about-shop__caption title">Рыболовный интернет-магазин D-Ocean</div>
+                            <div class="about-shop__description">
+                                <p>D-Ocean – крупнейший рыболовный интернет-магазин с собственным складом в Москве. Наш ассортимент насчитывает более 200 000 наименований товаров для рыбалки и активного отдыха. У нас на сайте всегда в наличии большой выбор удилищ, катушек, приманок, одежды для рыбалки и других товаров для новичков и профессионалов по лучшим ценам. </p>
+                                <p>Быстро подобрать необходимые рыболовные снасти и снаряжение тебе помогут «умные» фильтры и рекомендации на нашем сайте. Интуитивный интерфейс и удобная навигация по страницам поможет сэкономить время на поиски необходимого товара. </p>
+                                <p>В разделе видеообзоры можно наглядно посмотреть популярные продукты известных брендов и получить подробную информацию о товаре перед его покупкой. В коротких роликах наши эксперты расскажут обо всех тонкостях и нюансах рыболовных снастей, что позволит тебе подобрать необходимый товар.</p>
+                            </div>
+                            <a href="" class="about-shop__btn btn btn-primary icon-chevron-right">О компании</a>
+                        </div>
+                        <div class="about-shop__image">
+                            <div class="about-shop__logo">
+                                <img src="img/logo-prod.svg" alt="Логотип Произведено в РФ">
+                            </div>
+                            <img src="img/about.jpg" class="cover-image" alt="Фото продукции">
+                        </div>
+                    </div>
+                </section>
+                <section class="contacts">
+                    <div class="contacts__container">
+                        <div class="contacts__hint hint">Как нас найти?</div>
+                        <h2 class="contacts__title title">Контакты</h2>
+                        <div class="contacts__body">
+                            <div class="contacts__map">
+                                <div id="map" class="contacts__map-block"></div>
+                                <ul class="contacts__list">
+                                    <li class="contacts__list-item">
+                                        <div class="contacts__caption">Адрес</div>
+                                        <address class="contacts__text">г. Москва, Волоколамское ш., 114, к. 2, ст. 2, оф. 9/4</address>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <div class="contacts__caption">Режим работы</div>
+                                        <div class="contacts__text">Ежедневно с 10:00 до 20:00</div>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <div class="contacts__caption">Телефон</div>
+                                        <a href="tel:+79251398515" class="contacts__link">+7 (925) 139-85-15</a>
+                                        <div class="contacts__socials socials">
+                                            <a href="" aria-label="Следите за нами в Telegram" class="socials__link icon-telegram"></a>
+                                            <a href="" aria-label="Следите за нами в WhatsApp" class="socials__link icon-whatsapp"></a>
+                                        </div>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <div class="contacts__caption">Email</div>
+                                        <a href="mailto:info@d-ocean.su" class="contacts__link">info@d-ocean.su</a>
+                                        <div class="contacts__socials socials">
+                                            <a href="" aria-label="Следите за нами в Telegram" class="socials__link icon-telegram"></a>
+                                            <a href="" aria-label="Следите за нами в WhatsApp" class="socials__link icon-whatsapp"></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <form action="#" class="contacts__form">
+                                <div class="contacts__form-caption">Остались вопросы?</div>
+                                <div class="contacts__form-text">Напишите нам через форму обратной связи, мы ответим максимально оперативно на любой ваш вопрос.</div>
+                                <div class="contacts__form-fields">
+                                    <label class="form__field">
+                                        <input type="text" name="name" class="form__control" placeholder="">
+                                        <span class="form__field-placeholder">Ваше имя</span>
+                                    </label>
+                                    <label class="form__field">
+                                        <input type="tel" name="phone" class="form__control" placeholder="">
+                                        <span class="form__field-placeholder">Телефон</span>
+                                    </label>
+                                    <label class="form__field">
+                                        <input type="email" name="email" class="form__control" placeholder="">
+                                        <span class="form__field-placeholder">Email</span>
+                                    </label>
+                                    <label class="form__field">
+                                        <textarea name="message" class="form__control" placeholder=""></textarea>
+                                        <span class="form__field-placeholder">Ваш вопрос или предложение...</span>
+                                    </label>
+                                    <label class="form__file">
+                                        <input type="file" name="file" class="form__file-input" hidden>
+                                        <span class="form__file-btn icon-clip">Прикрепить (до 10 мб.)</span>
+                                    </label>
+                                    <label class="form__checkbox">
+                                        <input type="checkbox" name="agree" class="form__checkbox-input" hidden>
+                                        <span class="form__checkbox-text">Отправляя заявку, Вы даёте согласие на храниние и <a href="">обработку персональных данных</a></span>
+                                    </label>
+                                    <button type="submit" class="form__btn btn btn-primary icon-chevron-right">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </section>
             </main>
             <footer class="footer">
-
+                <div class="footer__top">
+                    <div class="footer__container">
+                        <div class="footer__side">
+                            <a href="/" class="footer__logo">
+                                <img src="img/logo.svg" alt="Логотип D-Ocean">
+                            </a>
+                            <div class="footer__reqs">
+                                ООО «Д-Океан» <br>
+                                ИНН: 7816740323 <br>
+                                КПП: 773301001 <br>
+                                ОГРН: 1237800043326
+                            </div>
+                        </div>
+                        <nav aria-label="Меню в подвале" class="footer__menu">
+                            <ul class="menu__list">
+                                <li class="menu__item">
+                                    <a href="/" class="menu__link">Главная</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="" class="menu__link">О&nbsp;компании</a>
+                                </li>
+                                <li class="menu__item menu__item--parent">
+                                    <button type="button" class="menu__btn icon-chevron-down">Помощь</button>
+                                    <div class="submenu">
+                                        <ul class="submenu__list">
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Оплата</a></li>
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Доставка</a></li>
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Возврат товара</a></li>
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Как сделать заказ?</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="" class="menu__link">Блог</a>
+                                </li>
+                                <li class="menu__item menu__item--parent">
+                                    <button type="button" class="menu__btn icon-chevron-down">Документы</button>
+                                    <div class="submenu">
+                                        <ul class="submenu__list">
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Политика конфиденциальности</a></li>
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Защита данных</a></li>
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Cookies</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu__item menu__item--parent">
+                                    <button type="button" class="menu__btn icon-chevron-down">Оптовикам</button>
+                                    <div class="submenu">
+                                        <ul class="submenu__list">
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Войти в личный кабинет</a></li>
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Зарегистрироваться</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu__item menu__item--parent">
+                                    <button type="button" class="menu__btn icon-chevron-down">Контакты</button>
+                                    <div class="submenu">
+                                        <ul class="submenu__list">
+                                            <li class="submenu__contacts">
+                                                <div class="submenu__contacts-block">
+                                                    <div class="submenu__contacts-caption">Телефон:</div>
+                                                    <a href="tel:+79251398515" class="submenu__contacts-phone">+7 (925) 139-85-15</a>
+                                                    <a href="mailto:info@d-ocean.su" class="submenu__contacts-mail">info@d-ocean.su</a>
+                                                </div>
+                                                <div class="submenu__contacts-block">
+                                                    <div class="submenu__contacts-caption">Мессенджеры:</div>
+                                                    <div class="submenu__contacts-socials socials">
+                                                        <a href="" aria-label="Следите за нами в Telegram" class="socials__link icon-telegram"></a>
+                                                        <a href="" aria-label="Следите за нами в WhatsApp" class="socials__link icon-whatsapp"></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Контакты</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="footer__policies">
+                                <li class="footer__policy">
+                                    <a href="" class="footer__policy-link">Политика конфиденциальности</a>
+                                </li>
+                                <li class="footer__policy">
+                                    <a href="" class="footer__policy-link">Защита данных</a>
+                                </li>
+                                <li class="footer__policy">
+                                    <a href="" class="footer__policy-link">Cookies</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="footer__sending">
+                            <div class="footer__sending-caption">Рассылка</div>
+                            <form action="#" class="footer__sending-form">
+                                <input type="email" name="email" class="form__control form__control--grey" placeholder="Email">
+                                <button type="submit" aria-label="Отправить" class="btn btn-primary btn-icon icon-send"></button>
+                            </form>
+                            <p class="footer__sending-text">
+                                Никакого спама, только важная информация о&nbsp;новинках и акциях, не чаще 1 раза в неделю
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="footer__container">
+                        <div class="footer__copy">© 2018-2025 D-Ocean. Все права защищены</div>
+                        <div class="footer__socials socials">
+                            <a href="" aria-label="Следите за нами в Telegram" class="socials__link icon-telegram"></a>
+                            <a href="" aria-label="Следите за нами в WhatsApp" class="socials__link icon-whatsapp"></a>
+                            <a href="" aria-label="Следите за нами в Youtube" class="socials__link icon-youtube"></a>
+                            <a href="" aria-label="Следите за нами в Rutube" class="socials__link icon-rutube"></a>
+                            <a href="" aria-label="Следите за нами в VK" class="socials__link icon-vk"></a>
+                        </div>
+                        <a href="" class="footer__prod">
+                            <img src="img/gektor.svg" alt="Студия-разработчик">
+                        </a>
+                    </div>
+                </div>
             </footer>
-            <div id="callback" class="popup">
+            <!-- <div id="callback" class="popup">
                 <button type="button" data-fancybox-close class="popup__close icon-close"></button>
                 <h2 class="popup__title">Остались вопросы?</h2>
                 <p class="popup__subtitle text-block-lg">Заполните форму, мы перезвоним и&nbsp;проконсультируем</p>
@@ -853,7 +1253,7 @@
                     </label>
                     <button type="submit" class="form__btn btn btn-secondary">Оставить запрос</button>
                 </form>
-            </div>
+            </div> -->
             <!-- plugins -->
             <script src="js/libs/jquery-3.7.1.min.js"></script>
             <script src="js/libs/fancybox.umd.js"></script>

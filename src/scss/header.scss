@@ -122,11 +122,17 @@
 	display: flex;
 	justify-content: center;
 	flex: 1 1 auto;
-	gap: rem(250);
+	gap: rem(125);
+	@media (min-width: 1720px) {
+		gap: rem(250);
+	}
 	// .menu__list
 	&__list {
 		display: flex;
-		gap: rem(18);
+		gap: rem(10);
+		@media (min-width: 1600px) {
+			gap: rem(18);
+		}
 	}
 	// .menu__item
 	&__item {

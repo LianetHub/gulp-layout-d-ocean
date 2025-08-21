@@ -197,7 +197,138 @@
                 </section>
                 <section class="about">
                     <div class="about__container">
-
+                        <div class="about__hint hint">Преимущества компании</div>
+                        <h2 class="about__title title">О компании D-Ocean</h2>
+                        <p class="about__subtitle">Расскажем кратко о сильных сторонах нашей компании</p>
+                        <ul class="about__list">
+                            @@loop('./html/templates/_about-item.html', './html/json/_home-about.json')
+                        </ul>
+                    </div>
+                </section>
+                <section class="gallery">
+                    <div class="gallery__container">
+                        <div class="gallery__hint hint">Наши товары наглядно</div>
+                        <h2 class="gallery__title title">Фото и видеогалерея</h2>
+                        <p class="gallery__subtitle">Мы подготовили качественные фото и видео нашей продукции</p>
+                        <div class="gallery__content">
+                            <div class="gallery__slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="" data-fancybox="gallery" class="gallery__slide">
+                                        <img src="@img/gallery/01.jpg" class="cover-image" alt="Фото">
+                                        <span class="gallery__slide-label label label--pink">Производство</span>
+                                        <span class="gallery__slide-text">Рыбалка на Камчатке с приманками D-Ocean</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <button type="button" class="gallery__prev swiper-button-prev"></button>
+                            <button type="button" class="gallery__next swiper-button-next"></button>
+                            <div class="gallery__pagination swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="reviews">
+                    <div class="reviews__container">
+                        <h2 class="reviews__hint hint">Отзывы клиентов</h2>
+                        <div class="reviews__caption title">Что говорят о нас</div>
+                        <p class="reviews__subtitle">Более 1000 довольных покупателей</p>
+                        <div class="reviews__content">
+                            <div class="reviews__slider swiper">
+                                <div class="swiper-wrapper">
+                                    @@loop('./html/templates/_review.html', './html/json/_home-reviews.json')
+                                </div>
+                            </div>
+                            <button type="button" class="reviews__prev swiper-button-prev"></button>
+                            <button type="button" class="reviews__next swiper-button-next"></button>
+                            <div class="reviews__pagination swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="about-shop">
+                    <div class="about-shop__container">
+                        <div class="about-shop__body">
+                            <h2 class="about-shop__hint hint">О нашем магазине</h2>
+                            <div class="about-shop__caption title">Рыболовный интернет-магазин D-Ocean</div>
+                            <div class="about-shop__description">
+                                <p>D-Ocean – крупнейший рыболовный интернет-магазин с собственным складом в Москве. Наш ассортимент насчитывает более 200 000 наименований товаров для рыбалки и активного отдыха. У нас на сайте всегда в наличии большой выбор удилищ, катушек, приманок, одежды для рыбалки и других товаров для новичков и профессионалов по лучшим ценам. </p>
+                                <p>Быстро подобрать необходимые рыболовные снасти и снаряжение тебе помогут «умные» фильтры и рекомендации на нашем сайте. Интуитивный интерфейс и удобная навигация по страницам поможет сэкономить время на поиски необходимого товара. </p>
+                                <p>В разделе видеообзоры можно наглядно посмотреть популярные продукты известных брендов и получить подробную информацию о товаре перед его покупкой. В коротких роликах наши эксперты расскажут обо всех тонкостях и нюансах рыболовных снастей, что позволит тебе подобрать необходимый товар.</p>
+                            </div>
+                            <a href="" class="about-shop__btn btn btn-primary icon-chevron-right">О компании</a>
+                        </div>
+                        <div class="about-shop__image">
+                            <div class="about-shop__logo">
+                                <img src="@img/logo-prod.svg" alt="Логотип Произведено в РФ">
+                            </div>
+                            <img src="@img/about.jpg" class="cover-image" alt="Фото продукции">
+                        </div>
+                    </div>
+                </section>
+                <section class="contacts">
+                    <div class="contacts__container">
+                        <div class="contacts__hint hint">Как нас найти?</div>
+                        <h2 class="contacts__title title">Контакты</h2>
+                        <div class="contacts__body">
+                            <div class="contacts__map">
+                                <div id="map" class="contacts__map-block"></div>
+                                <ul class="contacts__list">
+                                    <li class="contacts__list-item">
+                                        <div class="contacts__caption">Адрес</div>
+                                        <address class="contacts__text">г. Москва, Волоколамское ш., 114, к. 2, ст. 2, оф. 9/4</address>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <div class="contacts__caption">Режим работы</div>
+                                        <div class="contacts__text">Ежедневно с 10:00 до 20:00</div>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <div class="contacts__caption">Телефон</div>
+                                        <a href="tel:+79251398515" class="contacts__link">+7 (925) 139-85-15</a>
+                                        <div class="contacts__socials socials">
+                                            <a href="" aria-label="Следите за нами в Telegram" class="socials__link icon-telegram"></a>
+                                            <a href="" aria-label="Следите за нами в WhatsApp" class="socials__link icon-whatsapp"></a>
+                                        </div>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <div class="contacts__caption">Email</div>
+                                        <a href="mailto:info@d-ocean.su" class="contacts__link">info@d-ocean.su</a>
+                                        <div class="contacts__socials socials">
+                                            <a href="" aria-label="Следите за нами в Telegram" class="socials__link icon-telegram"></a>
+                                            <a href="" aria-label="Следите за нами в WhatsApp" class="socials__link icon-whatsapp"></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <form action="#" class="contacts__form">
+                                <div class="contacts__form-caption">Остались вопросы?</div>
+                                <div class="contacts__form-text">Напишите нам через форму обратной связи, мы ответим максимально оперативно на любой ваш вопрос.</div>
+                                <div class="contacts__form-fields">
+                                    <label class="form__field">
+                                        <input type="text" name="name" class="form__control" placeholder="">
+                                        <span class="form__field-placeholder">Ваше имя</span>
+                                    </label>
+                                    <label class="form__field">
+                                        <input type="tel" name="phone" class="form__control" placeholder="">
+                                        <span class="form__field-placeholder">Телефон</span>
+                                    </label>
+                                    <label class="form__field">
+                                        <input type="email" name="email" class="form__control" placeholder="">
+                                        <span class="form__field-placeholder">Email</span>
+                                    </label>
+                                    <label class="form__field">
+                                        <textarea name="message" class="form__control" placeholder=""></textarea>
+                                        <span class="form__field-placeholder">Ваш вопрос или предложение...</span>
+                                    </label>
+                                    <label class="form__file">
+                                        <input type="file" name="file" class="form__file-input" hidden>
+                                        <span class="form__file-btn icon-clip">Прикрепить (до 10 мб.)</span>
+                                    </label>
+                                    <label class="form__checkbox">
+                                        <input type="checkbox" name="agree" class="form__checkbox-input" hidden>
+                                        <span class="form__checkbox-text">Отправляя заявку, Вы даёте согласие на храниние и <a href="">обработку персональных данных</a></span>
+                                    </label>
+                                    <button type="submit" class="form__btn btn btn-primary icon-chevron-right">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </section>
             </main>

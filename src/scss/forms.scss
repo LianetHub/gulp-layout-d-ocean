@@ -1,4 +1,30 @@
 .form {
+	// .form__field
+	&__field {
+		position: relative;
+		display: block;
+		&._error {
+			& + .form__error {
+				display: flex;
+			}
+		}
+	}
+	// .form__field-placeholder
+	&__field-placeholder {
+		position: absolute;
+		top: 1rem;
+		left: 0.8rem;
+		color: #89939e;
+		display: block;
+		transition: all 0.3s ease 0s;
+		font-size: 1rem;
+		@media (min-width: $md4) {
+			font-size: 0.875rem;
+		}
+		@media (min-width: $md2) {
+			font-size: 1rem;
+		}
+	}
 	// .form__control
 	&__control {
 		text-overflow: ellipsis;
@@ -12,10 +38,27 @@
 		font-size: 1.125rem;
 		line-height: 144.444%;
 		min-height: rem(64);
-
-		&::placeholder {
-			opacity: 1;
-			color: #717680;
+		&.form__control--grey {
+			min-height: rem(38);
+			border-radius: 0.375rem;
+			background: #414651;
+			border: rem(1) solid #414651;
+			color: #d5d7da;
+			font-size: 0.9375rem;
+			line-height: 146.667%;
+			letter-spacing: -0.0125rem;
+			padding: 0.25rem 0.63rem;
+			&:hover,
+			&:focus {
+				border-color: #ff7dbc;
+			}
+		}
+		&._input {
+			padding: rem(20.2) 0.75rem rem(8.2);
+			& + .form__field-placeholder {
+				font-size: rem(12);
+				top: rem(4);
+			}
 		}
 		&:hover,
 		&:focus {

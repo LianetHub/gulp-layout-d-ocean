@@ -290,43 +290,41 @@
                                     <li class="contacts__list-item">
                                         <div class="contacts__caption">Email</div>
                                         <a href="mailto:info@d-ocean.su" class="contacts__link">info@d-ocean.su</a>
-                                        <div class="contacts__socials socials">
-                                            <a href="" aria-label="Следите за нами в Telegram" class="socials__link icon-telegram"></a>
-                                            <a href="" aria-label="Следите за нами в WhatsApp" class="socials__link icon-whatsapp"></a>
-                                        </div>
                                     </li>
                                 </ul>
                             </div>
-                            <form action="#" class="contacts__form">
-                                <div class="contacts__form-caption">Остались вопросы?</div>
-                                <div class="contacts__form-text">Напишите нам через форму обратной связи, мы ответим максимально оперативно на любой ваш вопрос.</div>
+                            <form action="#" class="contacts__form form">
+                                <div class="contacts__form-header">
+                                    <div class="contacts__form-caption">Остались вопросы?</div>
+                                    <div class="contacts__form-text">Напишите нам через форму обратной связи, мы ответим максимально оперативно на любой ваш вопрос.</div>
+                                </div>
                                 <div class="contacts__form-fields">
-                                    <label class="form__field">
+                                    <label class="contacts__form-field contacts__form-field--large form__field">
                                         <input type="text" name="name" class="form__control" placeholder="">
                                         <span class="form__field-placeholder">Ваше имя</span>
                                     </label>
-                                    <label class="form__field">
+                                    <label class="contacts__form-field form__field">
                                         <input type="tel" name="phone" class="form__control" placeholder="">
                                         <span class="form__field-placeholder">Телефон</span>
                                     </label>
-                                    <label class="form__field">
+                                    <label class="contacts__form-field form__field">
                                         <input type="email" name="email" class="form__control" placeholder="">
                                         <span class="form__field-placeholder">Email</span>
                                     </label>
-                                    <label class="form__field">
+                                    <label class="contacts__form-field contacts__form-field--large form__field">
                                         <textarea name="message" class="form__control" placeholder=""></textarea>
                                         <span class="form__field-placeholder">Ваш вопрос или предложение...</span>
                                     </label>
-                                    <label class="form__file">
+                                    <label class="form__file contacts__form-field--large">
                                         <input type="file" name="file" class="form__file-input" hidden>
                                         <span class="form__file-btn icon-clip">Прикрепить (до 10 мб.)</span>
                                     </label>
-                                    <label class="form__checkbox">
-                                        <input type="checkbox" name="agree" class="form__checkbox-input" hidden>
-                                        <span class="form__checkbox-text">Отправляя заявку, Вы даёте согласие на храниние и <a href="">обработку персональных данных</a></span>
-                                    </label>
-                                    <button type="submit" class="form__btn btn btn-primary icon-chevron-right">Отправить</button>
                                 </div>
+                                <label class="form__checkbox">
+                                    <input type="checkbox" name="agree" class="form__checkbox-input" hidden>
+                                    <span class="form__checkbox-text">Отправляя заявку, Вы даёте согласие на храниние и <a href="">обработку персональных данных</a></span>
+                                </label>
+                                <button type="submit" class="form__btn btn btn-primary icon-chevron-right">Отправить</button>
                             </form>
                         </div>
                     </div>

@@ -1,11 +1,4 @@
 @font-face {
-  font-family: "DelaGothicOne";
-  font-display: swap;
-  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -20,10 +13,38 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "DelaGothicOne";
+  font-display: swap;
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jost";
+  font-display: swap;
+  src: url("../fonts/Jost-MediumItalic.woff2") format("woff2"), url("../fonts/Jost-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Jost";
+  font-display: swap;
+  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
   font-family: "Jost";
   font-display: swap;
   src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  font-display: swap;
+  src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -41,34 +62,13 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Jost";
-  font-display: swap;
-  src: url("../fonts/Jost-MediumItalic.woff2") format("woff2"), url("../fonts/Jost-MediumItalic.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
   font-family: "Manrope";
   font-display: swap;
   src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
-@font-face {
-  font-family: "Jost";
-  font-display: swap;
-  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-.swiper-button-next, .swiper-button-prev, [class^=icon-]:before,
+.form__checkbox-input:checked + .form__checkbox-text::before, .swiper-button-next, .swiper-button-prev, [class^=icon-]:before,
 [class*=" icon-"]:before {
   font-family: "icons";
   font-style: normal;
@@ -84,6 +84,10 @@
 [class^=icon-]:before,
 [class*=" icon-"]:before {
   display: block;
+}
+
+.icon-check:before, .form__checkbox-input:checked + .form__checkbox-text:before {
+  content: "\e910";
 }
 
 .icon-search:before {
@@ -422,35 +426,29 @@
 }
 .form__field-placeholder {
   position: absolute;
-  top: 1rem;
-  left: 0.8rem;
-  color: #89939e;
+  top: 1.5rem;
+  left: 0;
+  color: #717680;
   display: block;
-  transition: all 0.3s ease 0s;
-  font-size: 1rem;
-}
-@media (min-width: 767.98px) {
-  .form__field-placeholder {
-    font-size: 0.875rem;
-  }
-}
-@media (min-width: 1199.98px) {
-  .form__field-placeholder {
-    font-size: 1rem;
-  }
+  transition: all 0.3s ease;
+  font-size: 1.125rem;
+  line-height: 122.222%;
 }
 .form__control {
   text-overflow: ellipsis;
-  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+  transition: border-color 0.3s ease, color 0.3s ease;
   width: 100%;
-  border-radius: 0.75rem;
-  background: #f5f5f5;
-  color: #181d27;
-  border: 0.0625rem solid #f5f5f5;
-  padding: 0.63rem;
+  border-radius: 0;
+  background: transparent;
+  color: #101828;
+  border-bottom: 0.0625rem solid #d5d7da;
   font-size: 1.125rem;
-  line-height: 144.444%;
-  min-height: 4rem;
+  padding: 1.37rem 0 0.5rem;
+  line-height: 122.222%;
+}
+.form__control:-webkit-autofill + .form__field-placeholder, .form__control:not(:placeholder-shown) + .form__field-placeholder {
+  font-size: 0.875rem;
+  top: 0;
 }
 .form__control.form__control--grey {
   min-height: 2.375rem;
@@ -466,15 +464,12 @@
 .form__control.form__control--grey:hover, .form__control.form__control--grey:focus {
   border-color: #ff7dbc;
 }
-.form__control._input {
-  padding: 1.2625rem 0.75rem 0.5125rem;
-}
 .form__control._input + .form__field-placeholder {
   font-size: 0.75rem;
-  top: 0.25rem;
+  top: 0.25rem !important;
 }
 .form__control:hover, .form__control:focus {
-  border-color: #000;
+  border-color: #ff7dbc;
 }
 .form__control:disabled {
   background: #ddd;
@@ -485,16 +480,82 @@
   background: #fff1ed;
 }
 .form__control:is(textarea) {
-  height: 9.125rem;
-  border-radius: 1.5rem;
+  height: 7.5rem;
   resize: none;
 }
-.form__control:is(select) {
-  font-family: inherit;
-  font-weight: 400;
+.form__checkbox {
+  display: inline-flex;
+  width: fit-content;
+}
+.form__checkbox-input:checked + .form__checkbox-text::before {
+  border-color: #ff7dbc;
+  background: #ff7dbc;
+}
+.form__checkbox-text {
   position: relative;
-  appearance: none;
-  min-height: 2.25rem;
+  display: block;
+  width: fit-content;
+  padding: 0 0 0 2rem;
+  line-height: 100%;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+}
+.form__checkbox-text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.0625rem solid #d5d7da;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (any-hover: hover) {
+  .form__checkbox-text:hover::before {
+    border-color: #ff7dbc;
+  }
+}
+.form__checkbox-text a {
+  color: #1570ef;
+  text-decoration: underline;
+}
+@media (any-hover: hover) {
+  .form__checkbox-text a:hover {
+    text-decoration: none;
+  }
+}
+.form__file {
+  width: 100%;
+}
+.form__file-btn {
+  color: #1570ef;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 122.222%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.form__file-btn::before {
+  color: #181d27;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
@@ -2299,4 +2360,90 @@ body.lock {
 }
 .offer__btn {
   margin-top: 6.5rem;
+}
+.contacts {
+  padding: 5rem 0;
+}
+.contacts__hint {
+  text-align: center;
+  justify-content: flex-start;
+}
+.contacts__title {
+  text-align: left;
+}
+.contacts__body {
+  margin-top: 2.63rem;
+  display: flex;
+  gap: 6.25rem;
+}
+.contacts__map {
+  flex: 1 1 auto;
+}
+.contacts__map-block {
+  height: 34.375rem;
+  background: #101828;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.contacts__list {
+  margin-top: 2rem;
+  columns: 4;
+  column-gap: 4.56rem;
+  column-rule: 0.0625rem solid #e9eaeb;
+}
+.contacts__list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  break-inside: avoid;
+}
+.contacts__caption {
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 109.091%;
+  margin-bottom: 0.62rem;
+}
+.contacts__text {
+  color: #535862;
+  font-size: 1.125rem;
+  line-height: 122.222%;
+}
+.contacts__link {
+  font-size: 1.125rem;
+  line-height: 122.222%;
+  font-size: 1.125rem;
+  line-height: 122.222%;
+  color: #535862;
+}
+.contacts__link[href*="mailto:"] {
+  color: #1570ef;
+}
+.contacts__socials {
+  margin-top: 0.81rem;
+}
+.contacts__form {
+  flex: 0 0 24.375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.625rem;
+}
+.contacts__form-caption {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 128.571%;
+}
+.contacts__form-text {
+  margin-top: 1.125rem;
+  color: #535862;
+  font-size: 1.125rem;
+  line-height: 122.222%;
+}
+.contacts__form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+.contacts__form-field--large {
+  grid-column: span 2;
 }

@@ -84,6 +84,12 @@ $(function () {
         }
     });
 
+    $('.form__field > .form__control').on('animationstart', function (e) {
+        if (e.originalEvent.animationName === 'onAutoFillStart' || e.originalEvent.animationName === 'onAutoFillCancel') {
+            $(this).addClass('_input');
+        }
+    });
+
 
 
     // sliders
@@ -405,5 +411,32 @@ $(function () {
         phoneInput.addEventListener('input', onPhoneInput, false);
         phoneInput.addEventListener('paste', onPhonePaste, false);
     }
+
+
+
+    // Contacts Block Map
+    if ($("#map").length) {
+        ymaps.ready(function () {
+            var coordinates = [55.83060906893058, 37.416250999999946];
+
+            var myMap = new ymaps.Map('map', {
+                center: coordinates,
+                zoom: 16,
+                controls: []
+            });
+
+            var placemark = new ymaps.Placemark(coordinates, {}, {
+                iconLayout: 'default#image',
+                iconImageHref: '/img/placemark.svg',
+                iconImageSize: [73, 97],
+                iconImageOffset: [-36, -97]
+            });
+
+            myMap.geoObjects.add(placemark);
+
+            myMap.behaviors.disable('scrollZoom');
+        });
+    }
+
 
 });

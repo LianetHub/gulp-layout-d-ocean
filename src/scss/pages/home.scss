@@ -642,6 +642,7 @@
 
 .benefits {
 	margin-top: 5rem;
+	margin-bottom: rem(75);
 	border-radius: 3rem;
 	color: #fff;
 	padding: 5rem 0 3.69rem;
@@ -671,7 +672,7 @@
 	}
 	// .benefits__body
 	&__body {
-		margin-top: rem(66);
+		margin-top: rem(16);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -763,10 +764,70 @@
 			filter: drop-shadow(rem(8) rem(32) rem(42) rgba(0, 0, 0, 0.4));
 		}
 	}
-
+	// .benefits__btn
 	&__btn {
 		width: fit-content;
-		margin: rem(43) auto 0;
+		margin: rem(63) auto 0;
 		display: flex;
+	}
+}
+
+.offers {
+	padding: rem(75) 0;
+	// .offers__container
+	&__container {
+	}
+	// .offers__slider
+	&__slider {
+	}
+	// .offers__controls
+	&__controls {
+		position: absolute;
+		bottom: rem(32);
+		right: rem(42);
+		display: flex;
+		gap: rem(8);
+	}
+	// .offers__prev
+	&__prev {
+	}
+	// .offers__next
+	&__next {
+	}
+}
+
+.offer {
+	border-radius: 3rem 1.5rem 1.5rem 3rem;
+	overflow: hidden;
+	background: #f5f5f5;
+	color: #535862;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	// .offer__main
+	&__main {
+		padding: 4.5rem 4.5rem 3.5rem;
+	}
+	// .offer__hint
+	&__hint {
+		text-align: left;
+		justify-content: flex-start;
+	}
+	// .offer__title
+	&__title {
+		text-align: left;
+	}
+	// .offer__desc
+	&__desc {
+		margin-top: 1.5rem;
+		font-size: 1.5rem;
+		line-height: 120%;
+	}
+	// .offer__btn
+	&__btn {
+		margin-top: 6.5rem;
+	}
+	// .offer__image
+	&__image {
 	}
 }

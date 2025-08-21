@@ -6,6 +6,13 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Jost";
+  font-display: swap;
+  src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -13,18 +20,18 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Jost";
+  font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
+  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
+  src: url("../fonts/Jost-MediumItalic.woff2") format("woff2"), url("../fonts/Jost-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
 }
 @font-face {
   font-family: "Jost";
@@ -36,22 +43,15 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-MediumItalic.woff2") format("woff2"), url("../fonts/Jost-MediumItalic.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "Manrope";
+  font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
@@ -62,10 +62,10 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Jost";
+  font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 .swiper-button-next, .swiper-button-prev, [class^=icon-]:before,
@@ -142,6 +142,25 @@
   .title {
     letter-spacing: 0.07rem;
     font-size: 3.5rem;
+  }
+}
+
+.title-sm {
+  font-family: "DelaGothicOne";
+  line-height: 120%;
+  font-size: 1.5rem;
+  letter-spacing: 0.03rem;
+}
+@media (min-width: 767.98px) {
+  .title-sm {
+    letter-spacing: 0.05rem;
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1199.98px) {
+  .title-sm {
+    letter-spacing: 0.0525rem;
+    font-size: 2.625rem;
   }
 }
 
@@ -1116,6 +1135,7 @@ body.lock {
 
 .benefits {
   margin-top: 5rem;
+  margin-bottom: 4.6875rem;
   border-radius: 3rem;
   color: #fff;
   padding: 5rem 0 3.69rem;
@@ -1135,7 +1155,7 @@ body.lock {
   line-height: 133.333%;
 }
 .benefits__body {
-  margin-top: 4.125rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1219,6 +1239,44 @@ body.lock {
 }
 .benefits__btn {
   width: fit-content;
-  margin: 2.6875rem auto 0;
+  margin: 3.9375rem auto 0;
   display: flex;
+}
+
+.offers {
+  padding: 4.6875rem 0;
+}
+.offers__controls {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.625rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.offer {
+  border-radius: 3rem 1.5rem 1.5rem 3rem;
+  overflow: hidden;
+  background: #f5f5f5;
+  color: #535862;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.offer__main {
+  padding: 4.5rem 4.5rem 3.5rem;
+}
+.offer__hint {
+  text-align: left;
+  justify-content: flex-start;
+}
+.offer__title {
+  text-align: left;
+}
+.offer__desc {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 120%;
+}
+.offer__btn {
+  margin-top: 6.5rem;
 }

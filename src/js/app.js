@@ -83,6 +83,16 @@ $(function () {
         })
     }
 
+    if ($('.offers__slider').length) {
+        new Swiper('.offers__slider', {
+            slidesPerView: 1,
+            watchOverflow: true,
+            navigation: {
+                nextEl: '.offers__next',
+                prevEl: '.offers__prev'
+            },
+        })
+    }
     if ($('.goods__slider').length) {
         new Swiper('.goods__slider', {
             slidesPerView: "auto",

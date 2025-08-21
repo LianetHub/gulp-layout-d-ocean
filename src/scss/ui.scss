@@ -114,6 +114,61 @@
 	@extend %ic, .icon-next;
 }
 
+.socials {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(12);
+	// .socials__link
+	&__link {
+		width: rem(32);
+		height: rem(32);
+		font-size: rem(20);
+		flex-shrink: 0;
+		background: #4e4e4e;
+		color: #fff;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background-color 0.3s ease;
+		&.icon-telegram {
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #00b0f2;
+				}
+			}
+		}
+		&.icon-whatsapp {
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #00e510;
+				}
+			}
+		}
+		&.icon-youtube {
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #ff0000;
+				}
+			}
+		}
+		&.icon-rutube {
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #13141c;
+				}
+			}
+		}
+		&.icon-vk {
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #2688eb;
+				}
+			}
+		}
+	}
+}
+
 // .rate {
 // 	display: flex;
 // 	align-items: center;

@@ -196,6 +196,11 @@
 			}
 		}
 	}
+	&.icon-grid {
+		&::before {
+			order: -1;
+		}
+	}
 
 	&::before {
 		transition: transform 0.3s ease;
@@ -217,11 +222,25 @@
 		}
 	}
 
-	&.btn-sm {
-		font-size: 1rem;
+	&.btn-white {
+		background: #fff;
+		color: #181d27;
+
+		&:hover,
+		&:active {
+			background: #ff91c6;
+			box-shadow: rem(6) rem(6) rem(12) 0 rgba(0, 0, 0, 0.22);
+		}
+	}
+
+	&.btn-large {
+		border-radius: 0.5rem;
+		padding: 0.5rem 0.75rem;
+		gap: 0.5rem;
+		font-size: 1.125rem;
 		font-weight: 600;
-		line-height: 150%;
-		padding: 0.75rem;
+		line-height: 144.444%;
+		text-transform: uppercase;
 	}
 
 	&:disabled,

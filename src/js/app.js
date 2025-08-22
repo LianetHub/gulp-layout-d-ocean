@@ -563,7 +563,12 @@ $(function () {
             myMap.geoObjects.add(placemark);
 
             myMap.behaviors.disable('scrollZoom');
+
+            window.addEventListener('resize', function () {
+                myMap.container.fitToViewport();
+            });
         });
+
     }
 
 

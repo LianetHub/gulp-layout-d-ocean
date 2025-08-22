@@ -83,6 +83,67 @@ $(function () {
     });
 
 
+    // form submit validation
+
+    const $form = $('.contacts__form');
+
+    $form.on('submit', function (e) {
+        let isValid = true;
+
+        $form.find('[data-required]').each(function () {
+            const $input = $(this);
+            const inputType = $input.attr('type');
+            const inputName = $input.attr('name');
+
+            $input.removeClass('_error');
+            $input.parent().removeClass('_error');
+
+            if (inputType === 'checkbox' && !$input.is(':checked')) {
+                $input.addClass('_error');
+                isValid = false;
+            } else if (inputName === 'phone' && !phoneTest($input.val())) {
+                $input.addClass('_error');
+                isValid = false;
+            } else if (inputName === 'email' && !emailTest($input.val())) {
+                $input.addClass('_error');
+                isValid = false;
+            } else if ($input.val().trim() === '') {
+                $input.addClass('_error');
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            e.preventDefault();
+        }
+    });
+
+    $form.find('[data-required]').on('input change', function () {
+        const $input = $(this);
+        const inputType = $input.attr('type');
+
+        if (inputType === 'checkbox') {
+            if ($input.is(':checked')) {
+                $input.removeClass('_error');
+            }
+        } else {
+            if ($input.val().trim() !== '') {
+                $input.removeClass('_error');
+            }
+        }
+    });
+
+    function emailTest(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    function phoneTest(phone) {
+        const cleaned = phone.replace(/\D/g, '');
+        return cleaned.length >= 10 && /^[1-9]\d{9,14}$/.test(cleaned);
+    }
+
+
     /* =========== Event Handlers ============== */
 
 

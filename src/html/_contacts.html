@@ -35,15 +35,15 @@
                 </div>
                 <div class="contacts__form-fields">
                     <label class="contacts__form-field contacts__form-field--large form__field">
-                        <input type="text" name="name" class="form__control" placeholder="">
+                        <input type="text" name="name" data-required class="form__control" placeholder="">
                         <span class="form__field-placeholder">Ваше имя</span>
                     </label>
                     <label class="contacts__form-field form__field">
-                        <input type="tel" name="phone" class="form__control" placeholder="">
+                        <input type="tel" name="phone" data-required class="form__control" placeholder="">
                         <span class="form__field-placeholder">Телефон</span>
                     </label>
                     <label class="contacts__form-field form__field">
-                        <input type="email" name="email" class="form__control" placeholder="">
+                        <input type="email" name="email" data-required class="form__control" placeholder="">
                         <span class="form__field-placeholder">Email</span>
                     </label>
                     <label class="contacts__form-field contacts__form-field--large form__field">
@@ -56,7 +56,7 @@
                     </label>
                 </div>
                 <label class="form__checkbox">
-                    <input type="checkbox" name="agree" class="form__checkbox-input" hidden>
+                    <input type="checkbox" name="agree" data-required class="form__checkbox-input" hidden>
                     <span class="form__checkbox-text">Отправляя заявку, Вы даёте согласие на храниние и <a href="">обработку персональных данных</a></span>
                 </label>
                 <button type="submit" class="form__btn btn btn-primary icon-chevron-right">Отправить</button>

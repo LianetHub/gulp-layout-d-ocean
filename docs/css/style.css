@@ -530,8 +530,10 @@
   border-color: #ddd;
 }
 .form__control._error {
-  outline: 1px solid #ba2028;
-  background: #fff1ed;
+  border-bottom: 0.0625rem solid #f04438;
+}
+.form__control._error + .form__field-placeholder {
+  color: #f04438;
 }
 .form__control:is(textarea) {
   height: 7.5rem;
@@ -544,6 +546,9 @@
 .form__checkbox-input:checked + .form__checkbox-text::before {
   border-color: #ff7dbc;
   background: #ff7dbc;
+}
+.form__checkbox-input._error + .form__checkbox-text::before {
+  border-color: #f04438;
 }
 .form__checkbox-text {
   position: relative;
@@ -610,6 +615,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
 }
 
 .btn {

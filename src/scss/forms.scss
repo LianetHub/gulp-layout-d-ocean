@@ -69,8 +69,10 @@
 			border-color: #ddd;
 		}
 		&._error {
-			outline: 1px solid #ba2028;
-			background: #fff1ed;
+			border-bottom: rem(1) solid #f04438;
+			& + .form__field-placeholder {
+				color: #f04438;
+			}
 		}
 		&:is(textarea) {
 			height: 7.5rem;
@@ -91,6 +93,13 @@
 					border-color: #ff7dbc;
 					background: #ff7dbc;
 					@extend %ic, .icon-check;
+				}
+			}
+		}
+		&._error {
+			& + .form__checkbox-text {
+				&::before {
+					border-color: #f04438;
 				}
 			}
 		}
@@ -168,6 +177,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
 		}
 	}
 }

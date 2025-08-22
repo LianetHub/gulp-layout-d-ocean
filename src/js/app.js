@@ -22,7 +22,7 @@ $(function () {
         }
 
         // Open the modal catalog when a user clicks the button
-        if ($target.is(".header__catalog")) {
+        if ($target.closest(".header__catalog").length) {
             $(".catalog").addClass("catalog--open");
             $("body").addClass("catalog-lock");
         }
@@ -47,11 +47,19 @@ $(function () {
 
         // Handle submenu logic
         if ($target.closest('.menu__btn').length) {
-            if ($target.closest('.menu__btn').parent().hasClass('active')) {
-                $target.closest('.menu__btn').parent().removeClass('active');
+            const $parentItem = $target.closest('.menu__btn').parent();
+            const isMobile = window.matchMedia("(max-width: 1300px)").matches;
+
+            if (isMobile) {
+                $parentItem.toggleClass('active');
+                $parentItem.find('.submenu').slideToggle(300);
             } else {
-                $('.menu__item.active').removeClass('active');
-                $target.closest('.menu__btn').parent().addClass('active');
+                if ($parentItem.hasClass('active')) {
+                    $parentItem.removeClass('active');
+                } else {
+                    $('.menu__item.active').removeClass('active');
+                    $parentItem.addClass('active');
+                }
             }
         }
 
@@ -59,6 +67,26 @@ $(function () {
         if (!$target.closest('.menu__btn').length && !$target.closest(".menu").length) {
             $('.menu__item.active').removeClass('active');
         }
+
+        // Close all submenus when clicking outside the menu
+        if (!$target.closest('.menu').length && !$target.closest('.icon-menu').length) {
+            $('.menu__item.active').removeClass('active');
+        }
+
+        // Open/close the mobile menu
+        if ($target.closest('.icon-menu').length) {
+            $('.icon-menu').toggleClass("active");
+            $('.menu').toggleClass("menu--open");
+            $('body').toggleClass('menu-lock');
+        }
+
+        // Correctly close the mobile menu on outside click
+        if ($(".menu").hasClass("menu--open") && !$target.closest(".menu").length && !$target.closest(".icon-menu").length) {
+            $('.icon-menu').removeClass("active");
+            $('.menu').removeClass("menu--open");
+            $('body').removeClass('menu-lock');
+        }
+
     });
 
 
@@ -540,6 +568,130 @@ $(function () {
         phoneInput.addEventListener('paste', onPhonePaste, false);
     }
 
+
+    // Function for handling dynamic adaptation
+    function dynamicAdaptHandler(matchMedia, objects) {
+        if (matchMedia.matches) {
+            objects.forEach(object => {
+                object.index = dynamicAdaptIndexInParent(object.parent, object.element);
+                dynamicAdaptMoveTo(object.place, object.element, object.destination);
+            });
+        } else {
+            objects.forEach(object => {
+                if (object.element.hasClass("_dynamic_adapt_")) {
+                    dynamicAdaptMoveBack(object.parent, object.element, object.index);
+                }
+            });
+        }
+    }
+
+
+    class DynamicAdapt {
+        constructor(type) {
+            this.type = type;
+            this.оbjects = [];
+            this.daClassname = "_dynamic_adapt_";
+            this.nodes = $('[data-da]');
+        }
+
+        init() {
+            // Populate the objects array
+            this.nodes.each((i, node) => {
+                const $node = $(node);
+                const data = $node.data('da').trim();
+                const dataArray = data.split(",");
+                const оbject = {};
+                оbject.element = $node;
+                оbject.parent = $node.parent();
+                оbject.destination = $(dataArray[0].trim());
+                оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
+                оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
+                оbject.index = this.indexInParent(оbject.parent, оbject.element);
+                this.оbjects.push(оbject);
+            });
+
+            this.arraySort(this.оbjects);
+
+            // Array of unique media queries
+            this.mediaQueries = this.оbjects.map(item => {
+                return `(${this.type}-width: ${item.breakpoint}px),${item.breakpoint}`;
+            }).filter((item, index, self) => {
+                return self.indexOf(item) === index;
+            });
+
+            // Attach listener to media query and call handler on first load
+            this.mediaQueries.forEach(media => {
+                const mediaSplit = media.split(',');
+                const matchMedia = window.matchMedia(mediaSplit[0]);
+                const mediaBreakpoint = mediaSplit[1];
+
+                // Array of objects with matching breakpoint
+                const objectsFilter = this.оbjects.filter(item => {
+                    return item.breakpoint === mediaBreakpoint;
+                });
+
+                matchMedia.addListener(() => {
+                    this.mediaHandler(matchMedia, objectsFilter);
+                });
+                this.mediaHandler(matchMedia, objectsFilter);
+            });
+        }
+
+        mediaHandler(matchMedia, оbjects) {
+            if (matchMedia.matches) {
+                оbjects.forEach(оbject => {
+                    оbject.index = this.indexInParent(оbject.parent, оbject.element);
+                    this.moveTo(оbject.place, оbject.element, оbject.destination);
+                });
+            } else {
+                оbjects.forEach(оbject => {
+                    if (оbject.element.hasClass(this.daClassname)) {
+                        this.moveBack(оbject.parent, оbject.element, оbject.index);
+                    }
+                });
+            }
+        }
+
+        // Move function
+        moveTo(place, element, destination) {
+            element.addClass(this.daClassname);
+            if (place === 'last' || place >= destination.children().length) {
+                destination.append(element);
+            } else if (place === 'first') {
+                destination.prepend(element);
+            } else {
+                destination.children().eq(place).before(element);
+            }
+        }
+
+        // Return function
+        moveBack(parent, element, index) {
+            element.removeClass(this.daClassname);
+            if (parent.children().eq(index).length) {
+                parent.children().eq(index).before(element);
+            } else {
+                parent.append(element);
+            }
+        }
+
+        // Get index within parent
+        indexInParent(parent, element) {
+            const parentChildren = parent.children();
+            return parentChildren.index(element);
+        }
+
+        // Sort array by breakpoint and place
+        arraySort(arr) {
+            if (this.type === "min") {
+                arr.sort((a, b) => a.breakpoint - b.breakpoint || a.place - b.place);
+            } else {
+                arr.sort((a, b) => b.breakpoint - a.breakpoint || b.place - a.place);
+            }
+        }
+    }
+
+    const da = new DynamicAdapt("max");
+    da.init();
 
 
     // Contacts Block Map

@@ -29,19 +29,24 @@
     <link rel="manifest" href="/site.webmanifest" > -->
 	<!-- favicon -->
 	<!-- plugins -->
-	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250822150507">
-	<link rel="stylesheet" href="css/libs/fancybox.min.css?_v=20250822150507">
+	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250822161519">
+	<link rel="stylesheet" href="css/libs/fancybox.min.css?_v=20250822161519">
 	<!-- plugins -->
-	<link rel="stylesheet" href="css/reset.min.css?_v=20250822150507">
-	<link rel="stylesheet" href="css/style.min.css?_v=20250822150507">
+	<link rel="stylesheet" href="css/reset.min.css?_v=20250822161519">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250822161519">
 </head>
 
 <body>
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__wrapper">
-				<button type="button" class="header__catalog btn btn-white btn-large icon-grid">КАТАЛОГ</button>
+				<button type="button" class="header__catalog btn btn-white btn-large icon-grid"><span>КАТАЛОГ</span></button>
 				<nav aria-label="Основное меню" class="header__menu menu">
+					<div class="menu__header">
+						<a href="/" class="menu__logo">
+							<img src="img/logo.svg" alt="Логотип D-Ocean">
+						</a>
+					</div>
 					<ul class="menu__list">
 						<li class="menu__item">
 							<a href="/" class="menu__link">Главная</a>
@@ -93,6 +98,7 @@
 											<div class="submenu__contacts-caption">Телефон:</div>
 											<a href="tel:+79251398515" class="submenu__contacts-phone">+7 (925) 139-85-15</a>
 											<a href="mailto:info@d-ocean.su" class="submenu__contacts-mail">info@d-ocean.su</a>
+											<a href="" class="submenu__contacts-callback btn btn-primary">заказать звонок</a>
 										</div>
 										<div class="submenu__contacts-block">
 											<div class="submenu__contacts-caption">Мессенджеры:</div>
@@ -112,7 +118,7 @@
 					<img src="img/logo.svg" alt="Логотип D-Ocean">
 				</a>
 				<div class="header__actions">
-					<div class="header__switch">
+					<div data-da=".menu__header, 768" class="header__switch">
 						<label class="header__switch-item">
 							<input type="radio" name="orderType" value="retail" checked class="header__switch-input" hidden>
 							<span class="header__switch-btn">Розница</span>
@@ -1347,12 +1353,12 @@
         <button type="submit" class="form__btn btn btn-secondary">Оставить запрос</button>
     </form>
 </div> --> <!-- plugins -->
-		<script src="js/libs/jquery-3.7.1.min.js?_v=20250822150507"></script>
-		<script src="js/libs/fancybox.umd.js?_v=20250822150507"></script>
-		<script src="js/libs/swiper-bundle.min.js?_v=20250822150507"></script>
-		<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ВАШ_API_КЛЮЧ&_v=20250822150507"></script>
+		<script src="js/libs/jquery-3.7.1.min.js?_v=20250822161519"></script>
+		<script src="js/libs/fancybox.umd.js?_v=20250822161519"></script>
+		<script src="js/libs/swiper-bundle.min.js?_v=20250822161519"></script>
+		<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ВАШ_API_КЛЮЧ&_v=20250822161519"></script>
 		<!-- plugins -->
-		<script src="js/app.min.js?_v=20250822150507"></script>
+		<script src="js/app.min.js?_v=20250822161519"></script>
 	</div>
 </body>
 

@@ -787,6 +787,70 @@
 	}
 }
 
+.about {
+	padding: rem(90) 0;
+	// .about__container
+	&__container {
+	}
+	// .about__header
+	&__header {
+		padding-top: 15.87rem;
+		text-align: center;
+		background: url("@img/decor/about-decor.svg") center 0 / contain no-repeat;
+	}
+	// .about__hint
+	&__hint {
+	}
+	// .about__title
+	&__title {
+	}
+	// .about__subtitle
+	&__subtitle {
+		margin-top: 0.75rem;
+		text-align: center;
+		color: #535862;
+		font-size: 1.5rem;
+		line-height: 133.333%;
+	}
+	// .about__list
+	&__list {
+		margin-top: 4rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem(24);
+	}
+	// .about__item
+	&__item {
+		border-radius: 1.25rem;
+		border: rem(1) solid #d5d7da;
+		padding: 2rem 1.5rem 1.125rem 1.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	// .about__item-thumb
+	&__item-thumb {
+		width: 5rem;
+		height: 5rem;
+		border-radius: 1.125rem;
+		overflow: hidden;
+	}
+	// .about__item-title
+	&__item-title {
+		font-family: $font-dela;
+		font-size: 1.5rem;
+		line-height: 133.333%;
+		letter-spacing: 0.03rem;
+	}
+	// .about__item-description
+	&__item-description {
+		color: #535862;
+		margin-top: 0.75rem;
+		font-size: 1.125rem;
+		line-height: 133.333%;
+	}
+}
+
 .reviews {
 	padding: 4.37rem 0;
 	background: url("@img/decor/reviews-bg.svg") center / cover no-repeat;

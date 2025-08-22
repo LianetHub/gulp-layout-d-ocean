@@ -2364,6 +2364,54 @@ body.lock {
 .offer__btn {
   margin-top: 6.5rem;
 }
+.about {
+  padding: 5.625rem 0;
+}
+.about__header {
+  padding-top: 15.87rem;
+  text-align: center;
+  background: url("../img/decor/about-decor.svg") center 0/contain no-repeat;
+}
+.about__subtitle {
+  margin-top: 0.75rem;
+  text-align: center;
+  color: #535862;
+  font-size: 1.5rem;
+  line-height: 133.333%;
+}
+.about__list {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.about__item {
+  border-radius: 1.25rem;
+  border: 0.0625rem solid #d5d7da;
+  padding: 2rem 1.5rem 1.125rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.about__item-thumb {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.125rem;
+  overflow: hidden;
+}
+.about__item-title {
+  font-family: "DelaGothicOne";
+  font-size: 1.5rem;
+  line-height: 133.333%;
+  letter-spacing: 0.03rem;
+}
+.about__item-description {
+  color: #535862;
+  margin-top: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 133.333%;
+}
+
 .reviews {
   padding: 4.37rem 0;
   background: url("../img/decor/reviews-bg.svg") center/cover no-repeat;

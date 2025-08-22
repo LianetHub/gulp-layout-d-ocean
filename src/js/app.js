@@ -282,6 +282,7 @@ $(function () {
         new Swiper('.offers__slider', {
             slidesPerView: 1,
             watchOverflow: true,
+            autoHeight: true,
             navigation: {
                 nextEl: '.offers__next',
                 prevEl: '.offers__prev'
@@ -341,20 +342,29 @@ $(function () {
 
     if ($('.reviews__slider').length) {
         new SwiperWithProgress('.reviews__slider', {
-            slidesPerView: 4,
-            spaceBetween: 24,
+            spaceBetween: 8,
             watchOverflow: true,
+            autoHeight: true,
             navigation: {
                 nextEl: '.reviews__next',
                 prevEl: '.reviews__prev'
             },
             paginationEl: '.reviews__pagination',
             breakpoints: {
-                1661.98: {
-                    slidesPerView: 3,
+                767.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                    autoHeight: false
                 },
-                1819.98: {
+                1399.98: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    autoHeight: false
+                },
+                1661.98: {
                     slidesPerView: 4,
+                    spaceBetween: 24,
+                    autoHeight: false
                 }
             }
         })
@@ -499,7 +509,6 @@ $(function () {
         // Return stripped input value — just numbers
         return input.value.replace(/\D/g, '');
     }
-
     var onPhonePaste = function (e) {
         var input = e.target,
             inputNumbersValue = getInputNumbersValue(input);
@@ -514,7 +523,6 @@ $(function () {
             }
         }
     }
-
     var onPhoneInput = function (e) {
         var input = e.target,
             inputNumbersValue = getInputNumbersValue(input),
@@ -570,22 +578,6 @@ $(function () {
 
 
     // Function for handling dynamic adaptation
-    function dynamicAdaptHandler(matchMedia, objects) {
-        if (matchMedia.matches) {
-            objects.forEach(object => {
-                object.index = dynamicAdaptIndexInParent(object.parent, object.element);
-                dynamicAdaptMoveTo(object.place, object.element, object.destination);
-            });
-        } else {
-            objects.forEach(object => {
-                if (object.element.hasClass("_dynamic_adapt_")) {
-                    dynamicAdaptMoveBack(object.parent, object.element, object.index);
-                }
-            });
-        }
-    }
-
-
     class DynamicAdapt {
         constructor(type) {
             this.type = type;

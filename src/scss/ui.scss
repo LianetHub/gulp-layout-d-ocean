@@ -230,11 +230,18 @@
 
 .label {
 	display: inline-block;
-	min-height: rem(32);
-	padding: 0.25rem 0.52rem;
-	font-size: 1rem;
-	border-radius: 0.5rem;
 	line-height: 150%;
+	font-size: 0.75rem;
+	padding: 0.125rem 0.25rem;
+
+	min-height: rem(22);
+	border-radius: 0.25rem;
+	@media (min-width: $md4) {
+		border-radius: 0.5rem;
+		min-height: rem(32);
+		padding: 0.25rem 0.52rem;
+		font-size: 1rem;
+	}
 	// .label--small
 	&--small {
 		border-radius: 0.375rem;

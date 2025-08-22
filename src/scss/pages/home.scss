@@ -596,12 +596,15 @@
 
 .benefits {
 	margin-top: 5rem;
-	margin-bottom: rem(75);
 	border-radius: 3rem;
 	color: #fff;
-	padding: 5rem 0 3.69rem;
 	background: url("@img/decor/benefits-pattern.svg") 0 0 / cover no-repeat, #181d27;
-
+	padding: 3rem 0;
+	margin-bottom: rem(40);
+	@media (min-width: $md3) {
+		margin-bottom: rem(75);
+		padding: 5rem 0 3.69rem;
+	}
 	// .benefits__container
 	&__container {
 	}
@@ -621,22 +624,38 @@
 	// .benefits__description
 	&__description {
 		margin-top: 0.75rem;
-		font-size: 1.125rem;
-		line-height: 133.333%;
+		font-size: 0.875rem;
+		line-height: 157.143%;
+		@media (min-width: $md3) {
+			line-height: 133.333%;
+			font-size: 1.125rem;
+		}
 	}
 	// .benefits__body
 	&__body {
-		margin-top: rem(16);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		perspective: rem(1000);
 		min-height: rem(500);
+		flex-direction: column;
+		margin-top: 2.62rem;
+		@media (min-width: $md2) {
+			margin-top: rem(16);
+			gap: 1rem;
+			flex-direction: row;
+		}
 	}
 	// .benefits__list
 	&__list {
-		width: 29.375rem;
+		width: 100%;
 		counter-reset: num var(--start-num, 0);
+		@media (min-width: $md2) {
+			max-width: 29.375rem;
+		}
+		&:last-child {
+			margin-top: -0.75rem;
+		}
 	}
 	// .benefits__item
 	&__item {
@@ -644,13 +663,18 @@
 		background: #252b37;
 		box-shadow: 0 rem(-32) rem(42) 0 rgba(0, 0, 0, 0.5);
 		display: flex;
-		padding: 1.5rem 1.125rem 2.25rem 1.125rem;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 1rem;
+
 		align-self: stretch;
 		counter-increment: num;
 		transition: color 0.3s ease, background-color 0.3s ease;
+		padding: 1rem 0.875rem 1.75rem 0.875rem;
+		gap: 0.5rem;
+		@media (min-width: $md3) {
+			gap: 1rem;
+			padding: 1.5rem 1.125rem 2.25rem 1.125rem;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: #181d27;
@@ -680,24 +704,31 @@
 	// .benefits__item-title
 	&__item-title {
 		display: flex;
-		align-items: flex-end;
-		font-size: 1.5rem;
+		align-items: center;
 		font-weight: 700;
 		line-height: 110%;
 		gap: 1rem;
-
+		font-size: 1.125rem;
+		@media (min-width: $md3) {
+			align-items: flex-end;
+			font-size: 1.5rem;
+		}
 		&::before {
 			content: counter(num);
-			-webkit-text-stroke-width: 2px;
+			-webkit-text-stroke-width: rem(2);
 			-webkit-text-stroke-color: #9a9a9a;
 			font-family: $font-dela;
 			color: transparent;
-			font-size: 4rem;
 			line-height: 100%;
 			text-transform: uppercase;
-			width: 4.375rem;
 			flex-shrink: 0;
 			transition: all 0.3s ease;
+			font-size: 2.625rem;
+			width: 2.75rem;
+			@media (min-width: $md3) {
+				width: 4.375rem;
+				font-size: 4rem;
+			}
 		}
 	}
 	// .benefits__item-description
@@ -706,14 +737,33 @@
 	}
 	// .benefits__picture
 	&__picture {
-		flex: 0 0 rem(450);
-		height: rem(450);
+		flex-shrink: 0;
+		flex-grow: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		background: url("@img/decor/benefits-picture-decor.svg") center / 95% auto no-repeat;
 		transition: all 0.5s ease-out;
 		transform-style: preserve-3d;
+		order: 1;
+		height: 22.5rem;
+
+		margin-top: 2rem;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		@media (min-width: $md5) {
+			margin-left: 0;
+			margin-right: 0;
+			width: 22.5rem;
+		}
+		@media (min-width: $md3) {
+			margin-top: 0;
+			width: rem(450);
+			height: rem(450);
+		}
+		@media (min-width: $md2) {
+			order: 0;
+		}
 		& img {
 			filter: drop-shadow(rem(8) rem(32) rem(42) rgba(0, 0, 0, 0.4));
 		}
@@ -721,46 +771,73 @@
 	// .benefits__btn
 	&__btn {
 		width: fit-content;
-		margin: rem(63) auto 0;
 		display: flex;
+		margin: rem(28) auto 0;
+		@media (min-width: $md3) {
+			margin: rem(63) auto 0;
+		}
 	}
 }
 
 .offers {
-	padding: rem(75) 0;
+	padding: rem(40) 0;
+	@media (min-width: $md3) {
+		padding: rem(75) 0;
+	}
 	// .offers__container
 	&__container {
 	}
 	// .offers__slider
 	&__slider {
+		margin-left: -1rem;
+		margin-right: -1rem;
+		@media (min-width: $md5) {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 	// .offers__controls
 	&__controls {
 		position: absolute;
-		bottom: rem(32);
-		right: rem(42);
 		display: flex;
 		gap: rem(8);
+		bottom: rem(16);
+		right: rem(16);
+		@media (min-width: $md3) {
+			bottom: rem(32);
+			right: rem(42);
+		}
 	}
 	// .offers__prev
 	&__prev {
+		@media (max-width: $md3) {
+			width: rem(48);
+			height: rem(48);
+		}
 	}
 	// .offers__next
 	&__next {
+		@extend .offers__prev;
 	}
 }
 
 .offer {
-	border-radius: 3rem 1.5rem 1.5rem 3rem;
 	overflow: hidden;
 	background: #f5f5f5;
 
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1rem;
+	border-radius: rem(24);
+	@media (min-width: $md3) {
+		gap: 1rem;
+		border-radius: 3rem 1.5rem 1.5rem 3rem;
+		grid-template-columns: repeat(2, 1fr);
+	}
 	// .offer__main
 	&__main {
-		padding: 4.5rem 4.5rem 3.5rem;
+		padding: rem(56) 1rem rem(40);
+		@media (min-width: $md2) {
+			padding: 4.5rem 4.5rem 3.5rem;
+		}
 	}
 	// .offer__hint
 	&__hint {
@@ -774,13 +851,19 @@
 	// .offer__desc
 	&__desc {
 		margin-top: 1.5rem;
-		font-size: 1.5rem;
 		color: #535862;
 		line-height: 120%;
+		font-size: rem(18);
+		@media (min-width: $md4) {
+			font-size: 1.5rem;
+		}
 	}
 	// .offer__btn
 	&__btn {
-		margin-top: 6.5rem;
+		margin-top: 2.15rem;
+		@media (min-width: $md4) {
+			margin-top: 6.5rem;
+		}
 	}
 	// .offer__image
 	&__image {
@@ -788,8 +871,11 @@
 }
 
 .reviews {
-	padding: 4.37rem 0 9rem;
 	background: url("@img/decor/reviews-bg.svg") center / cover no-repeat;
+	padding: rem(40) 0;
+	@media (min-width: $md4) {
+		padding: 4.37rem 0 9rem;
+	}
 	// .reviews__container
 	&__container {
 	}
@@ -803,31 +889,44 @@
 	&__subtitle {
 		margin-top: 0.75rem;
 		color: #535862;
-		font-size: 1.5rem;
 		line-height: 133.333%;
 		text-align: center;
+		font-size: 1rem;
+		@media (min-width: $md3) {
+			font-size: 1.5rem;
+		}
 	}
 	// .reviews__content
 	&__content {
-		margin-top: 3.5rem;
 		position: relative;
+		margin-top: 2rem;
+		@media (min-width: $md3) {
+			margin-top: 1.5rem;
+		}
 	}
 	// .reviews__slider
 	&__slider {
+		overflow: visible;
+		@media (min-width: $md3) {
+			overflow: hidden;
+			margin: 0 -1.5rem;
+			padding: 2rem 1.5rem;
+		}
 	}
 	// .reviews__prev
 	&__prev {
 		width: 3rem;
 		height: 3rem;
+		@media (max-width: $md4) {
+			background: #d5d7da;
+		}
 		@media (min-width: $md4) {
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
-			left: 1.5rem;
+			left: -1.5rem;
 		}
-		@media (min-width: $md2) {
-			left: 3.5rem;
-		}
+
 		@media (min-width: 1920px) {
 			transform: translateY(calc(-50% - rem(9)));
 			left: -4.75rem;
@@ -837,35 +936,75 @@
 	&__next {
 		width: 3rem;
 		height: 3rem;
+		@media (max-width: $md4) {
+			background: #d5d7da;
+		}
 		@media (min-width: $md4) {
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
-			right: 1.5rem;
-		}
-		@media (min-width: $md2) {
-			right: 3.5rem;
+			right: -1.5rem;
 		}
 		@media (min-width: 1920px) {
 			transform: translateY(calc(-50% - rem(9)));
 			right: -4.75rem;
 		}
 	}
+	// .reviews__footer
+	&__footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 2.25rem;
+		@media (min-width: $md4) {
+			margin-top: 2.75rem;
+		}
+	}
+	// .reviews__controls
+	&__controls {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
 	// .reviews__pagination
 	&__pagination {
-		margin-top: 2.75rem;
 		position: static;
+		color: $black;
+		.swiper-pagination-progress {
+			background: #d5d7da;
+			&::after {
+				background: #181d27;
+			}
+		}
+		.swiper-pagination-total {
+			opacity: 0.7;
+			color: #7b7b7b;
+		}
 	}
 }
 
 .review {
 	display: flex;
-	padding: 1.5rem 1.5rem 1.125rem 1.5rem;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.75rem;
 	border-radius: 1.25rem;
-	background: #f5f5f5;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	background: #fff;
+	box-shadow: rem(18) rem(18) rem(32) 0 rgba(0, 0, 0, 0.18);
+	padding: 1.125rem 1.125rem 0.875rem 1.125rem;
+	gap: 1rem;
+	@media (min-width: $md3) {
+		gap: 0.75rem;
+		padding: 1.5rem 1.5rem 1.125rem 1.5rem;
+		background: #f5f5f5;
+		box-shadow: none;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background: #fff;
+			box-shadow: rem(18) rem(18) rem(32) 0 rgba(0, 0, 0, 0.18);
+		}
+	}
 	// .review__images
 	&__images {
 		margin-right: auto;
@@ -884,9 +1023,12 @@
 	&__text {
 		color: #535862;
 		padding-bottom: 0.75rem;
-		font-size: 1.125rem;
-		line-height: 133.333%;
 		border-bottom: rem(1) solid #d5d7da;
+		line-height: 137.5%;
+		@media (min-width: $md3) {
+			line-height: 133.333%;
+			font-size: 1.125rem;
+		}
 	}
 	// .review__footer
 	&__footer {
@@ -932,15 +1074,26 @@
 }
 
 .about-shop {
-	border-radius: 3rem;
 	background: #181d27;
 	color: #fff;
-	padding: 6.25rem 0;
-	margin: rem(90) 0;
+	margin: rem(40) 0;
+	border-radius: 1.5rem;
+	padding: rem(42) 0;
+	@media (min-width: $md3) {
+		padding: 6.25rem 0;
+		border-radius: 3rem;
+		margin: rem(90) 0;
+	}
 	// .about-shop__container
 	&__container {
 		display: flex;
-		gap: 4.75rem;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 4rem;
+		@media (min-width: $md2) {
+			gap: 4.75rem;
+			flex-direction: row;
+		}
 	}
 	// .about-shop__body
 	&__body {
@@ -959,11 +1112,13 @@
 	&__description {
 		margin-top: 2rem;
 		color: #d5d7da;
-		font-size: 1.125rem;
 		line-height: 133.333%;
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+		@media (min-width: $md2) {
+			font-size: 1.125rem;
+		}
 	}
 	// .about-shop__btn
 	&__btn {
@@ -971,9 +1126,14 @@
 	}
 	// .about-shop__image
 	&__image {
-		flex: 0 0 41.625rem;
 		border-radius: 1.5rem;
 		position: relative;
+		@media (min-width: $md3) {
+			flex: 0 0 36rem;
+		}
+		@media (min-width: $md0) {
+			flex: 0 0 41.625rem;
+		}
 		& img {
 			border-radius: 1.5rem;
 		}
@@ -982,7 +1142,14 @@
 	&__logo {
 		position: absolute;
 		top: -2.56rem;
-		right: -2.88rem;
+		right: 0;
+		width: 5rem;
+		height: 5rem;
+		@media (min-width: $md3) {
+			right: -2.88rem;
+			width: 10rem;
+			height: 10rem;
+		}
 		animation: infiniteRotate 45s linear infinite;
 	}
 }

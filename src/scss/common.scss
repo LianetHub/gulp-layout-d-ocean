@@ -115,15 +115,21 @@ body {
 //=============== LAYOUT ===============================
 
 .about {
-	padding: rem(90) 0;
+	padding: rem(40) 0;
+	@media (min-width: $md3) {
+		padding: rem(90) 0;
+	}
 	// .about__container
 	&__container {
 	}
 	// .about__header
 	&__header {
-		padding-top: 16.5rem;
 		text-align: center;
 		background: url("@img/decor/about-decor.svg") center 0 / contain no-repeat;
+		padding-top: 6.5rem;
+		@media (min-width: $md3) {
+			padding-top: 16.5rem;
+		}
 	}
 	// .about__hint
 	&__hint {
@@ -136,24 +142,50 @@ body {
 		margin-top: 0.75rem;
 		text-align: center;
 		color: #535862;
-		font-size: 1.5rem;
 		line-height: 133.333%;
+		font-size: 1rem;
+		@media (min-width: $md3) {
+			font-size: 1.5rem;
+		}
 	}
 	// .about__list
 	&__list {
-		margin-top: 4rem;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: rem(24);
+		margin-top: 2.75rem;
+		gap: rem(18);
+		@media (min-width: $md4) {
+			gap: rem(24);
+			margin-top: 4rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 	// .about__item
 	&__item {
 		border-radius: 1.25rem;
-		border: rem(1) solid #d5d7da;
-		padding: 2rem 1.5rem 1.125rem 1.5rem;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		border: rem(1) solid #ff7dbc;
+		background: #ff7dbc;
+		padding: 1.5rem 1.25rem 1.125rem 1.25rem;
+		@media (min-width: $md4) {
+			padding: 2rem 1.5rem 1.125rem 1.5rem;
+			border: rem(1) solid #d5d7da;
+			background-color: transparent;
+			transition: background-color 0.3s ease, border-color 0.3s ease;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: #ff7dbc;
+				border-color: #ff7dbc;
+				.about__item-thumb {
+					box-shadow: rem(2) rem(6) rem(12) 0 rgba(0, 0, 0, 0.25);
+				}
+			}
+		}
 	}
 	// .about__item-thumb
 	&__item-thumb {
@@ -161,30 +193,82 @@ body {
 		height: 5rem;
 		border-radius: 1.125rem;
 		overflow: hidden;
+		border-radius: 1.125rem;
+		box-shadow: rem(2) rem(6) rem(12) 0 rgba(0, 0, 0, 0.25);
+		transition: box-shadow 0.3s ease;
 	}
 	// .about__item-title
 	&__item-title {
 		margin-top: 1.5rem;
 		font-family: $font-dela;
-		font-size: 1.5rem;
 		line-height: 133.333%;
 		letter-spacing: 0.03rem;
+		font-size: 1.25rem;
+		@media (min-width: $md4) {
+			font-size: 1.5rem;
+		}
 	}
 	// .about__item-description
 	&__item-description {
-		color: #535862;
 		margin-top: 0.75rem;
-		font-size: 1.125rem;
-		line-height: 133.333%;
+		opacity: 0.7;
+		color: #181d27;
+		font-size: 1rem;
+		line-height: 137.5%;
+		@media (min-width: $md4) {
+			font-size: 1.125rem;
+			line-height: 133.333%;
+			color: #535862;
+			opacity: 1;
+		}
 	}
 }
 
 .gallery {
-	margin: rem(90) 0 rem(180);
-	padding: 7.5rem 0 2rem;
-	background: url("@img/decor/gallery-bg.svg") center 0 / cover no-repeat;
 	color: #fff;
-	border-radius: 0 0 3rem 3rem;
+	border-radius: 0 0 1.5rem 1.5rem;
+	position: relative;
+	margin: rem(40) 0;
+	padding: rem(51) 0 3rem;
+	background: url("@img/decor/gallery-decor-bg-mobile.svg") 0 0 / cover no-repeat, linear-gradient(116deg, #c62d80 3.99%, #ffee6b 89.04%),
+		linear-gradient(180deg, #eaeaea 0%, #848484 100%);
+	@media (min-width: $md5) {
+		background: url("@img/decor/gallery-decor-bg.svg") 0 0 / cover no-repeat, linear-gradient(116deg, #c62d80 3.99%, #ffee6b 89.04%),
+			linear-gradient(180deg, #eaeaea 0%, #848484 100%);
+	}
+	@media (min-width: $md3) {
+		border-radius: 0 0 3rem 3rem;
+		padding: 7.5rem 0 2rem;
+		margin: rem(90) 0 rem(180);
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		animation: wave-run 15s linear infinite;
+		background: url("@img/decor/wave-pattern.svg") 0 0 / auto rem(24) repeat-x;
+		@media (min-width: $md5) {
+			background: url("@img/decor/wave-pattern.svg") 0 0 / auto rem(40) repeat-x;
+		}
+		@media (min-width: $md4) {
+			background: url("@img/decor/wave-pattern.svg") 0 0 / auto rem(80) repeat-x;
+		}
+		@media (min-width: $md2) {
+			background: url("@img/decor/wave-pattern.svg") 0 0 / auto rem(100) repeat-x;
+		}
+		@keyframes wave-run {
+			from {
+				background-position-x: 0;
+			}
+			to {
+				background-position-x: 100vw;
+			}
+		}
+	}
 	// .gallery__container
 	&__container {
 	}
@@ -199,27 +283,67 @@ body {
 	&__subtitle {
 		margin-top: 0.75rem;
 
-		font-size: 1.5rem;
-		line-height: 133.333%;
 		text-align: center;
+		line-height: 150%;
+		@media (min-width: $md4) {
+			line-height: 133.333%;
+			font-size: 1.5rem;
+		}
 	}
 	// .gallery__content
 	&__content {
-		position: relative;
-		max-width: 80rem;
-		padding: 0 6rem;
-		margin: 2.55rem auto 0;
+		margin: rem(42) -1rem 0;
+		@media (min-width: $md4) {
+			position: relative;
+			max-width: 80rem;
+			padding: 0 6rem;
+			margin: 2.55rem auto 0;
+		}
 	}
 	// .gallery__slider
 	&__slider {
-		max-width: 67.5rem;
-		overflow: visible;
+		@media (min-width: $md4) {
+			max-width: 67.5rem;
+			overflow: visible;
+		}
 	}
 	// .gallery__slide
 	&__slide {
-		border-radius: 1.5rem;
 		overflow: hidden;
 		position: relative;
+		border-radius: 0.75rem;
+		@media (min-width: $md4) {
+			border-radius: 1.5rem;
+		}
+		&.icon-play {
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 3.25rem;
+				height: 3.25rem;
+				font-size: 1.5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #fff;
+				border-radius: rem(20);
+				color: $black;
+				transition: background-color 0.3s ease;
+				@media (min-width: $md4) {
+					width: rem(60);
+					height: rem(60);
+				}
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					&::before {
+						background-color: $pink;
+					}
+				}
+			}
+		}
 
 		&.swiper-slide-active {
 			.gallery__slide-label,
@@ -232,46 +356,86 @@ body {
 	// .gallery__slide-label
 	&__slide-label {
 		position: absolute;
-		top: 1.5rem;
-		left: 1.5rem;
+		top: 0.75rem;
+		left: 0.75rem;
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.3s ease, visibility 0.3s ease;
+		@media (min-width: $md4) {
+			top: 1.5rem;
+			left: 1.5rem;
+		}
 	}
 	// .gallery__slide-text
 	&__slide-text {
-		border-radius: 0.75rem;
 		background: rgba(255, 255, 255, 0.8);
 		backdrop-filter: blur(rem(4));
 		-wekbit-backdrop-filter: blur(rem(4));
 		position: absolute;
-		bottom: 1.5rem;
-		left: 1.5rem;
 		color: #181d27;
-		font-size: 1.5rem;
-		line-height: 133.333%;
-		padding: 0.5rem 0.88rem;
+		font-size: rem(14);
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.3s ease, visibility 0.3s ease;
+		padding: rem(6) rem(12);
+		line-height: 157.143%;
+		bottom: 0.75rem;
+		left: 0.75rem;
+		border-radius: 0.5rem;
+		@media (min-width: $md3) {
+			border-radius: 0.75rem;
+			bottom: 1.5rem;
+			left: 1.5rem;
+			line-height: 133.333%;
+			padding: 0.5rem 0.88rem;
+			font-size: 1.5rem;
+		}
 	}
 	// .gallery__prev
 	&__prev {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		left: 1.5rem;
+		@media (max-width: $md4) {
+			width: rem(48);
+			height: rem(48);
+		}
+		@media (min-width: $md4) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 1.5rem;
+		}
 	}
 	// .gallery__next
 	&__next {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 1.5rem;
+		@media (max-width: $md4) {
+			width: rem(48);
+			height: rem(48);
+		}
+		@media (min-width: $md4) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 1.5rem;
+		}
+	}
+	// .gallery__footer
+	&__footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 2.25rem;
+		padding: 0 1rem;
+		@media (min-width: $md4) {
+			margin-top: rem(32);
+		}
+	}
+	// .gallery__controls
+	&__controls {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 	// .gallery__pagination
 	&__pagination {
-		margin-top: rem(32);
 		position: static;
 		color: $black;
 		.swiper-pagination-progress {
@@ -288,7 +452,10 @@ body {
 }
 
 .contacts {
-	padding: 5.75rem 0 5rem;
+	padding: rem(40) 0;
+	@media (min-width: $md3) {
+		padding: 5.75rem 0 5rem;
+	}
 	// .contacts__container
 	&__container {
 	}
@@ -306,9 +473,17 @@ body {
 	}
 	// .contacts__body
 	&__body {
-		margin-top: 2.63rem;
 		display: flex;
-		gap: 6.25rem;
+		gap: 5rem;
+		flex-direction: column;
+		margin-top: 1.5rem;
+		@media (min-width: $md3) {
+			margin-top: 2.63rem;
+			flex-direction: row;
+		}
+		@media (min-width: $md1) {
+			gap: 6.25rem;
+		}
 	}
 	// .contacts__map
 	&__map {
@@ -318,10 +493,15 @@ body {
 	&__map-header {
 		position: relative;
 		height: 34.375rem;
-		width: 100%;
+
 		background: $black;
 		border-radius: 1.5rem;
 		overflow: hidden;
+		margin: 0 -1rem;
+		@media (min-width: $md5) {
+			width: 100%;
+			margin: 0;
+		}
 	}
 	// .contacts__map-block
 	&__map-block {
@@ -334,12 +514,16 @@ body {
 	// .contacts__list
 	&__list {
 		margin-top: 2rem;
-		// columns: 4;
-		// column-gap: 4.56rem;
-		// column-rule: rem(1) solid #e9eaeb;
-		gap: 2.28rem;
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+		gap: 1rem;
+		@media (min-width: $md5) {
+			gap: 2.28rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md0) {
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 	// .contacts__list-item
 	&__list-item {
@@ -348,9 +532,25 @@ body {
 		align-items: flex-start;
 		break-inside: avoid;
 		padding-right: 2rem;
-		max-width: 18rem;
-		&:not(:last-child) {
-			border-right: rem(1) solid #e9eaeb;
+		@media (max-width: $md5) {
+			padding-right: 0;
+			&:not(:last-child) {
+				padding-bottom: 1rem;
+				border-bottom: rem(1) solid #e9eaeb;
+			}
+		}
+		@media (max-width: $md0) {
+			@media (min-width: $md5) {
+				&:nth-child(odd) {
+					border-right: rem(1) solid #e9eaeb;
+				}
+			}
+		}
+		@media (min-width: $md0) {
+			max-width: 18rem;
+			&:not(:last-child) {
+				border-right: rem(1) solid #e9eaeb;
+			}
 		}
 	}
 	// .contacts__caption
@@ -383,12 +583,18 @@ body {
 	}
 	// .contacts__form
 	&__form {
-		flex: 0 0 28.2rem;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: rem(42);
-		padding-right: rem(62);
+		gap: 2rem;
+		@media (min-width: $md3) {
+			gap: rem(42);
+			flex: 0 0 24.2rem;
+		}
+		@media (min-width: $md0) {
+			flex: 0 0 28.2rem;
+			padding-right: rem(62);
+		}
 	}
 	// .contacts__form-caption
 	&__form-caption {
@@ -405,6 +611,7 @@ body {
 	}
 	// .contacts__form-fields
 	&__form-fields {
+		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 0.75rem;

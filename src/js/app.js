@@ -107,6 +107,11 @@ $(function () {
             if ($(this.selector).length) {
                 new Swiper(this.selector, {
                     ...this.options,
+                    speed: 800,
+                    autoplay: {
+                        delay: 8000,
+                        stopOnLastSlide: false,
+                    },
                     pagination: {
                         el: this.options.paginationEl,
                         type: "fraction",
@@ -145,11 +150,6 @@ $(function () {
     if ($('.promo__slider').length) {
         new SwiperWithProgress('.promo__slider', {
             slidesPerView: 1,
-            speed: 800,
-            autoplay: {
-                delay: 8000,
-                stopOnLastSlide: false,
-            },
             effect: "fade",
             fadeEffect: {
                 crossFade: true
@@ -235,7 +235,35 @@ $(function () {
 
     }
 
-
+    if ($('.reviews__slider').length) {
+        new SwiperWithProgress('.reviews__slider', {
+            slidesPerView: 4,
+            spaceBetween: 24,
+            watchOverflow: true,
+            navigation: {
+                nextEl: '.reviews__next',
+                prevEl: '.reviews__prev'
+            },
+            paginationEl: '.reviews__pagination',
+            breakpoints: {
+                1661.98: {
+                    slidesPerView: 3,
+                },
+                1819.98: {
+                    slidesPerView: 4,
+                }
+            }
+        })
+        if ($('.review__images').length) {
+            $('.review__images').each(function (index, element) {
+                new Swiper(element, {
+                    slidesPerView: "auto",
+                    spaceBetween: 8,
+                    watchOverflow: true,
+                })
+            })
+        }
+    }
 
     // amination
 

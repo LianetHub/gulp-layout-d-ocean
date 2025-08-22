@@ -262,7 +262,7 @@
 .goods {
 	background: #f6d8e6;
 	margin: rem(80) 0;
-	padding: rem(48) 0 rem(30);
+	padding: rem(48) 0 rem(24);
 	position: relative;
 	border-radius: rem(24);
 	@media (min-width: $md4) {
@@ -787,72 +787,8 @@
 	}
 }
 
-.about {
-	padding: rem(90) 0;
-	// .about__container
-	&__container {
-	}
-	// .about__header
-	&__header {
-		padding-top: 15.87rem;
-		text-align: center;
-		background: url("@img/decor/about-decor.svg") center 0 / contain no-repeat;
-	}
-	// .about__hint
-	&__hint {
-	}
-	// .about__title
-	&__title {
-	}
-	// .about__subtitle
-	&__subtitle {
-		margin-top: 0.75rem;
-		text-align: center;
-		color: #535862;
-		font-size: 1.5rem;
-		line-height: 133.333%;
-	}
-	// .about__list
-	&__list {
-		margin-top: 4rem;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: rem(24);
-	}
-	// .about__item
-	&__item {
-		border-radius: 1.25rem;
-		border: rem(1) solid #d5d7da;
-		padding: 2rem 1.5rem 1.125rem 1.5rem;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-	// .about__item-thumb
-	&__item-thumb {
-		width: 5rem;
-		height: 5rem;
-		border-radius: 1.125rem;
-		overflow: hidden;
-	}
-	// .about__item-title
-	&__item-title {
-		font-family: $font-dela;
-		font-size: 1.5rem;
-		line-height: 133.333%;
-		letter-spacing: 0.03rem;
-	}
-	// .about__item-description
-	&__item-description {
-		color: #535862;
-		margin-top: 0.75rem;
-		font-size: 1.125rem;
-		line-height: 133.333%;
-	}
-}
-
 .reviews {
-	padding: 4.37rem 0;
+	padding: 4.37rem 0 9rem;
 	background: url("@img/decor/reviews-bg.svg") center / cover no-repeat;
 	// .reviews__container
 	&__container {
@@ -917,6 +853,7 @@
 	}
 	// .reviews__pagination
 	&__pagination {
+		margin-top: 2.75rem;
 		position: static;
 	}
 }
@@ -926,7 +863,7 @@
 	padding: 1.5rem 1.5rem 1.125rem 1.5rem;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 1rem;
+	gap: 0.75rem;
 	border-radius: 1.25rem;
 	background: #f5f5f5;
 	// .review__images
@@ -954,7 +891,6 @@
 	// .review__footer
 	&__footer {
 		width: 100%;
-		margin-top: 0.75rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -1000,7 +936,7 @@
 	background: #181d27;
 	color: #fff;
 	padding: 6.25rem 0;
-	margin: rem(70) 0;
+	margin: rem(90) 0;
 	// .about-shop__container
 	&__container {
 		display: flex;
@@ -1048,113 +984,5 @@
 		top: -2.56rem;
 		right: -2.88rem;
 		animation: infiniteRotate 45s linear infinite;
-	}
-}
-
-.contacts {
-	padding: 5rem 0;
-	// .contacts__container
-	&__container {
-	}
-	// .contacts__hint
-	&__hint {
-		text-align: center;
-		justify-content: flex-start;
-	}
-	// .contacts__title
-	&__title {
-		text-align: left;
-	}
-	// .contacts__body
-	&__body {
-		margin-top: 2.63rem;
-		display: flex;
-		gap: 6.25rem;
-	}
-	// .contacts__map
-	&__map {
-		flex: 1 1 auto;
-	}
-	// .contacts__map-block
-	&__map-block {
-		height: 34.375rem;
-		background: $black;
-		border-radius: 1.5rem;
-		overflow: hidden;
-	}
-	// .contacts__list
-	&__list {
-		margin-top: 2rem;
-		columns: 4;
-		column-gap: 4.56rem;
-		column-rule: rem(1) solid #e9eaeb;
-	}
-	// .contacts__list-item
-	&__list-item {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		break-inside: avoid;
-	}
-	// .contacts__caption
-	&__caption {
-		font-size: 1.375rem;
-		font-weight: 500;
-		line-height: 109.091%;
-		margin-bottom: 0.62rem;
-	}
-	// .contacts__text
-	&__text {
-		color: #535862;
-		font-size: 1.125rem;
-		line-height: 122.222%;
-	}
-	// .contacts__link
-	&__link {
-		font-size: 1.125rem;
-		line-height: 122.222%;
-		font-size: 1.125rem;
-		line-height: 122.222%;
-		color: #535862;
-		&[href*="mailto:"] {
-			color: #1570ef;
-		}
-	}
-	// .contacts__socials
-	&__socials {
-		margin-top: 0.81rem;
-	}
-	// .contacts__form
-	&__form {
-		flex: 0 0 24.375rem;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: rem(42);
-	}
-	// .contacts__form-caption
-	&__form-caption {
-		font-size: 1.75rem;
-		font-weight: 600;
-		line-height: 128.571%;
-	}
-	// .contacts__form-text
-	&__form-text {
-		margin-top: rem(18);
-		color: #535862;
-		font-size: 1.125rem;
-		line-height: 122.222%;
-	}
-	// .contacts__form-fields
-	&__form-fields {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 0.75rem;
-	}
-	// .contacts__form-field
-	&__form-field {
-		&--large {
-			grid-column: span 2;
-		}
 	}
 }

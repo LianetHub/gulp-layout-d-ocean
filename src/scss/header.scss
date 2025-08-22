@@ -154,6 +154,20 @@
 					}
 				}
 			}
+			&.active {
+				.menu__btn {
+					color: #181d27;
+					background: #ff7dbc;
+					&::before {
+						transform: rotate(180deg);
+					}
+				}
+				.submenu {
+					opacity: 1;
+					visibility: visible;
+					transform: none;
+				}
+			}
 		}
 	}
 	// .menu__link

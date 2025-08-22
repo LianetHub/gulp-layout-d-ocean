@@ -44,6 +44,21 @@ $(function () {
             $(".catalog__block").removeClass("active");
             $(".catalog__block").eq(index).addClass("active");
         }
+
+        // Handle submenu logic
+        if ($target.closest('.menu__btn').length) {
+            if ($target.closest('.menu__btn').parent().hasClass('active')) {
+                $target.closest('.menu__btn').parent().removeClass('active');
+            } else {
+                $('.menu__item.active').removeClass('active');
+                $target.closest('.menu__btn').parent().addClass('active');
+            }
+        }
+
+        // Close all submenus when clicking outside the menu
+        if (!$target.closest('.menu__btn').length && !$target.closest(".menu").length) {
+            $('.menu__item.active').removeClass('active');
+        }
     });
 
 
@@ -263,6 +278,30 @@ $(function () {
                 })
             })
         }
+    }
+
+    if ($('.gallery__slider').length) {
+        new SwiperWithProgress('.gallery__slider', {
+            slidesPerView: 1,
+            spaceBetween: 180,
+
+            watchOverflow: true,
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 10,
+                depth: 120,
+                modifier: 1,
+                slideShadows: false,
+            },
+            navigation: {
+                nextEl: '.gallery__next',
+                prevEl: '.gallery__prev'
+            },
+            paginationEl: '.gallery__pagination',
+
+        })
+
     }
 
     // amination

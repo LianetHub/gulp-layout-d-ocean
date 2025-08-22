@@ -251,6 +251,11 @@
 		text-transform: uppercase;
 	}
 
+	&.btn-sm {
+		font-size: 1rem;
+		padding: 0.75rem;
+	}
+
 	&.btn-icon {
 		width: 2.5rem;
 		height: 2.5rem;

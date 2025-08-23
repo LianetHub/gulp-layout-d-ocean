@@ -74,7 +74,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	overflow-x: hidden;
+	@media (max-width: $md3) {
+		overflow-x: hidden;
+	}
 }
 
 .page {
@@ -113,6 +115,46 @@ body {
 }
 
 //=============== LAYOUT ===============================
+
+// =============== MODULES ====================
+@import "./modules/breads";
+// =============== MODULES ====================
+
+.promo-banner {
+	overflow: hidden;
+	color: #fff;
+	position: relative;
+	background: linear-gradient(90deg, #bd3381 -0.68%, #7dd9ec 100%);
+	padding: rem(88) 0 rem(24);
+	border-radius: 0 0 1.5rem 1.5rem;
+	@media (min-width: $md4) {
+		border-radius: 0 0 3rem 3rem;
+		padding: 9.12rem 0 4rem;
+		background: linear-gradient(90deg, #bd3381 -0.68%, #7dd9ec 58.18%, rgba(125, 217, 236, 0) 100%);
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 44%;
+			height: 100%;
+			background: url("@img/decor/banner-decor.jpg") 100% 0 / cover no-repeat;
+			z-index: -1;
+		}
+	}
+	// .promo-banner__container
+	&__container {
+	}
+	// .promo-banner__title
+	&__title {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-break: break-all;
+	}
+}
 
 .about {
 	padding: rem(40) 0;

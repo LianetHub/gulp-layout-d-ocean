@@ -33,11 +33,9 @@
                 <li class="menu__item menu__item--parent">
                     <button type="button" class="menu__btn icon-chevron-down">Документы</button>
                     <div class="submenu">
-                        <ul class="submenu__list">
-                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Политика конфиденциальности</a></li>
-                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Защита данных</a></li>
-                            <li class="submenu__item"><a href="" class="submenu__link icon-chevron-right">Cookies</a></li>
-                        </ul>
+                        @@include('./templates/_docs-submenu.html', {
+                        "active": "@@active"
+                        })
                     </div>
                 </li>
                 <li class="menu__item menu__item--parent">

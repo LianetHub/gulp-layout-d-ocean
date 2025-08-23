@@ -405,6 +405,10 @@
 			height: 1.25rem;
 			color: #a4a7ae;
 		}
+		&.active {
+			background: #252b37;
+			color: #fff;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				background: #252b37;

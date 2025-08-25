@@ -7,6 +7,8 @@ $(function () {
         Fancybox.bind("[data-fancybox]", {
             dragToClose: false,
             closeButton: false,
+            closeClick: "outside"
+
         });
     }
 
@@ -87,6 +89,12 @@ $(function () {
             $('body').removeClass('menu-lock');
         }
 
+        if ($target.is('.fancybox__backdrop')) {
+            //    Fancybox.close();
+            console.log('tatata');
+
+        }
+
     });
 
 
@@ -113,52 +121,66 @@ $(function () {
 
     // form submit validation
 
-    const $form = $('.contacts__form');
+    function initFormValidation($form) {
+        $form.on('submit', function (e) {
+            let isValid = true;
 
-    $form.on('submit', function (e) {
-        let isValid = true;
+            $form.find('[data-required]').each(function () {
+                const $input = $(this);
+                const inputType = $input.attr('type');
+                const inputName = $input.attr('name');
 
-        $form.find('[data-required]').each(function () {
+                $input.removeClass('_error');
+                $input.parent().removeClass('_error');
+
+                if (inputType === 'checkbox' && !$input.is(':checked')) {
+                    $input.addClass('_error');
+                    isValid = false;
+                } else if (inputName === 'phone' && !phoneTest($input.val())) {
+                    $input.addClass('_error');
+                    isValid = false;
+                } else if (inputName === 'email' && !emailTest($input.val())) {
+                    $input.addClass('_error');
+                    isValid = false;
+                } else if ($input.val().trim() === '') {
+                    $input.addClass('_error');
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) {
+                e.preventDefault();
+            }
+        });
+
+        $form.find('[data-required]').on('input change', function () {
             const $input = $(this);
             const inputType = $input.attr('type');
             const inputName = $input.attr('name');
 
-            $input.removeClass('_error');
-            $input.parent().removeClass('_error');
-
-            if (inputType === 'checkbox' && !$input.is(':checked')) {
-                $input.addClass('_error');
-                isValid = false;
-            } else if (inputName === 'phone' && !phoneTest($input.val())) {
-                $input.addClass('_error');
-                isValid = false;
-            } else if (inputName === 'email' && !emailTest($input.val())) {
-                $input.addClass('_error');
-                isValid = false;
-            } else if ($input.val().trim() === '') {
-                $input.addClass('_error');
-                isValid = false;
+            if (inputType === 'checkbox') {
+                if ($input.is(':checked')) {
+                    $input.removeClass('_error');
+                }
+            } else if (inputName === 'phone') {
+                if (phoneTest($input.val())) {
+                    $input.removeClass('_error');
+                }
+            } else if (inputName === 'email') {
+                if (emailTest($input.val())) {
+                    $input.removeClass('_error');
+                }
+            } else {
+                if ($input.val().trim() !== '') {
+                    $input.removeClass('_error');
+                }
             }
         });
+    }
 
-        if (!isValid) {
-            e.preventDefault();
-        }
-    });
-
-    $form.find('[data-required]').on('input change', function () {
-        const $input = $(this);
-        const inputType = $input.attr('type');
-
-        if (inputType === 'checkbox') {
-            if ($input.is(':checked')) {
-                $input.removeClass('_error');
-            }
-        } else {
-            if ($input.val().trim() !== '') {
-                $input.removeClass('_error');
-            }
-        }
+    // Запуск для всех форм
+    $('form').each(function () {
+        initFormValidation($(this));
     });
 
     function emailTest(email) {
@@ -170,6 +192,7 @@ $(function () {
         const cleaned = phone.replace(/\D/g, '');
         return cleaned.length >= 10 && /^[1-9]\d{9,14}$/.test(cleaned);
     }
+
 
 
     /* =========== Event Handlers ============== */
@@ -319,21 +342,14 @@ $(function () {
             const prevBtn = $block.find('.catalog__block-prev')[0];
 
             new Swiper(slider, {
-                slidesPerView: 4,
+                slidesPerView: "auto",
                 spaceBetween: 16,
                 watchOverflow: true,
                 navigation: {
                     nextEl: nextBtn,
                     prevEl: prevBtn
                 },
-                breakpoints: {
-                    1661.98: {
-                        slidesPerView: 4,
-                    },
-                    1819.98: {
-                        slidesPerView: 5,
-                    }
-                }
+
             })
         })
 
@@ -416,57 +432,59 @@ $(function () {
         // image rotation animation
 
         const maxRotation = 8;
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
         benefitsSection.on('mousemove', function (e) {
-            const width = benefitsSection.width();
-            const height = benefitsSection.height();
-            const left = benefitsSection.offset().left;
-            const top = benefitsSection.offset().top;
-
-            const mouseX = e.pageX - left - width / 2;
-            const mouseY = e.pageY - top - height / 2;
-
-            const rotateY = (mouseX / (width / 2)) * maxRotation;
-            const rotateX = (mouseY / (height / 2)) * -maxRotation;
-
-            benefitsPicture.css('transform', `
+            if (!isMobile) {
+                const width = benefitsSection.width();
+                const height = benefitsSection.height();
+                const left = benefitsSection.offset().left;
+                const top = benefitsSection.offset().top;
+                const mouseX = e.pageX - left - width / 2;
+                const mouseY = e.pageY - top - height / 2;
+                const rotateY = (mouseX / (width / 2)) * maxRotation;
+                const rotateX = (mouseY / (height / 2)) * -maxRotation;
+                benefitsPicture.css('transform', `
             perspective(1000px) 
             rotateX(${rotateX}deg) 
             rotateY(${rotateY}deg)
         `);
+            }
         });
 
         benefitsSection.on('mouseleave', function () {
-            benefitsPicture.css('transform', `
+            if (!isMobile) {
+                benefitsPicture.css('transform', `
             perspective(1000px)
             rotateX(0deg) 
             rotateY(0deg)
         `);
+            }
         });
-
 
         benefitsLists.each(function () {
             const startValue = $(this).attr('start');
-
             if (startValue) {
                 $(this).css('--start-num', parseInt(startValue) - 1);
             }
         });
 
-        benefitsSection.on('pointerenter', '.benefits__item', function (event) {
+        if (isMobile) {
+            const firstItem = benefitsLists.find('.benefits__item').first();
+            firstItem.addClass('active');
+            firstItem.find('.benefits__item-description').slideDown(150);
+        }
 
+        benefitsSection.on('pointerenter', '.benefits__item', function (event) {
             if (event.pointerType === 'mouse') {
                 const currentItem = $(this);
                 const currentDescription = currentItem.find('.benefits__item-description');
-
                 $('.benefits__item').removeClass('active');
                 currentItem.addClass('active');
-
                 $('.benefits__item-description').not(currentDescription).stop().slideUp(150);
                 currentDescription.stop().slideDown(150);
             }
         });
-
 
         benefitsLists.on('pointerleave', '.benefits__item', function (event) {
             if (event.pointerType === 'mouse') {
@@ -476,29 +494,64 @@ $(function () {
             }
         });
 
-
         benefitsSection.on('click', '.benefits__item', function (e) {
             e.preventDefault();
-
             const currentItem = $(this);
             const currentDescription = currentItem.find('.benefits__item-description');
-
             if (currentItem.hasClass('active')) {
-
                 currentItem.removeClass('active');
                 currentDescription.stop().slideUp(300);
-
             } else {
                 $('.benefits__item').removeClass('active');
                 currentItem.addClass('active');
-
                 $('.benefits__item-description').not(currentDescription).stop().slideUp(300);
                 currentDescription.stop().slideDown(300);
             }
         });
-
     }
 
+
+    // animation on scroll
+    const $sections = $('[data-animate]');
+    if ($sections.length) {
+        $sections.each(function () {
+            const $section = $(this);
+
+            const callback = function (entries, observer) {
+                if (entries[0].isIntersecting) {
+                    if ($section.data('animate') === "number" && !$section.hasClass('animated')) {
+                        counter($section);
+                    }
+                    $section.addClass('animated');
+                    setTimeout(() => {
+                        $section.addClass('animation-end');
+                    }, 600)
+                }
+            };
+
+            const observer = new IntersectionObserver(callback);
+            observer.observe(this);
+        });
+
+        function counter($counter) {
+            let countFinish = parseInt($counter.text(), 10);
+            $counter.text("0");
+
+            const updateCounter = () => {
+                const target = countFinish;
+                const count = parseInt($counter.text(), 10);
+                const increment = Math.ceil(target / 20);
+
+                if (count + increment < target) {
+                    $counter.text(count + increment);
+                    setTimeout(updateCounter, 100);
+                } else {
+                    $counter.text(target);
+                }
+            };
+            updateCounter();
+        }
+    }
 
 
     // Phone Russia Mask
@@ -716,4 +769,7 @@ $(function () {
     }
 
 
+
 });
+
+

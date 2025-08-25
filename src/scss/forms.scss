@@ -53,6 +53,12 @@
 			&:focus {
 				border-color: #ff7dbc;
 			}
+			&._error {
+				border: rem(1) solid #f04438;
+				&::placeholder {
+					color: #f04438;
+				}
+			}
 		}
 		&._input {
 			& + .form__field-placeholder {

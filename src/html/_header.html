@@ -1,6 +1,7 @@
 <header class="header">
     <div class="header__wrapper">
-        <button type="button" class="header__catalog btn btn-white btn-large icon-grid"><span>КАТАЛОГ</span></button>
+        <a href="" class="header__catalog-link btn btn-white btn-large icon-grid" aria-label="Перейти в каталог"></a>
+        <button type="button" class="header__catalog btn btn-white btn-large icon-grid">КАТАЛОГ</button>
         <nav aria-label="Основное меню" class="header__menu menu">
             <div class="menu__header">
                 <a href="/" class="menu__logo">
@@ -26,7 +27,7 @@
                     </div>
                 </li>
                 <li class="menu__item">
-                    <a href="" class="menu__link">Блог</a>
+                    <a href="/blog.html" class="menu__link@@if(typeof active !== 'undefined' && active == 7){ active}">Блог</a>
                 </li>
             </ul>
             <ul class="menu__list">
@@ -95,7 +96,7 @@
 </header>
 <div class="catalog">
     <div class="catalog__header">
-        <div class="catalog__title title">Каталог товаров</div>
+        <div class="catalog__title">Каталог товаров</div>
         <button type="button" aria-label="Закрыть каталог" class="catalog__close icon-cross"></button>
     </div>
     <form action="#" class="catalog__search">

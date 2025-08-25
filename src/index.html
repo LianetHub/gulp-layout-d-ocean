@@ -14,7 +14,10 @@
                                 <div class="promo__container">
                                     <div class="promo__offer promo__offer--small">
                                         <div class="promo__offer-logo">
-                                            <img src="@img/logo-prod.svg" alt="Логотип Произведено в РФ">
+                                            <span class="promo__offer-logo-rotate">
+                                                <img src="@img/logo-prod-text.svg" alt="Произведено в РФ">
+                                            </span>
+                                            <img src="@img/logo-prod.svg" alt="Логотип">
                                         </div>
                                         <h1 class="promo__offer-title">Компания <span>D-OCEAN</span></h1>
                                         <p class="promo__offer-subtitle">Российский производитель и поставщик приманок для рыбной ловли</p>
@@ -30,7 +33,10 @@
                                     <div class="promo__row">
                                         <div class="promo__offer">
                                             <div class="promo__offer-logo desktop-only">
-                                                <img src="@img/logo-prod.svg" alt="Логотип Произведено в РФ">
+                                                <span class="promo__offer-logo-rotate">
+                                                    <img src="@img/logo-prod-text.svg" alt="Произведено в РФ">
+                                                </span>
+                                                <img src="@img/logo-prod.svg" alt="Логотип">
                                             </div>
                                             <div class="promo__offer-title promo__offer-title--small">
                                                 Первым оптовым клиентам скидка <span class="color-accent">15%</span> на весь ассортимент
@@ -96,8 +102,8 @@
                 </div>
                 <section class="products">
                     <div class="products__container">
-                        <div class="products__hint hint">Что мы производим?</div>
-                        <h2 class="products__title title">Наша продукция</h2>
+                        <div class="products__hint hint" data-animate="bottom">Что мы производим?</div>
+                        <h2 class="products__title title" data-animate="bottom">Наша продукция</h2>
                         <ul class="products__list">
                             @@loop('./html/templates/_product.html', './html/json/_home-products.json')
                         </ul>
@@ -106,12 +112,12 @@
                 <section class="benefits">
                     <div class="benefits__container">
                         <div class="benefits__header">
-                            <h2 class="benefits__hint hint">Преимущества продукции</h2>
-                            <p class="benefits__caption title">Приманки D-Ocean</p>
-                            <p class="benefits__description">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и&nbsp;параметров</p>
+                            <h2 class="benefits__hint hint" data-animate="bottom">Преимущества продукции</h2>
+                            <p class="benefits__caption title" data-animate="bottom">Приманки D-Ocean</p>
+                            <p class="benefits__description" data-animate="bottom">Воблер часто используют для ловли хищной рыбы на спиннинг. Благодаря разнообразию форм и&nbsp;параметров</p>
                         </div>
                         <div class="benefits__body">
-                            <ol class="benefits__list">
+                            <ol class="benefits__list" data-animate="bottom">
                                 <li class="benefits__item">
                                     <div class="benefits__item-title">Особый состав краски</div>
                                     <p class="benefits__item-description">
@@ -131,13 +137,13 @@
                                     </p>
                                 </li>
                             </ol>
-                            <div class="benefits__picture">
+                            <div class="benefits__picture" data-animate="bottom">
                                 <img src="@img/promo/slider/04.png" alt="Вобблер">
                                 <div class="benefits__picture-decor">
                                     <img src="@img/decor/benefits-picture-decor.svg" alt="Декор">
                                 </div>
                             </div>
-                            <ol start="4" class="benefits__list">
+                            <ol start="4" class="benefits__list" data-animate="bottom">
                                 <li class="benefits__item">
                                     <div class="benefits__item-title">Люминесцентные элементы на наших приманках</div>
                                     <p class="benefits__item-description">
@@ -158,12 +164,12 @@
                                 </li>
                             </ol>
                         </div>
-                        <a href="" class="benefits__btn btn btn-primary icon-chevron-right">смотреть КАТАЛОГ</a>
+                        <a href="" class="benefits__btn btn btn-primary icon-chevron-right" data-animate="bottom">смотреть КАТАЛОГ</a>
                     </div>
                 </section>
                 <section class="offers">
                     <div class="offers__container">
-                        <div class="offers__slider swiper">
+                        <div class="offers__slider swiper" data-animate="bottom">
                             <div class="swiper-wrapper">
                                 <div class="offer swiper-slide">
                                     <div class="offer__main">
@@ -199,9 +205,9 @@
                 @@include('./html/_gallery.html')
                 <section class="reviews">
                     <div class="reviews__container">
-                        <h2 class="reviews__hint hint">Отзывы клиентов</h2>
-                        <div class="reviews__caption title">Что говорят о нас</div>
-                        <p class="reviews__subtitle">Более 1000 довольных покупателей</p>
+                        <h2 class="reviews__hint hint" data-animate="bottom">Отзывы клиентов</h2>
+                        <div class="reviews__caption title" data-animate="bottom">Что говорят о нас</div>
+                        <p class="reviews__subtitle" data-animate="bottom">Более 1000 довольных покупателей</p>
                         <div class="reviews__content">
                             <div class="reviews__slider swiper">
                                 <div class="swiper-wrapper">
@@ -221,18 +227,21 @@
                 <section class="about-shop">
                     <div class="about-shop__container">
                         <div class="about-shop__body">
-                            <h2 class="about-shop__hint hint">О нашем магазине</h2>
-                            <div class="about-shop__caption title">Рыболовный интернет-магазин D-Ocean</div>
-                            <div class="about-shop__description">
+                            <h2 class="about-shop__hint hint" data-animate="bottom">О нашем магазине</h2>
+                            <div class="about-shop__caption title" data-animate="bottom">Рыболовный интернет-магазин D-Ocean</div>
+                            <div class="about-shop__description" data-animate="bottom">
                                 <p>D-Ocean – крупнейший рыболовный интернет-магазин с собственным складом в Москве. Наш ассортимент насчитывает более 200 000 наименований товаров для рыбалки и активного отдыха. У нас на сайте всегда в наличии большой выбор удилищ, катушек, приманок, одежды для рыбалки и других товаров для новичков и профессионалов по лучшим ценам. </p>
                                 <p>Быстро подобрать необходимые рыболовные снасти и снаряжение тебе помогут «умные» фильтры и рекомендации на нашем сайте. Интуитивный интерфейс и удобная навигация по страницам поможет сэкономить время на поиски необходимого товара. </p>
                                 <p>В разделе видеообзоры можно наглядно посмотреть популярные продукты известных брендов и получить подробную информацию о товаре перед его покупкой. В коротких роликах наши эксперты расскажут обо всех тонкостях и нюансах рыболовных снастей, что позволит тебе подобрать необходимый товар.</p>
                             </div>
-                            <a href="" class="about-shop__btn btn btn-primary icon-chevron-right">О компании</a>
+                            <a href="" class="about-shop__btn btn btn-primary icon-chevron-right" data-animate="bottom">О компании</a>
                         </div>
-                        <div class="about-shop__image">
+                        <div class="about-shop__image" data-animate="bottom">
                             <div class="about-shop__logo">
-                                <img src="@img/logo-prod.svg" alt="Логотип Произведено в РФ">
+                                <span class="about-shop__logo-rotate">
+                                    <img src="@img/logo-prod-text.svg" alt="Произведено в РФ">
+                                </span>
+                                <img src="@img/logo-prod.svg" alt="Логотип">
                             </div>
                             <img src="@img/about.jpg" class="cover-image" alt="Фото продукции">
                         </div>

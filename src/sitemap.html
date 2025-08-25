@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Карта сайта'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page">
+                @@include('./html/_promo-banner.html', {
+                "title": "Карта сайта",
+                "breadcrumbs": ["Главная"]
+                })
+                <div class="sitemap">
+                    <div class="sitemap__container">
+                        <ol>
+                            <li>
+                                <a href="/" class="title-sm">Главная страница</a>
+                            </li>
+                            <li>
+                                <a href="/privacy.html" class="title-sm">Политика конфиденциальности</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </main>
+            @@include('html/_footer.html', {})
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

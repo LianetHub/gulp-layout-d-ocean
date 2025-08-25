@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Блог'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 7
+            })
+            <main class="page">
+                @@include('./html/_promo-banner.html', {
+                "title": "Полезные статьи",
+                "breadcrumbs": ["Главная"]
+                })
+                <section class="blog">
+                    <div class="blog__container">
+                        <div class="blog__header">
+                            <h2 class="blog__title">Полезные статьи</h2>
+                            <span class="blog__quantity">196</span>
+                            <div class="blog__filters">
+                                <div class="blog__filter">
+                                    <div class="blog__select select">
+                                        <select name="sort_by">
+                                            <option selected value="popular">По популярности</option>
+                                            <option value="newest">Сначала новые</option>
+                                            <option value="oldest">Сначала старые</option>
+                                            <option value="default">По умолчанию</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="blog__filter">
+                                    <div class="blog__filter-text">Выводить:</div>
+                                    <div class="blog__select select">
+                                        <select name="items_per_page">
+                                            <option value="10">10</option>
+                                            <option selected value="20">20</option>
+                                            <option value="30">30</option>
+                                            <option value="40">40</option>
+                                            <option value="50">50</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="blog__list">
+                            @@loop('./html/templates/_blog-item.html', './html/json/_blog.json')
+                        </ul>
+                    </div>
+                </section>
+                @@include('./html/_about.html')
+                @@include('./html/_contacts.html')
+            </main>
+            @@include('html/_footer.html', {
+            "active": 8
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

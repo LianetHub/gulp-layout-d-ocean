@@ -37,6 +37,7 @@
 	&__catalog {
 		margin-right: auto;
 		@media (max-width: $md4) {
+			display: none;
 			width: rem(40);
 			height: rem(40);
 			border-radius: 0.5rem;
@@ -50,6 +51,20 @@
 		}
 		@media (min-width: 1299.98px) {
 			order: -1;
+		}
+	}
+	// .header__catalog-link
+	&__catalog-link {
+		width: rem(40);
+		height: rem(40);
+		border-radius: 0.5rem;
+		margin-right: auto;
+		&.btn {
+			box-shadow: rem(6) rem(6) rem(12) 0 rgba(0, 0, 0, 0.22);
+			background: #ff91c6;
+		}
+		@media (min-width: $md4) {
+			display: none;
 		}
 	}
 	// .header__menu
@@ -315,6 +330,10 @@
 		background: #252b37;
 		width: 100%;
 		min-height: rem(40);
+		&.active {
+			color: #181d27;
+			background: #ff7dbc;
+		}
 		@media (min-width: 1299.8px) {
 			background: transparent;
 			width: auto;

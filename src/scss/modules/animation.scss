@@ -8,6 +8,9 @@
 		transform: none;
 		opacity: 1;
 	}
+	&.animation-end {
+		transition-delay: 0s;
+	}
 }
 
 [data-animate="fade"] {
@@ -21,6 +24,9 @@
 		opacity: 1;
 		visibility: visible;
 	}
+	&.animation-end {
+		transition-delay: 0s;
+	}
 }
 
 [data-animate="scale"] {
@@ -33,6 +39,9 @@
 		opacity: 1;
 		visibility: visible;
 		transform: scale(1);
+	}
+	&.animation-end {
+		transition-delay: 0s;
 	}
 }
 

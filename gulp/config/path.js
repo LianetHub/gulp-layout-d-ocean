@@ -37,7 +37,7 @@ export const path = {
 	},
 	watch: {
 		files: `${srcFolder}/files/**/*.*`,
-		html: `${srcFolder}/**/*.html`,
+		html: `${srcFolder}/**/*.*`,
 		scss: `${srcFolder}/scss/**/*.scss`,
 		normalize: `${srcFolder}/scss/reset.scss`,
 		js: `${srcFolder}/js/**/*.js`,

@@ -16,8 +16,7 @@
                 <section class="blog">
                     <div class="blog__container">
                         <div class="blog__header">
-                            <h2 class="blog__title">Полезные статьи</h2>
-                            <span class="blog__quantity">196</span>
+                            <h2 class="blog__title">Полезные статьи <span class="blog__quantity">196</span></h2>
                             <div class="blog__filters">
                                 <div class="blog__filter">
                                     <div class="blog__select select">
@@ -46,6 +45,23 @@
                         <ul class="blog__list">
                             @@loop('./html/templates/_blog-item.html', './html/json/_blog.json')
                         </ul>
+                        <div class="blog__pagination pagination">
+                            <a href="" class="pagination__prev icon-prev">Назад</a>
+                            <a href="" class="pagination__item active">1</a>
+                            <a href="" class="pagination__item">2</a>
+                            <a href="" class="pagination__item">3</a>
+                            <span class="pagination__item">...</span>
+                            <a href="" class="pagination__item">8</a>
+                            <a href="" class="pagination__item">9</a>
+                            <a href="" class="pagination__item">10</a>
+                            <a href="" class="pagination__next icon-next">Вперед</a>
+                        </div>
+                        <div class="blog__loader">
+                            <div class="blog__loader-indicator">
+                                <img src="@img/loading-circle.svg" alt="Иконка">
+                            </div>
+                            <div class="blog__loader-text">Загрузка статей...</div>
+                        </div>
                     </div>
                 </section>
                 @@include('./html/_about.html')

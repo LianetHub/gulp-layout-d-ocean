@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src:  url('fonts/icons.eot?q0rmxj');
-  src:  url('fonts/icons.eot?q0rmxj#iefix') format('embedded-opentype'),
-    url('fonts/icons.ttf?q0rmxj') format('truetype'),
-    url('fonts/icons.woff?q0rmxj') format('woff'),
-    url('fonts/icons.svg?q0rmxj#icons') format('svg');
+  src:  url('fonts/icons.eot?inv4k2');
+  src:  url('fonts/icons.eot?inv4k2#iefix') format('embedded-opentype'),
+    url('fonts/icons.ttf?inv4k2') format('truetype'),
+    url('fonts/icons.woff?inv4k2') format('woff'),
+    url('fonts/icons.svg?inv4k2#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -30,6 +30,12 @@
 }
 .icon-search:before {
   content: "\e90f";
+}
+.icon-calendar:before {
+  content: "\e911";
+}
+.icon-clock:before {
+  content: "\e912";
 }
 .icon-cross:before {
   content: "\e90e";

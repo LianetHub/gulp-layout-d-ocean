@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Контакты'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page">
+                <div class="error-page">
+                    <div class="error-page__container">
+                        <div class="error-page__status">
+                            <img src="@img/decor/error-404.svg" alt="404">
+                        </div>
+                        <h1 class="error-page__title">Ошибка 404!</h1>
+                        <p class="error-page__subtitle">Ой... Кажется вы заплыли слишком глубоко в Д-Океане. Нажмите на кнопку ниже, чтобы вернуться обратно =)</p>
+                        <a href="" class="error-page__btn btn btn-primary icon-chevron-right">На главную</a>
+                        <div class="error-page__copyright">© 2018-2025 D-Ocean. Все права защищены</div>
+                    </div>
+                </div>
+            </main>
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

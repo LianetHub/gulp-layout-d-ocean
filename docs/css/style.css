@@ -1,12 +1,4 @@
 @font-face {
-  font-family: "Jost";
-  font-display: swap;
-  src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -17,8 +9,8 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -41,8 +33,8 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -51,6 +43,22 @@
   font-display: swap;
   src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost";
+  font-display: swap;
+  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-display: swap;
+  src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -67,14 +75,6 @@
   font-display: swap;
   src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
-  font-weight: 600;
   font-style: normal;
 }
 
@@ -4053,6 +4053,60 @@ body.lock {
   margin-bottom: 1.5rem;
 }
 
+.error-page {
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  background: url("../img/decor/error-tentacle-1.svg") 0 100%/4.375rem auto no-repeat, url("../img/decor/error-tentacle-2.svg") 100% 100%/4.6875rem auto no-repeat, url("../img/decor/error-bg.svg") center 0/cover no-repeat, #131416;
+}
+
+.error-page__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.error-page__status {
+  margin-left: -1.5rem;
+  margin-right: -2rem;
+  margin-bottom: 0.25rem;
+}
+
+.error-page__title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 131.25%;
+  letter-spacing: -0.00625rem;
+}
+
+.error-page__subtitle {
+  max-width: 32.4375rem;
+  font-size: 1rem;
+  line-height: 137.5%;
+  margin-top: 1.25rem;
+}
+
+.error-page__btn {
+  margin-top: 1.25rem;
+}
+
+.error-page__copyright {
+  font-size: 1rem;
+  line-height: 150%;
+  opacity: 0.8;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 12.9375rem;
+}
+
 .blog {
   padding: 1.5rem 0 2.5rem;
 }
@@ -4723,6 +4777,31 @@ body.lock {
     font-size: 2rem;
   }
 
+  .error-page {
+    background: url("../img/decor/error-tentacle-1.svg") 0 100%/9.875rem auto no-repeat, url("../img/decor/error-tentacle-2.svg") 100% 100%/11.875rem auto no-repeat, url("../img/decor/error-bg.svg") center 0/cover no-repeat, #131416;
+  }
+
+  .error-page__status {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: -1rem;
+  }
+
+  .error-page__subtitle {
+    margin-top: 0.5rem;
+    line-height: 150%;
+    font-size: 1.25rem;
+  }
+
+  .error-page__btn {
+    margin-top: 2rem;
+  }
+
+  .error-page__copyright {
+    max-width: 100%;
+    letter-spacing: -0.00625rem;
+  }
+
   .blog {
     padding: 3rem 0 6.875rem;
   }
@@ -4795,6 +4874,12 @@ body.lock {
 @media (min-width: 767.98px) and (any-hover: hover) {
   .contacts__row .contacts__link:hover {
     color: #1570ef;
+  }
+}
+
+@media (min-height: 780px) and (min-width: 767.98px) {
+  .error-page__copyright {
+    bottom: 2.625rem;
   }
 }
 
@@ -6100,5 +6185,15 @@ body.lock {
 
   .benefits__item.active .benefits__item-title::before {
     -webkit-text-stroke-color: #f4d400;
+  }
+}
+
+@media (min-height: 780px) {
+  .error-page__copyright {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }

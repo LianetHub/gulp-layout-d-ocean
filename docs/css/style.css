@@ -1,4 +1,12 @@
 @font-face {
+  font-family: "DelaGothicOne";
+  font-display: swap;
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -9,16 +17,8 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "DelaGothicOne";
-  font-display: swap;
-  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -33,14 +33,6 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Jost";
-  font-display: swap;
   src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -49,16 +41,8 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -75,6 +59,22 @@
   font-display: swap;
   src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-display: swap;
+  src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost";
+  font-display: swap;
+  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -4009,6 +4009,82 @@ body.lock {
   height: 100%;
 }
 
+.our-production {
+  padding: 1.5rem 0;
+}
+
+.our-production__container {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+}
+
+.our-production__hint {
+  text-align: left;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.our-production__title {
+  text-align: left;
+}
+
+.our-production__text {
+  margin-top: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: 150%;
+  gap: 1.5rem;
+  color: #414651;
+}
+
+.our-production__text ul {
+  list-style: disc;
+  font-weight: 700;
+  padding-left: 1.375em;
+}
+
+.our-production__text ul li::marker {
+  font-size: 0.5em;
+}
+
+.our-production__image {
+  background: url("../img/decor/about-img-bg.svg") center bottom/contain no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-right: 1rem;
+  padding-top: 4.5rem;
+  margin-right: -1rem;
+  padding-bottom: 3rem;
+  margin-left: -1rem;
+  padding-left: 1.5rem;
+}
+
+.our-production__image img {
+  -webkit-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+          transform: rotate(5deg);
+  -webkit-filter: drop-shadow(-0.75rem 0.75rem 2.625rem rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(-0.75rem 0.75rem 2.625rem rgba(0, 0, 0, 0.25));
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+  aspect-ratio: 1.3529411765;
+}
+
 .policy {
   padding: 1.5rem 0 2.5rem;
 }
@@ -4359,6 +4435,14 @@ body.lock {
   }
 
   .offers__slider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .our-production__image {
+    max-width: 46.5625rem;
+    width: 100%;
+    padding-left: 0;
     margin-left: auto;
     margin-right: auto;
   }
@@ -4771,6 +4855,15 @@ body.lock {
 
   .reviews__footer {
     margin-top: 2.75rem;
+  }
+
+  .our-production {
+    padding: 5rem 0;
+  }
+
+  .our-production__image img {
+    aspect-ratio: 1.4081632653;
+    border-radius: 2rem;
   }
 
   .policy__title {
@@ -5608,6 +5701,17 @@ body.lock {
   .products__item-main {
     max-width: 48.625rem;
   }
+
+  .our-production__container {
+    gap: 1rem;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .our-production__text {
+    gap: 1.75rem;
+    font-size: 1.125rem;
+  }
 }
 
 @media (min-width: 1459.98px) {
@@ -5688,6 +5792,12 @@ body.lock {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 41.625rem;
             flex: 0 0 41.625rem;
+  }
+
+  .our-production__image {
+    padding-bottom: 5.5rem;
+    padding-top: 0;
+    margin-right: 0;
   }
 
   .blog__list {

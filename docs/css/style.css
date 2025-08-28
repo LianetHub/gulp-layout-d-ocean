@@ -15,14 +15,6 @@
 }
 
 @font-face {
-  font-family: "DelaGothicOne";
-  font-display: swap;
-  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Jost";
   font-display: swap;
   src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
@@ -33,25 +25,25 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-MediumItalic.woff2") format("woff2"), url("../fonts/Jost-MediumItalic.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
+  src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Manrope";
+  font-family: "DelaGothicOne";
   font-display: swap;
-  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+  src: url("../fonts/Jost-MediumItalic.woff2") format("woff2"), url("../fonts/Jost-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
 }
 
 @font-face {
@@ -75,6 +67,14 @@
   font-display: swap;
   src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-display: swap;
+  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -1537,6 +1537,15 @@ body.lock {
 
 .about__item-list li::marker {
   font-size: 0.5em;
+}
+
+.about__item-list a {
+  color: #1570ef;
+  text-decoration-line: underline;
+}
+
+.about__item-list strong {
+  color: #181d27;
 }
 
 .gallery {
@@ -4273,6 +4282,108 @@ body.lock {
   margin-top: 2rem;
 }
 
+.support__blocks {
+  margin-top: 2rem;
+}
+
+.support__block .support__cards {
+  margin-top: 1.5rem;
+}
+
+.support__block:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.support__caption {
+  font-family: Jost;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.75rem;
+}
+
+.support__caption::before,
+.support__caption::after {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  height: 0.0625rem;
+  background: #d5d7da;
+}
+
+.support__columns {
+  margin-top: 1.5rem;
+}
+
+.support__column {
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+}
+
+.support__column-thumb {
+  width: 100%;
+  height: 10.625rem;
+}
+
+.support__column-thumb img {
+  border-radius: 1.125rem;
+}
+
+.support__column-caption {
+  font-family: "DelaGothicOne";
+  line-height: 133.333%;
+  letter-spacing: 0.03rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.support__column-desc {
+  margin-top: 0.75rem;
+  color: #535862;
+  font-size: 1rem;
+  line-height: 137.5%;
+}
+
+.support__column-desc a {
+  color: #1570ef;
+  text-decoration-line: underline;
+}
+
+.support__baloon {
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  background: #ff7dbc;
+}
+
+.support__baloon--yellow {
+  background: #f4d400;
+}
+
+.support__baloon-title {
+  font-weight: 600;
+  line-height: 133.333%;
+  letter-spacing: 0.03rem;
+  font-size: 1.25rem;
+}
+
+.support__baloon-list {
+  margin-top: 0.75rem;
+  list-style: disc;
+  padding-left: 1.5em;
+  line-height: 133.333%;
+}
+
+.support__baloon-list li::marker {
+  font-size: 0.5em;
+}
+
 .policy {
   padding: 1.5rem 0 2.5rem;
 }
@@ -4636,6 +4747,10 @@ body.lock {
     padding-left: 0;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .support__column-thumb {
+    width: 15.75rem;
   }
 }
 
@@ -5093,6 +5208,39 @@ body.lock {
     margin-top: 3rem;
   }
 
+  .support__blocks {
+    margin-top: 2.875rem;
+  }
+
+  .support__block .support__cards {
+    margin-top: 2rem;
+  }
+
+  .support__block:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  .support__caption {
+    gap: 1.5rem;
+  }
+
+  .support__column-caption {
+    font-size: 1.5rem;
+  }
+
+  .support__column-desc {
+    font-size: 1.125rem;
+    line-height: 133.333%;
+  }
+
+  .support__baloon-title {
+    font-size: 1.5rem;
+  }
+
+  .support__baloon-list {
+    font-size: 1.125rem;
+  }
+
   .policy__title {
     font-size: 2rem;
   }
@@ -5397,6 +5545,19 @@ body.lock {
     right: -2.88rem;
     width: 10rem;
     height: 10rem;
+  }
+
+  .support__columns {
+    margin-top: 4.5rem;
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2;
+    -webkit-column-gap: 6rem;
+       -moz-column-gap: 6rem;
+            column-gap: 6rem;
+    -webkit-column-rule: 0.0625rem solid #d5d7da;
+       -moz-column-rule: 0.0625rem solid #d5d7da;
+            column-rule: 0.0625rem solid #d5d7da;
   }
 
   .policy {
@@ -6231,6 +6392,12 @@ body.lock {
   .offers__next {
     width: 3rem;
     height: 3rem;
+  }
+
+  .support__column:not(:last-child) {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.0625rem solid #d5d7da;
   }
 }
 

@@ -290,6 +290,13 @@ body {
 				font-size: 0.5em;
 			}
 		}
+		& a {
+			color: #1570ef;
+			text-decoration-line: underline;
+		}
+		& strong {
+			color: #181d27;
+		}
 	}
 }
 

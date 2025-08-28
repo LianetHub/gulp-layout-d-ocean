@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Доставка'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 4
+            })
+            <main class="page">
+                @@include('./html/_promo-banner.html', {
+                "title": "Доставка",
+                "background": "@img/decor/banner-decor-payment.jpg",
+                "breadcrumbs": ["Главная", "Помощь"],
+                })
+                <div class="support">
+                    <div class="support__container">
+                        <nav class="support__nav">
+                            <ul class="support__nav-list">
+                                <li class="support__nav-item"><a href="payment.html" class="support__nav-link">Оплата</a></li>
+                                <li class="support__nav-item"><a href="delivery.html" class="support__nav-link active">Доставка</a></li>
+                                <li class="support__nav-item"><a href="return.html" class="support__nav-link">Возврат товара</a></li>
+                                <li class="support__nav-item"><a href="how-to-create-order.html" class="support__nav-link">Как сделать заказ?</a></li>
+                            </ul>
+                        </nav>
+                        <div class="support__blocks">
+                            <div class="support__block">
+                                <h3 class="support__caption title-sm">Самовывоз</h3>
+                                <ul class="support__cards about__list">
+                                    @@loop('./html/templates/_about-item.html', './html/json/_delivery.json')
+                                </ul>
+                            </div>
+                            <div class="support__block">
+                                <h3 class="support__caption title-sm">Курьерская доставка</h3>
+                                <div class="support__columns">
+                                    <div class="support__column">
+                                        <div class="support__column-thumb">
+                                            <img src="@img/support/courier.jpg" class="cover-image" alt="Фото">
+                                        </div>
+                                        <div class="support__column-caption">Доставка курьером СДЭК</div>
+                                        <div class="support__column-desc">
+                                            <p>Стоимость услуги рассчитывается согласно тарифам компании СДЭК. Расчет производится при оформлении заказа. Срок зависит от адреса доставки в соответствии с условиями СДЭК. Ориентировочный срок рассчитывается при оформлении заказа в рабочих днях. Ориентировочный срок доставки службой доставки указывается при оформлении заказа в рабочих днях, считая с момента передачи заказа в службу доставки.</p>
+                                        </div>
+                                    </div>
+                                    <div class="support__column">
+                                        <div class="support__column-thumb">
+                                            <img src="@img/support/express.jpg" class="cover-image" alt="Фото">
+                                        </div>
+                                        <div class="support__column-caption">Экспресс-доставка</div>
+                                        <div class="support__column-desc">
+                                            <p>
+                                                Экспресс-доставка осуществляется в течение 4 часов с момента подтверждения заказа, в пределах МКАД с 9:00 до 20:00. В период доставки вам следует быть на связи по указанным в заказе контактным телефонам. При оформлении заказа рассчитывается ориентировочное время доставки, точное время будет указано в письме с подтверждением заказа. <br>
+                                                Наши курьеры стараются успеть к каждому клиенту, чтобы все заказы были доставлены вовремя. Старайтесь не задерживать курьера более 15 минут для проверки заказа, это позволит нам осуществлять доставку быстро и в срок. В случае отказа от товара, независимо от причины, вы оплачиваете полную стоимость доставки (на основании п.п. 3,4 ст. 497 ГК РФ и договора <a href="">публичной оферты</a>)
+                                            </p>
+                                        </div>
+                                        <div class="support__baloon">
+                                            <div class="support__baloon-title">Условия доставки</div>
+                                            <ul class="support__baloon-list">
+                                                <li>Стоимость экспресс-доставки 1000 рублей.</li>
+                                                <li>Экспресс-доставка осуществляется при 100% оплате онлайн.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="support__baloon support__baloon--yellow">
+                                            <div class="support__baloon-title">Срок доставки</div>
+                                            <ul class="support__baloon-list">
+                                                <li>Экспресс-доставка производится в течение 4 часов.</li>
+                                                <li>Если заказ подтвержден до 15.30, доставка осуществляется в этот же день</li>
+                                                <li>Если заказ подтвержден после 15.30, доставка осуществляется на следующий день, начиная с 10:00</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include('./html/_faq.html')
+                @@include('./html/_about.html')
+                @@include('./html/_contacts.html')
+            </main>
+            @@include('html/_footer.html', {
+            "active": 4
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

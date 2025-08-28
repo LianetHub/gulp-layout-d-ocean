@@ -89,10 +89,17 @@ $(function () {
             $('body').removeClass('menu-lock');
         }
 
+        // Close Fancybox (modal window) when clicking on the backdrop
         if ($target.is('.fancybox__backdrop')) {
             //    Fancybox.close();
             console.log('tatata');
 
+        }
+
+        // FAQ accordion logic
+        if ($target.is('.faq__question')) {
+            $target.toggleClass('active');
+            $target.next().slideToggle();
         }
 
     });

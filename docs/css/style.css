@@ -1,15 +1,23 @@
 @font-face {
-  font-family: "DelaGothicOne";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "icons";
+  font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DelaGothicOne";
+  font-display: swap;
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -31,6 +39,14 @@
 }
 
 @font-face {
+  font-family: "Manrope";
+  font-display: swap;
+  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Jost";
   font-display: swap;
   src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
@@ -41,16 +57,8 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -70,14 +78,7 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Jost";
-  font-display: swap;
-  src: url("../fonts/Jost-SemiBold.woff2") format("woff2"), url("../fonts/Jost-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
+.faq__question::before,
 .dropdown__list-item.active::before,
 .dropdown__list-item[aria-checked=true]::before,
 .form__checkbox-input:checked + .form__checkbox-text::before,
@@ -99,6 +100,16 @@
 [class^=icon-]:before,
 [class*=" icon-"]:before {
   display: block;
+}
+
+.icon-minus:before,
+.faq__question.active:before {
+  content: "\e913";
+}
+
+.icon-plus:before,
+.faq__question:before {
+  content: "\e914";
 }
 
 .icon-check:before,
@@ -515,33 +526,6 @@
 .sidebar__link.active {
   background: #252b37;
   color: #fff;
-}
-
-.fancybox__container {
-  max-width: 100% !important;
-  padding: 0 !important;
-}
-
-.fancybox__slide {
-  padding: 0;
-}
-
-.fancybox__backdrop {
-  background: rgba(30, 30, 30, 0.6);
-}
-
-.fancybox__content {
-  color: inherit;
-  background: none;
-  padding: 0;
-}
-
-.fancybox__content :focus:not(.carousel__button.is-close) {
-  outline: none;
-}
-
-.popup {
-  display: none;
 }
 
 ::-webkit-scrollbar {
@@ -1543,6 +1527,18 @@ body.lock {
   line-height: 137.5%;
 }
 
+.about__item-list {
+  margin-top: 1rem;
+  padding-left: 1.5em;
+  list-style: disc;
+  color: #535862;
+  line-height: 133.333%;
+}
+
+.about__item-list li::marker {
+  font-size: 0.5em;
+}
+
 .gallery {
   color: #fff;
   border-radius: 0 0 1.5rem 1.5rem;
@@ -1891,6 +1887,140 @@ body.lock {
 .contacts__form-field--large {
   -ms-grid-column-span: 2;
   grid-column: span 2;
+}
+
+.faq {
+  padding: 1.25rem 0 2.5rem;
+}
+
+.faq__body {
+  background: #f5f5f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  padding: 2.625rem 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  border-radius: 1.5rem;
+}
+
+.faq__side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.faq__hint {
+  text-align: left;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.faq__title {
+  text-align: left;
+}
+
+.faq__description {
+  margin-top: 1.5rem;
+  line-height: 133.333%;
+  margin-bottom: 2rem;
+}
+
+.faq__btn {
+  margin-top: auto;
+}
+
+.faq__list {
+  max-width: 50.1875rem;
+  width: 100%;
+}
+
+.faq__item {
+  background: #fff;
+  border-radius: 1rem;
+}
+
+.faq__item:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+.faq__question {
+  font-weight: 600;
+  line-height: 120%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+}
+
+.faq__question::before {
+  -webkit-transition: background-color 0.3s, -webkit-transform 0.3s ease;
+  transition: background-color 0.3s, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s, -webkit-transform 0.3s ease;
+  border-radius: 0.75rem;
+  background: #98a2b3;
+  color: #fff;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.faq__question.active {
+  color: #ff7dbc;
+}
+
+.faq__question.active::before {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+  background-color: #ff7dbc;
+}
+
+.faq__answer {
+  display: none;
+  line-height: 140%;
+  font-size: 0.875rem;
+  padding: 0 0.75rem 0.875rem;
+}
+
+.faq__answer a {
+  text-decoration: underline;
 }
 
 .header {
@@ -4085,6 +4215,64 @@ body.lock {
   aspect-ratio: 1.3529411765;
 }
 
+.support {
+  padding: 1.5rem 0 1.25rem;
+}
+
+.support__nav {
+  border-radius: 0.75rem;
+  background: #000;
+  color: #d5d7da;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.support__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.support__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.support__nav-item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.support__nav-link {
+  font-size: 1.125rem;
+  line-height: 144.444%;
+  padding: 0.375rem 0.75rem;
+  display: inline-block;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.support__nav-link.active {
+  background: #ff7dbc;
+  color: #181d27;
+}
+
+.support__cards {
+  margin-top: 2rem;
+}
+
 .policy {
   padding: 1.5rem 0 2.5rem;
 }
@@ -4380,10 +4568,6 @@ body.lock {
 }
 
 @media (min-width: 575.98px) {
-  .fancybox__slide {
-    padding: 1.25rem;
-  }
-
   [class*=__container] {
     -webkit-box-sizing: content-box;
             box-sizing: content-box;
@@ -4420,6 +4604,13 @@ body.lock {
     gap: 2.28rem;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faq__body {
+    border-radius: 3rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 3.5rem 4.5rem;
   }
 
   .footer__side {
@@ -4534,6 +4725,10 @@ body.lock {
     opacity: 1;
   }
 
+  .about__item-list {
+    font-size: 1.125rem;
+  }
+
   .gallery::before {
     background: url("../img/decor/wave-pattern.svg") 0 0/auto 5rem repeat-x;
   }
@@ -4612,6 +4807,24 @@ body.lock {
     font-weight: 600;
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
+  }
+
+  .faq {
+    padding: 2.5rem 0 5rem;
+  }
+
+  .faq__description {
+    font-size: 1.125rem;
+  }
+
+  .faq__question {
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  .faq__answer {
+    padding: 0 1.5rem 2rem;
+    font-size: 1.125rem;
   }
 
   .header__catalog-link {
@@ -4864,6 +5077,20 @@ body.lock {
   .our-production__image img {
     aspect-ratio: 1.4081632653;
     border-radius: 2rem;
+  }
+
+  .support {
+    padding: 5rem 0 2.5rem;
+  }
+
+  .support__nav-list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .support__cards {
+    margin-top: 3rem;
   }
 
   .policy__title {
@@ -5302,6 +5529,20 @@ body.lock {
     border-radius: 1.5rem;
     -webkit-box-shadow: -0.75rem 0.75rem 2.625rem 0 rgba(0, 0, 0, 0.25);
             box-shadow: -0.75rem 0.75rem 2.625rem 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .faq__body {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .faq__side {
+    max-width: 21.25rem;
   }
 
   .footer__container {
@@ -5759,6 +6000,10 @@ body.lock {
     padding-right: 3.875rem;
   }
 
+  .faq__body {
+    padding: 4.5rem 7.625rem 4.5rem 5.625rem;
+  }
+
   .menu__list {
     gap: 1.125rem;
   }
@@ -6138,6 +6383,10 @@ body.lock {
     background-color: #ff7dbc;
   }
 
+  .faq__answer a:hover {
+    text-decoration: none;
+  }
+
   .header__cart:hover {
     color: #ff7dbc;
   }
@@ -6280,6 +6529,10 @@ body.lock {
     background: #fff;
     -webkit-box-shadow: 1.125rem 1.125rem 2rem 0 rgba(0, 0, 0, 0.18);
             box-shadow: 1.125rem 1.125rem 2rem 0 rgba(0, 0, 0, 0.18);
+  }
+
+  .support__nav-link:hover {
+    color: #fff;
   }
 
   .policy__body p a:hover {

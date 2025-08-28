@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Оплата'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 3
+            })
+            <main class="page">
+                @@include('./html/_promo-banner.html', {
+                "title": "Оплата",
+                "background": "@img/decor/banner-decor-payment.jpg",
+                "breadcrumbs": ["Главная", "Помощь"],
+                })
+                <div class="support">
+                    <div class="support__container">
+                        <nav class="support__nav">
+                            <ul class="support__nav-list">
+                                <li class="support__nav-item"><a href="payment.html" class="support__nav-link active">Оплата</a></li>
+                                <li class="support__nav-item"><a href="delivery.html" class="support__nav-link">Доставка</a></li>
+                                <li class="support__nav-item"><a href="return.html" class="support__nav-link">Возврат товара</a></li>
+                                <li class="support__nav-item"><a href="how-to-create-order.html" class="support__nav-link">Как сделать заказ?</a></li>
+                            </ul>
+                        </nav>
+                        <ul class="support__cards about__list">
+                            @@loop('./html/templates/_about-item.html', './html/json/_payment.json')
+                        </ul>
+                    </div>
+                </div>
+                @@include('./html/_faq.html')
+                @@include('./html/_about.html')
+                @@include('./html/_contacts.html')
+            </main>
+            @@include('html/_footer.html', {
+            "active": 3
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

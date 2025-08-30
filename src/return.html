@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Возврат товара'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 4
+            })
+            <main class="page">
+                @@include('./html/_promo-banner.html', {
+                "title": "Возврат товара",
+                "background": "@img/decor/banner-decor-return.jpg",
+                "breadcrumbs": ["Главная", "Помощь"],
+                })
+                <div class="support">
+                    <div class="support__container">
+                        <nav class="support__nav">
+                            <ul class="support__nav-list">
+                                <li class="support__nav-item"><a href="payment.html" class="support__nav-link">Оплата</a></li>
+                                <li class="support__nav-item"><a href="delivery.html" class="support__nav-link">Доставка</a></li>
+                                <li class="support__nav-item"><a href="return.html" class="support__nav-link active">Возврат товара</a></li>
+                                <li class="support__nav-item"><a href="how-to-create-order.html" class="support__nav-link">Как сделать заказ?</a></li>
+                            </ul>
+                        </nav>
+                        <div class="support__blocks">
+                            <div class="support__block">
+                                <h3 class="support__caption title-sm">Возврат товара надлежащего качества</h3>
+                                <div class="support__content">
+                                    <div class="support__column">
+                                        <div class="support__column-desc">
+                                            <h3>Возврат надлежащего товара осуществляется после его получения в течение 14 календарных дней. Возврат товара возможен в случае, если:</h3>
+                                            <ul>
+                                                <li>Сохранены его товарный вид (упаковка, пломбы, ярлыки)</li>
+                                                <li>Потребительские свойства</li>
+                                                <li>Документ, подтверждающий факт и условия покупки указанного товара (товарный/кассовый чек или распечатку из личного кабинета соответствующей платежной системы с детализацией платежа)</li>
+                                            </ul>
+                                            <h3>Для возврата товара также необходим документ, удостоверяющий личность (паспорт гражданина РФ/загранпаспорт).</h3>
+                                            <p>При возврате товара надлежащего качества, мы вернем его стоимость не позднее, чем через 10 дней с момента получения товара и вашего письменного заявления, однако в пределах указанного срока мы вправе провести экспертизу товара с целью определения его качества и сохранности потребительских свойств. Сроки зачисления денежных средств на расчетный счет получателя зависят от внутреннего регламента банка-получателя. Оплата доставки товара продавцу осуществляется за счет покупателя.</p>
+                                        </div>
+                                        <div class="support__baloon support__baloon--yellow">
+                                            <div class="support__baloon-title">Порядок возврата товара:</div>
+                                            <ul class="support__baloon-list">
+                                                <li>1. Заполнить заявление на возврат. Вы можете распечатать форму и заполнить её вручную или воспользоваться он-лайн сервисом возврата товаров.</li>
+                                                <li>2. Приложить копию паспорта, чек/распечатку из личного кабинета соответствующей платежной системы с детализацией платежа.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="support__image">
+                                        <img src="@img/return-1.jpg" class="cover-image" alt="Фото товара">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="support__block">
+                                <h3 class="support__caption title-sm"><span>Возврат товара <span class="color-red">не</span>надлежащего качества</span></h3>
+                                <div class="support__content">
+                                    <div class="support__image">
+                                        <img src="@img/return-2.jpg" class="cover-image" alt="Фото товара">
+                                    </div>
+                                    <div class="support__column">
+                                        <div class="support__column-desc">
+                                            <h3>Под товаром ненадлежащего качества подразумевается товар, который неисправен и не может обеспечить исполнение своих функциональных качеств. Отличие элементов дизайна или оформления от заявленных в описании на сайте не является неисправностью или нефункциональностью товара.</h3>
+                                        </div>
+
+                                        <div class="support__baloon">
+                                            <div class="support__baloon-title">Порядок возврата товара:</div>
+                                            <ul class="support__baloon-list">
+                                                <li>1. Заполнить заявление на возврат. Вы можете <a href="">распечатать форму</a> и заполнить её вручную или воспользоваться он-лайн сервисом возврата товаров.</li>
+                                                <li>2. В заявлении просим Вас подробно указать, какой именно дефект содержит возвращаемый вами товар.</li>
+                                                <li>3. Упаковать товар к возврату в фирменную коробку, вложить распечатку из личного кабинета соответствующей платежной системы с детализацией платежа, заполненное заявление, копию документа удостоверяющего личность.</li>
+                                                <li>4. Товар необходимо передать в полной комплектации, со всеми комплектующими и полным комплектом принадлежностей в том виде, в котором была осуществлена доставка.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include('./html/_faq.html')
+                @@include('./html/_about.html')
+                @@include('./html/_contacts.html')
+            </main>
+            @@include('html/_footer.html', {
+            "active": 4
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

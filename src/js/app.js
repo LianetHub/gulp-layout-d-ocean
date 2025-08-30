@@ -226,6 +226,15 @@ $(function () {
 
 
 
+    // Scrolls the navigation to the active link
+
+    const nav = $('.support__nav');
+    const activeLink = $('.support__nav-link.active');
+
+    if (nav.length && activeLink.length) {
+        nav.scrollLeft(activeLink.position().left);
+    }
+
     // sliders
 
     // Extend Class for Swiper.js add wrap progress

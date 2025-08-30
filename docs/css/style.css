@@ -15,6 +15,22 @@
 }
 
 @font-face {
+  font-family: "DelaGothicOne";
+  font-display: swap;
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost";
+  font-display: swap;
+  src: url("../fonts/Jost-MediumItalic.woff2") format("woff2"), url("../fonts/Jost-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
   font-family: "Jost";
   font-display: swap;
   src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
@@ -31,19 +47,11 @@
 }
 
 @font-face {
-  font-family: "DelaGothicOne";
+  font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Jost";
-  font-display: swap;
-  src: url("../fonts/Jost-MediumItalic.woff2") format("woff2"), url("../fonts/Jost-MediumItalic.woff") format("woff");
+  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
   font-weight: 500;
-  font-style: italic;
+  font-style: normal;
 }
 
 @font-face {
@@ -70,14 +78,7 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
+.support__column-desc ul li::before,
 .faq__question::before,
 .dropdown__list-item.active::before,
 .dropdown__list-item[aria-checked=true]::before,
@@ -113,6 +114,7 @@
 }
 
 .icon-check:before,
+.support__column-desc ul li:before,
 .dropdown__list-item.active:before,
 .dropdown__list-item[aria-checked=true]:before,
 .form__checkbox-input:checked + .form__checkbox-text:before {
@@ -195,6 +197,10 @@
 
 .color-accent {
   color: #ff7dbc;
+}
+
+.color-red {
+  color: #f04438;
 }
 
 .hint {
@@ -4297,13 +4303,13 @@ body.lock {
 .support__caption {
   font-family: Jost;
   font-weight: 400;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.75rem;
 }
 
 .support__caption::before,
@@ -4314,6 +4320,38 @@ body.lock {
           flex: 1 1 auto;
   height: 0.0625rem;
   background: #d5d7da;
+  min-width: 1rem;
+}
+
+.support__caption::before {
+  margin-right: 0.75rem;
+}
+
+.support__caption::after {
+  margin-left: 0.75rem;
+}
+
+.support__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.support__content .support__baloon {
+  margin-top: 2rem;
+}
+
+.support__image {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  -webkit-box-shadow: -0.75rem 0.75rem 2.625rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: -0.75rem 0.75rem 2.625rem 0 rgba(0, 0, 0, 0.25);
 }
 
 .support__columns {
@@ -4343,11 +4381,61 @@ body.lock {
   font-size: 1.25rem;
 }
 
-.support__column-desc {
+.support__column-desc:not(:first-child) {
   margin-top: 0.75rem;
+}
+
+.support__column-desc h3 {
+  font-size: 1.25rem;
+  line-height: 140%;
+}
+
+.support__column-desc h3:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.support__column-desc ul:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.support__column-desc ul li {
+  padding-left: 2rem;
+  position: relative;
+  color: #535862;
+  line-height: 140%;
+  font-size: 1rem;
+}
+
+.support__column-desc ul li:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.support__column-desc ul li::before {
+  color: #25b887;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.support__column-desc p {
   color: #535862;
   font-size: 1rem;
   line-height: 137.5%;
+}
+
+.support__column-desc p:not(:first-child) {
+  margin-top: 1.5rem;
 }
 
 .support__column-desc a {
@@ -4382,6 +4470,10 @@ body.lock {
 
 .support__baloon-list li::marker {
   font-size: 0.5em;
+}
+
+.support__baloon-list li a {
+  color: #1570ef;
 }
 
 .policy {
@@ -5220,15 +5312,33 @@ body.lock {
     margin-bottom: 5rem;
   }
 
-  .support__caption {
-    gap: 1.5rem;
+  .support__caption::before {
+    margin-right: 1.5rem;
+  }
+
+  .support__caption::after {
+    margin-left: 1.5rem;
+  }
+
+  .support__content .support__column-desc p {
+    font-size: 1.25rem;
+    line-height: 140%;
   }
 
   .support__column-caption {
     font-size: 1.5rem;
   }
 
-  .support__column-desc {
+  .support__column-desc h3 {
+    line-height: 133.333%;
+    font-size: 1.5rem;
+  }
+
+  .support__column-desc ul li {
+    font-size: 1.25rem;
+  }
+
+  .support__column-desc p {
     font-size: 1.125rem;
     line-height: 133.333%;
   }
@@ -5547,6 +5657,10 @@ body.lock {
     height: 10rem;
   }
 
+  .support__content {
+    margin-top: 2.5rem;
+  }
+
   .support__columns {
     margin-top: 4.5rem;
     -webkit-columns: 2;
@@ -5863,6 +5977,23 @@ body.lock {
     font-size: 1.125rem;
   }
 
+  .support__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .support__content .support__column {
+    padding-top: 1.375rem;
+  }
+
+  .support__image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33rem;
+            flex: 0 0 33rem;
+  }
+
   .policy__body {
     line-height: 166.667%;
     margin-top: 1rem;
@@ -6113,6 +6244,10 @@ body.lock {
   .our-production__text {
     gap: 1.75rem;
     font-size: 1.125rem;
+  }
+
+  .support__content {
+    gap: 10.12rem;
   }
 }
 
@@ -6394,7 +6529,7 @@ body.lock {
     height: 3rem;
   }
 
-  .support__column:not(:last-child) {
+  .support__columns .support__column:not(:last-child) {
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 0.0625rem solid #d5d7da;
@@ -6700,6 +6835,10 @@ body.lock {
 
   .support__nav-link:hover {
     color: #fff;
+  }
+
+  .support__baloon-list li a:hover {
+    text-decoration: underline;
   }
 
   .policy__body p a:hover {

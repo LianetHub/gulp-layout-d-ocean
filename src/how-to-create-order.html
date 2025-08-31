@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Возврат товара'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 6
+            })
+            <main class="page">
+                @@include('./html/_promo-banner.html', {
+                "title": "Как сделать заказ?",
+                "background": "@img/decor/banner-decor-return.jpg",
+                "breadcrumbs": ["Главная", "Помощь"],
+                })
+                <div class="support">
+                    <div class="support__container">
+                        <nav class="support__nav swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="support__nav-item swiper-slide"><a href="payment.html" class="support__nav-link">Оплата</a></li>
+                                <li class="support__nav-item swiper-slide"><a href="delivery.html" class="support__nav-link">Доставка</a></li>
+                                <li class="support__nav-item swiper-slide"><a href="return.html" class="support__nav-link">Возврат товара</a></li>
+                                <li class="support__nav-item swiper-slide"><a href="how-to-create-order.html" class="support__nav-link active">Как сделать заказ?</a></li>
+                            </ul>
+                        </nav>
+                        <div class="support__blocks">
+                            <div class="support__block">
+                                <h3 class="support__caption title-sm">Как сделать заказ:</h3>
+                                <div class="support__steps">
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            1. Выберите понравившийся вам товар в каталоге. Если затрудняетесь найти товар в каталоге, воспользуйтесь поиском по каталогу.
+                                        </div>
+                                        <div class="support__step-image">
+                                            <img src="@img/steps/01.png" alt="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            2. Нажмите кнопку «В корзину» рядом с выбранным товаром.
+                                        </div>
+                                        <div class="support__step-image">
+                                            <img src="@img/steps/02.png" alt="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            3. Перейдите в раздел «Корзина».
+                                        </div>
+                                        <div class="support__step-image">
+                                            <img src="@img/steps/03.png" alt="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            4. Укажите или скорректируйте количество товаров.
+                                        </div>
+                                        <div class="support__step-image">
+                                            <img src="@img/steps/04.png" alt="Фото">
+                                            <img src="@img/steps/04.png" alt="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            5. При наличии промокода введите код купона для скидки в поле ввода
+                                        </div>
+                                        <div class="support__step-image">
+                                            <img src="@img/steps/05.png" alt="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            6. Нажмите кнопку «Оформить заказ».
+                                        </div>
+                                        <div class="support__step-image">
+                                            <img src="@img/steps/06.png" alt="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            7. Укажите Регион доставки товара.
+                                        </div>
+                                        <div class="support__step-image">
+                                            <img src="@img/steps/07.png" alt="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            8. Выберите способ получения товара.
+                                        </div>
+                                        <div class="support__step-image">
+                                            <img src="@img/steps/08.png" alt="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            9. Выберите способ оплаты.
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            10. Заполните форму с контактными данными. В поле «Комментарии» укажите детали: наличие арок, пропусков, мест для разгрузки и т.п.
+                                        </div>
+                                    </div>
+                                    <div class="support__step">
+                                        <div class="support__step-text">
+                                            11. Проверьте все Ваши данные и состав заказ и нажмите кнопку «Оформить заказ».
+                                        </div>
+                                        <a href="" class="support__step-btn btn btn-primary icon-chevron-right">смотреть КАТАЛОГ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include('./html/_faq.html')
+                @@include('./html/_about.html')
+                <!-- @@include('./html/_contacts.html') -->
+            </main>
+            @@include('html/_footer.html', {
+            "active": 6
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

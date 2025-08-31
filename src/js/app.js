@@ -228,12 +228,12 @@ $(function () {
 
     // Scrolls the navigation to the active link
 
-    const nav = $('.support__nav');
-    const activeLink = $('.support__nav-link.active');
+    // const nav = $('.support__nav');
+    // const activeLink = $('.support__nav-link.active');
 
-    if (nav.length && activeLink.length) {
-        nav.scrollLeft(activeLink.position().left);
-    }
+    // if (nav.length && activeLink.length) {
+    //     nav.scrollLeft(activeLink.position().left);
+    // }
 
     // sliders
 
@@ -433,6 +433,15 @@ $(function () {
 
         })
 
+    }
+
+    if ($('.support__nav').length) {
+
+        new Swiper('.support__nav', {
+            slidesPerView: "auto",
+            spaceBetween: 4,
+            initialSlide: $('.support__nav-item .support__nav-link.active').parent().index()
+        })
     }
 
     // amination

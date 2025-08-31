@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "icons";
+  font-family: "DelaGothicOne";
   font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -15,9 +15,17 @@
 }
 
 @font-face {
-  font-family: "DelaGothicOne";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost";
+  font-display: swap;
+  src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -39,9 +47,9 @@
 }
 
 @font-face {
-  font-family: "Jost";
+  font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
+  src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -49,8 +57,8 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -65,16 +73,8 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -4236,6 +4236,7 @@ body.lock {
 
 .support__nav {
   border-radius: 0.75rem;
+  padding: 0.25rem;
   background: #000;
   color: #d5d7da;
   width: -webkit-fit-content;
@@ -4243,30 +4244,14 @@ body.lock {
   width: fit-content;
   margin: 0 auto;
   max-width: 100%;
-  overflow-y: auto;
-}
-
-.support__nav::-webkit-scrollbar {
-  display: none;
-}
-
-.support__nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  gap: 0.25rem;
-  padding: 0.25rem;
-  border-radius: 0.75rem;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 .support__nav-item {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .support__nav-link {
@@ -4474,6 +4459,50 @@ body.lock {
 
 .support__baloon-list li a {
   color: #1570ef;
+}
+
+.support__steps {
+  max-width: 67.5rem;
+  margin: 1.6875rem auto 0;
+}
+
+.support__step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+}
+
+.support__step:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.support__step-text {
+  font-size: 1.125rem;
+  line-height: 144.444%;
+}
+
+.support__step-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.support__step-image img {
+  border-radius: 1.5rem;
+}
+
+.support__step-btn {
+  margin-top: 0.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .policy {
@@ -5290,12 +5319,6 @@ body.lock {
     padding: 5rem 0 2.5rem;
   }
 
-  .support__nav-list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
   .support__cards {
     margin-top: 3rem;
   }
@@ -5349,6 +5372,16 @@ body.lock {
 
   .support__baloon-list {
     font-size: 1.125rem;
+  }
+
+  .support__steps {
+    margin: 4rem auto 0;
+    padding-bottom: 4rem;
+  }
+
+  .support__step-text {
+    line-height: 133.333%;
+    font-size: 1.5rem;
   }
 
   .policy__title {

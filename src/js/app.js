@@ -248,16 +248,6 @@ $(function () {
     });
 
 
-
-    // Scrolls the navigation to the active link
-
-    // const nav = $('.support__nav');
-    // const activeLink = $('.support__nav-link.active');
-
-    // if (nav.length && activeLink.length) {
-    //     nav.scrollLeft(activeLink.position().left);
-    // }
-
     // sliders
 
     // Extend Class for Swiper.js add wrap progress
@@ -392,7 +382,6 @@ $(function () {
             })
         })
 
-
     }
 
     if ($('.reviews__slider').length) {
@@ -465,6 +454,54 @@ $(function () {
             spaceBetween: 4,
             initialSlide: $('.support__nav-item .support__nav-link.active').parent().index()
         })
+    }
+
+    if ($('.blog__slider').length) {
+        if (window.innerWidth > 767.98) {
+
+            new Swiper('.blog__slider', {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                watchOverflow: true,
+                navigation: {
+                    nextEl: '.blog__next',
+                    prevEl: '.blog__prev'
+                },
+                breakpoints: {
+                    767.98: {
+                        slidesPerView: 3,
+                    },
+                    1199.98: {
+                        slidesPerView: 3,
+                    },
+                    1661.98: {
+                        slidesPerView: 4,
+                    },
+                }
+            })
+        }
+    }
+
+    if ($('.article__slider').length) {
+        $('.article__slider').each(function (index, element) {
+
+            const $slider = $(element);
+            const nextBtn = $slider.find('.article__next')[0];
+            const prevBtn = $slider.find('.article__next')[0];
+            const pagination = $slider.find('.article__pagination')[0];
+
+            new SwiperWithProgress($slider[0], {
+                slidesPerView: 1,
+                watchOverflow: true,
+                navigation: {
+                    nextEl: nextBtn,
+                    prevEl: prevBtn
+                },
+                paginationEl: pagination,
+
+            })
+        })
+
     }
 
     // amination

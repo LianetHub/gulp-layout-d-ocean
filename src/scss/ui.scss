@@ -101,6 +101,10 @@
 		display: none;
 	}
 
+	&.swiper-button--grey {
+		background: #d5d7da;
+	}
+
 	&:disabled,
 	&.swiper-button-disabled,
 	&[aria-disabled="true"] {

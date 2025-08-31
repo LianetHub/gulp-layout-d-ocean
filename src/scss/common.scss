@@ -63,6 +63,9 @@ body {
 	&.lock {
 		overflow: hidden;
 	}
+	&.preloading {
+		overflow: hidden;
+	}
 }
 
 // ================== ОБОЛОЧКА ==============================
@@ -117,6 +120,7 @@ body {
 //=============== LAYOUT ===============================
 
 // =============== MODULES ====================
+@import "./modules/preloader";
 @import "./modules/breads";
 @import "./modules/animation";
 @import "./modules/pagination";

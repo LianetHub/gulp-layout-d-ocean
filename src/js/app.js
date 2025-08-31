@@ -2,6 +2,29 @@
 
 $(function () {
 
+    // preloader
+    if ($('.preloader').length > 0) {
+        let counting = setInterval(function () {
+            let loader = $('#percentage');
+            let currval = parseInt(loader.text());
+
+            if (currval < 90) {
+                loader.text(++currval);
+            } else if (currval < 95 && document.readyState === "interactive") {
+                loader.text(95);
+            } else if (currval < 99 && document.readyState === "complete") {
+                loader.text(99);
+            }
+
+            if (currval >= 99 && document.readyState === "complete") {
+                clearInterval(counting);
+                loader.text(100);
+                setTimeout(function () {
+                    $('body').removeClass('preloading').addClass('is-loaded');
+                }, 300);
+            }
+        }, 20);
+    }
 
     if (typeof Fancybox !== "undefined" && Fancybox !== null) {
         Fancybox.bind("[data-fancybox]", {

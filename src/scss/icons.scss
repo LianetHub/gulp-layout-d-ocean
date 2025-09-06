@@ -18,8 +18,26 @@
 	}
 }
 
+.icon-grid-thin:before {
+	content: "\e921";
+}
+.icon-rows:before {
+	content: "\e91d";
+}
 .icon-copy:before {
 	content: "\e918";
+}
+.icon-compare:before {
+	content: "\e919";
+}
+.icon-heart-fill:before {
+	content: "\e91a";
+}
+.icon-heart:before {
+	content: "\e91b";
+}
+.icon-filter-funnel:before {
+	content: "\e91c";
 }
 .icon-dislike:before {
 	content: "\e915";
@@ -29,6 +47,15 @@
 }
 .icon-like:before {
 	content: "\e917";
+}
+.icon-energy:before {
+	content: "\e91e";
+}
+.icon-play-square:before {
+	content: "\e91f";
+}
+.icon-cube:before {
+	content: "\e920";
 }
 .icon-minus:before {
 	content: "\e913";

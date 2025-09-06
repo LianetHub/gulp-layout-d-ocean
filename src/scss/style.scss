@@ -54,6 +54,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 @import "common";
 @import "header";
 @import "modules/catalog";
+@import "modules/range-slider";
 @import "footer";
 
 //=======================================
@@ -61,6 +62,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 // СТИЛИ СТРАНИЦ
 
 @import "pages/home";
+@import "pages/catalog";
 @import "pages/about";
 @import "pages/support";
 @import "pages/policy";

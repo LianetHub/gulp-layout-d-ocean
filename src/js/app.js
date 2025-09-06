@@ -125,6 +125,39 @@ $(function () {
             $target.next().slideToggle();
         }
 
+        // Catalog filter block accordion
+        if ($target.closest('.filter__block-title').length) {
+            const $title = $target.closest('.filter__block-title');
+            const $content = $title.next('.filter__block-content');
+
+            $title.toggleClass('active');
+            $content.stop(true, true).slideToggle();
+        }
+
+        // toggle active state favorite
+        if ($target.is('.favorite-btn')) {
+            $target.toggleClass('active')
+        }
+
+        // toggle active compare btn
+        if ($target.is('.compare-btn')) {
+            $target.toggleClass('active')
+        }
+
+        // add to cart btn
+        if ($target.closest(".shop-item__add-to-cart").length) {
+            const $button = $target.closest(".shop-item__add-to-cart");
+            const $span = $button.find("span");
+
+            $button.toggleClass("active");
+
+            if ($button.hasClass("active")) {
+                $span.text("в корзине");
+            } else {
+                $span.text("в корзину");
+            }
+        }
+
     });
 
 
@@ -222,6 +255,14 @@ $(function () {
         const cleaned = phone.replace(/\D/g, '');
         return cleaned.length >= 10 && /^[1-9]\d{9,14}$/.test(cleaned);
     }
+
+
+    // Display filter block in Сatalog if title is active
+    $('.filter__block-title.active').each(function () {
+        const $title = $(this);
+        const $content = $title.next('.filter__block-content');
+        $content.slideDown(0);
+    });
 
 
 
@@ -487,7 +528,7 @@ $(function () {
 
             const $slider = $(element);
             const nextBtn = $slider.find('.article__next')[0];
-            const prevBtn = $slider.find('.article__next')[0];
+            const prevBtn = $slider.find('.article__prev')[0];
             const pagination = $slider.find('.article__pagination')[0];
 
             new SwiperWithProgress($slider[0], {
@@ -503,6 +544,84 @@ $(function () {
         })
 
     }
+
+    if ($('.shop__brands-slider').length) {
+        new Swiper('.shop__brands-slider', {
+            slidesPerView: "auto",
+            spaceBetween: 24,
+            watchOverflow: true,
+            navigation: {
+                nextEl: '.shop__brands-next',
+                prevEl: '.shop__brands-prev'
+            },
+            breakpoints: {
+                767.98: {
+                    spaceBetween: 42,
+                },
+            }
+        })
+    }
+
+    if ($('.shop__categories').length) {
+        new Swiper('.shop__categories', {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            watchOverflow: true,
+
+        })
+
+    }
+
+    if ($('.shop-item').length) {
+        $('.shop-item').each(function (index, element) {
+            const $slider = $(element).find('.shop-item__slider');
+            if (!$slider.length) return;
+
+            const pagination = $(element).find('.shop-item__pagination')[0];
+
+            const swiper = new Swiper($slider[0], {
+                slidesPerView: 1,
+                speed: 0,
+                lazy: true,
+                watchOverflow: true,
+                pagination: {
+                    el: pagination,
+                    clickable: true
+                }
+            });
+
+            const $areasWrapper = $('<div class="shop-item__hover-areas"></div>');
+            $areasWrapper.css({
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: 'flex',
+                zIndex: 10
+            });
+
+            const slidesCount = swiper.slides.length;
+
+            for (let i = 0; i < slidesCount; i++) {
+                const $area = $('<div class="shop-item__hover-area"></div>');
+                $area.css({
+                    flex: '1 1 0',
+                    cursor: 'pointer'
+                });
+
+                $area.on('mouseenter', () => {
+                    swiper.slideTo(i);
+                });
+
+                $areasWrapper.append($area);
+            }
+
+
+            $slider.css('position', 'relative').append($areasWrapper);
+        });
+    }
+
 
     // amination
 
@@ -1062,6 +1181,171 @@ $(function () {
         new CustomSelect(element);
     });
 
+
+    // range slider
+
+    const rangeFilters = $('.range');
+
+    if (rangeFilters.length > 0) {
+        rangeFilters.each(function () {
+            const rangeSlider = $(this).find('.range__slider')[0];
+            const startInput = $(this).find('.range__control--start');
+            const endInput = $(this).find('.range__control--end');
+            const inputs = [startInput, endInput];
+            const form = $(this).closest('form');
+            const resetButton = form.find('button[type="reset"]');
+
+            const min = parseInt(startInput.attr('min'));
+            const max = parseInt(endInput.attr('max')) || 1000000;
+            const margin = Math.round((max - min) * 0.05);
+
+
+
+            function parseNumber(value) {
+                return parseInt(value.replace(/\s/g, ''));
+            }
+
+            function updateMaxLength(input) {
+                const maxLength = parseInt(input.attr('maxlength'));
+                const numLength = maxLength - Math.floor((maxLength - 1) / 4);
+                input.attr('maxlength', numLength);
+            }
+
+            function getTextWidth(text, input) {
+                const span = document.createElement("span");
+                const cs = window.getComputedStyle(input);
+                span.style.position = "absolute";
+                span.style.visibility = "hidden";
+                span.style.whiteSpace = "nowrap";
+                span.style.font = cs.font;
+                span.style.letterSpacing = cs.letterSpacing;
+                span.textContent = String(text || "");
+                document.body.appendChild(span);
+                const w = span.offsetWidth;
+                document.body.removeChild(span);
+                return w;
+            }
+
+            function updateUnitPosition(input) {
+                const $input = $(input);
+                const $units = $input.siblings(".range__unit");
+                if ($units.length === 0) return;
+
+                const cs = window.getComputedStyle(input);
+                const value = $input.val();
+                const textWidth = getTextWidth(value, input);
+
+                const paddingLeft = parseFloat(cs.paddingLeft) || 0;
+                const paddingRight = parseFloat(cs.paddingRight) || 0;
+                const clientWidth = input.clientWidth;
+                const contentWidth = Math.max(0, clientWidth - paddingLeft - paddingRight);
+
+
+                let textStartX;
+                const ta = cs.textAlign;
+                if (ta === "center") {
+                    textStartX = paddingLeft + Math.max(0, (contentWidth - textWidth) / 2);
+                } else if (ta === "right" || ta === "end") {
+                    textStartX = clientWidth - paddingRight - textWidth;
+                } else {
+                    textStartX = paddingLeft;
+                }
+
+                const gap = 4;
+
+                const $currency = $units.last();
+                const currencyWidth = $currency.outerWidth();
+                const desiredCurrencyLeft = textStartX + textWidth + gap;
+                const maxCurrencyLeft = clientWidth - paddingRight - currencyWidth;
+                const currencyLeft = Math.min(desiredCurrencyLeft, maxCurrencyLeft);
+                $currency.css("left", currencyLeft + "px");
+
+                const $label = $units.first();
+                const labelWidth = $label.outerWidth();
+                let desiredLabelLeft = textStartX - labelWidth - gap;
+                const minLabelLeft = paddingLeft;
+                let labelLeft = Math.max(minLabelLeft, desiredLabelLeft);
+
+                const labelRight = labelLeft + labelWidth;
+                if (labelRight + gap > currencyLeft) {
+
+                    labelLeft = Math.max(minLabelLeft, currencyLeft - labelWidth - gap);
+                }
+                $label.css("left", labelLeft + "px");
+
+
+                $units.addClass("ready");
+            }
+
+
+
+            updateMaxLength(startInput);
+            updateMaxLength(endInput);
+
+            startInput.val(startInput.val());
+            endInput.val(endInput.val());
+
+
+            noUiSlider.create(rangeSlider, {
+                start: [parseNumber(startInput.val()), parseNumber(endInput.val())],
+                connect: true,
+                margin: margin,
+                range: {
+                    'min': [min],
+                    'max': [max]
+                }
+            });
+
+            rangeSlider.noUiSlider.on('update', function (values, handle) {
+                inputs[handle].val(Math.round(values[handle]));
+                updateUnitPosition(inputs[handle][0]);
+            });
+
+
+            const setRangeSlider = (i, value) => {
+                let arr = [null, null];
+                arr[i] = parseNumber(value);
+                rangeSlider.noUiSlider.set(arr);
+            };
+
+            $.each(inputs, function (index, input) {
+                $(input).on('change', function (e) {
+                    setRangeSlider(index, $(this).val());
+                });
+                $(input).on('input', function (e) {
+                    let value = $(this).val();
+                    value = value.replace(/[^\d]/g, '');
+                    $(this).val(value);
+                    $(this).addClass('active');
+                });
+                $(input).on('input change', function () {
+                    updateUnitPosition(this);
+                });
+                updateUnitPosition(input[0]);
+            });
+
+            const ro = new ResizeObserver(() => {
+                updateUnitPosition(startInput[0]);
+                updateUnitPosition(endInput[0]);
+            });
+            ro.observe(startInput[0]);
+            ro.observe(endInput[0]);
+
+
+            if (resetButton.length > 0) {
+                resetButton.on('click', function () {
+                    setTimeout(function () {
+
+                        startInput.val(startInput[0].defaultValue);
+                        endInput.val(endInput[0].defaultValue);
+
+                        rangeSlider.noUiSlider.set([parseNumber(startInput[0].defaultValue), parseNumber(endInput[0].defaultValue)]);
+
+                    }, 0);
+                });
+            }
+        });
+    }
 
 });
 

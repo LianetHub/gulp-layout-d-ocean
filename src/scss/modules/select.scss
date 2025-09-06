@@ -147,6 +147,7 @@
 		&[aria-checked="true"] {
 			color: #fff;
 			background: #252b37;
+			font-weight: 500;
 			&::before {
 				order: 1;
 				@extend %ic, .icon-check;

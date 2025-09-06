@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Каталог товаров'
+    })
+    <body class="preloading">
+        @@include('html/_preloader.html', {})
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 0
+            })
+            <main class="page">
+                @@include('./html/_promo-banner.html', {
+                "title": "Каталог товаров",
+                "background": "@img/decor/banner-catalog.jpg",
+                "breadcrumbs": ["Главная"],
+                })
+                <div class="shop">
+                    <div class="shop__container">
+                        <div class="shop__brands">
+                            <button type="button" class="shop__brands-prev swiper-button-prev swiper-button--grey"></button>
+                            <div class="shop__brands-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/fhm.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/zetrix.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/dawa.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/shiman.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/duo.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/graff.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/abu-garcia.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/norfin.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/simms.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/hr.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/boyscout.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/aiko.png" alt="Лого бренда">
+                                    </a>
+                                    <a href="" class="shop__slide swiper-slide">
+                                        <img src="@img/brands/graphiteleader.png" alt="Лого бренда">
+                                    </a>
+                                </div>
+                            </div>
+                            <button type="button" class="shop__brands-next swiper-button-next swiper-button--grey"></button>
+                        </div>
+                        <div class="shop__categories swiper">
+                            <div class="swiper-wrapper">
+                                <a href="" class="shop__category swiper-slide">
+                                    <span class="shop__category-thumb">
+                                        <img src="@img/goods/categories/spoons.jpg" class="cover-image" alt="Фото категории">
+                                    </span>
+                                    <span class="shop__category-text icon-chevron-right">Блесны</span>
+                                </a>
+                                <a href="" class="shop__category swiper-slide">
+                                    <span class="shop__category-thumb">
+                                        <img src="@img/goods/categories/ratlins.jpg" class="cover-image" alt="Фото категории">
+                                    </span>
+                                    <span class="shop__category-text icon-chevron-right">Ратлины</span>
+                                </a>
+                                <a href="" class="shop__category swiper-slide">
+                                    <span class="shop__category-thumb">
+                                        <img src="@img/goods/categories/wobblers.jpg" class="cover-image" alt="Фото категории">
+                                    </span>
+                                    <span class="shop__category-text icon-chevron-right">Воблеры</span>
+                                </a>
+                                <a href="" class="shop__category swiper-slide">
+                                    <span class="shop__category-thumb">
+                                        <img src="@img/goods/categories/tail-spinners.jpg" class="cover-image" alt="Фото категории">
+                                    </span>
+                                    <span class="shop__category-text icon-chevron-right">Тейл-спиннеры</span>
+                                </a>
+                                <a href="" class="shop__category swiper-slide">
+                                    <span class="shop__category-thumb">
+                                        <img src="@img/goods/categories/equipment.jpg" class="cover-image" alt="Фото категории">
+                                    </span>
+                                    <span class="shop__category-text icon-chevron-right">Оснастка</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="shop__body">
+                            @@include('./html/_catalog-filter.html')
+                            <div class="shop__content">
+                                <div class="shop__header">
+                                    <div class="shop__select">
+                                        <div class="select">
+                                            <select name="sort_by">
+                                                <option selected value="popular">По популярности</option>
+                                                <option value="newest">Сначала новые</option>
+                                                <option value="oldest">Сначала старые</option>
+                                                <option value="default">По умолчанию</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="shop__select">
+                                        <div class="shop__select-text">Выводить:</div>
+                                        <div class="select">
+                                            <select name="items_per_page">
+                                                <option value="10">10</option>
+                                                <option selected value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option value="40">40</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="shop__grid">
+                                        <label class="shop__grid-item">
+                                            <input type="radio" name="grid" value="grid" checked class="shop__grid-input hidden" hidden>
+                                            <span class="shop__grid-btn icon-grid-thin"></span>
+                                        </label>
+                                        <label class="shop__grid-item">
+                                            <input type="radio" name="grid" value="rows" class="shop__grid-input hidden" hidden>
+                                            <span class="shop__grid-btn icon-rows"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="shop__items">
+                                    @@loop('./html/templates/_shop-item.html', './html/json/_catalog.json')
+                                </div>
+                                <div class="shop__pagination pagination">
+                                    <a href="" class="pagination__prev icon-prev">Назад</a>
+                                    <a href="" class="pagination__item active">1</a>
+                                    <a href="" class="pagination__item">2</a>
+                                    <a href="" class="pagination__item">3</a>
+                                    <span class="pagination__item">...</span>
+                                    <a href="" class="pagination__item">8</a>
+                                    <a href="" class="pagination__item">9</a>
+                                    <a href="" class="pagination__item">10</a>
+                                    <a href="" class="pagination__next icon-next">Вперед</a>
+                                </div>
+                                <div class="shop__loader loader">
+                                    <div class="loader__indicator">
+                                        <img src="@img/loading-circle.svg" alt="Иконка">
+                                    </div>
+                                    <div class="loader__text">Загрузка товаров...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include('./html/_about.html')
+                @@include('./html/_contacts.html')
+            </main>
+            @@include('html/_footer.html', {
+            "active": 0
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

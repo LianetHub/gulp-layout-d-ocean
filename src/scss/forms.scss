@@ -157,6 +157,30 @@
 			}
 		}
 	}
+	// .form__checkbox-row
+	&__checkbox-row {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	// .form__checkbox-thumb
+	&__checkbox-thumb {
+		width: 2rem;
+		height: 2rem;
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	// .form__checkbox-title
+	&__checkbox-title {
+		color: #535862;
+		font-size: 1.125rem;
+		line-height: 140%;
+	}
+	// .form__checkbox-quantity
+	&__checkbox-quantity {
+	}
 	// .form__file
 	&__file {
 		width: 100%;
@@ -289,41 +313,42 @@
 
 @import "./modules/select";
 
-// .switcher {
-// 	// .switcher__input
-// 	&__input {
-// 		&:checked {
-// 			& + .switcher__btn {
-// 				&::before {
-// 					left: rem(2);
-// 				}
-// 				background: #81a6ca;
-// 			}
-// 		}
-// 	}
-// 	// .switcher__btn
-// 	&__btn {
-// 		position: relative;
-// 		width: rem(35);
-// 		height: rem(20);
-// 		border-radius: 6.25rem;
-// 		background: #81a6ca;
-// 		display: block;
-// 		cursor: pointer;
-// 		transition: background-color 0.3s ease 0s;
-// 		&::before {
-// 			content: "";
-// 			position: absolute;
-// 			top: rem(2);
-// 			left: rem(17);
-// 			width: rem(16);
-// 			transition: left 0.3s ease 0s;
-// 			border-radius: 50%;
-// 			background: #fff;
-// 			height: calc(100% - rem(4));
-// 		}
-// 	}
-// }
+.switcher {
+	// .switcher__input
+	&__input {
+		&:checked {
+			& + .switcher__btn {
+				&::before {
+					left: rem(22);
+				}
+				background: $pink;
+			}
+		}
+	}
+	// .switcher__btn
+	&__btn {
+		position: relative;
+		width: rem(44);
+		height: rem(24);
+		border-radius: 0.75rem;
+		background: #f2f4f7;
+		display: block;
+		cursor: pointer;
+		transition: background-color 0.3s ease 0s;
+		&::before {
+			content: "";
+			position: absolute;
+			top: rem(2);
+			left: rem(2);
+			width: rem(20);
+			transition: left 0.3s ease 0s;
+			border-radius: 50%;
+			background: #fff;
+			filter: drop-shadow(0 rem(1) rem(2) rgba(16, 24, 40, 0.06)) drop-shadow(0 rem(1) rem(3) rgba(16, 24, 40, 0.1));
+			height: calc(100% - rem(4));
+		}
+	}
+}
 
 // .iti__selected-flag {
 // 	background-color: rgba(0, 0, 0, 0.05);

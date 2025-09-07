@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Корзина'
+    })
+    <body class="preloading">
+        @@include('html/_preloader.html', {})
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 0
+            })
+            <main class="page">
+                <section class="order">
+                    <div class="order__container">
+                        <nav aria-label="Хлебные крошки" class="breadcrumbs">
+                            <ul class="breadcrumbs__list">
+                                <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                                <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Личный кабинет</a></li>
+                                <li class="breadcrumbs__item">
+                                    <span class="breadcrumbs__link active">Корзина</span>
+                                </li>
+                            </ul>
+                        </nav>
+                        <h1 class="order__title">
+                            Корзина
+                            <span class="order__quantity">6</span>
+                        </h1>
+                        <div class="notify">
+                            <div class="notify__text">Чтобы получить доступ к оптовым ценам на весь ассортимент товаров, зарегистрируйтесь в пару кликов как юр. лицо или ИП</div>
+                            <a href="" class="notify__btn btn btn-primary btn-sm">регистрация</a>
+                            <button type="button" class="notify__close icon-cross"></button>
+                        </div>
+                        <div class="order__controls">
+                            <label class="order__cart-checkbox form__checkbox">
+                                <input type="checkbox" name="select-all" checked data-required class="form__checkbox-input" hidden>
+                                <span class="form__checkbox-text">Выбрать все</span>
+                            </label>
+                            <button type="button" class="order__controls-remove">Удалить выбранное</button>
+                        </div>
+                        <div class="order__content">
+                            <div class="order__body">
+                                <table class="order__cart">
+                                    <thead>
+                                        <tr>
+                                            <th>Товар</th>
+                                            <th>Кол-во</th>
+                                            <th>Цена</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="order__cart-main">
+                                                    <label class="order__cart-checkbox form__checkbox">
+                                                        <input type="checkbox" checked data-required class="form__checkbox-input" hidden>
+                                                        <span class="form__checkbox-text"></span>
+                                                    </label>
+                                                    <div class="order__cart-thumb">
+                                                        <img src="@img/goods/06.png" class="cover-image" alt="Фото товара">
+                                                    </div>
+                                                    <div class="order__cart-body">
+                                                        <div class="order__cart-sku">180904</div>
+                                                        <div class="order__cart-name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-quantity quantity-block">
+                                                    <button type="button" class="quantity-block__down icon-minus"></button>
+                                                    <input type="text" name="product-quantity" maxlength="3" class="quantity-block__input" value="1">
+                                                    <button type="button" class="quantity-block__up icon-plus"></button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-actions">
+                                                    <div class="order__cart-price">
+                                                        <div class="order__cart-price-current">799 ₽</div>
+                                                    </div>
+                                                    <button type="button" class="order__cart-remove icon-cross"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="order__cart-main">
+                                                    <label class="order__cart-checkbox form__checkbox">
+                                                        <input type="checkbox" checked data-required class="form__checkbox-input" hidden>
+                                                        <span class="form__checkbox-text"></span>
+                                                    </label>
+                                                    <div class="order__cart-thumb">
+                                                        <img src="@img/goods/07.jpg" class="cover-image" alt="Фото товара">
+                                                    </div>
+                                                    <div class="order__cart-body">
+                                                        <div class="order__cart-sku">180905</div>
+                                                        <div class="order__cart-name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 37g , цвет 05</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-quantity quantity-block">
+                                                    <button type="button" class="quantity-block__down icon-minus"></button>
+                                                    <input type="text" name="product-quantity" maxlength="3" class="quantity-block__input" value="1">
+                                                    <button type="button" class="quantity-block__up icon-plus"></button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-actions">
+                                                    <div class="order__cart-price">
+                                                        <div class="order__cart-price-old">
+                                                            <div class="order__cart-price-old-value">1 644 ₽</div>
+                                                            <div class="order__cart-price-old-sale">-35%</div>
+                                                        </div>
+                                                        <div class="order__cart-price-current">1245 ₽</div>
+                                                    </div>
+                                                    <button type="button" class="order__cart-remove icon-cross"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="order__cart-main">
+                                                    <label class="order__cart-checkbox form__checkbox">
+                                                        <input type="checkbox" name="product" checked data-required class="form__checkbox-input" hidden>
+                                                        <span class="form__checkbox-text"></span>
+                                                    </label>
+                                                    <div class="order__cart-thumb">
+                                                        <img src="@img/goods/08.jpg" class="cover-image" alt="Фото товара">
+                                                    </div>
+                                                    <div class="order__cart-body">
+                                                        <div class="order__cart-sku">180906</div>
+                                                        <div class="order__cart-name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 45g , цвет 02</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-quantity quantity-block">
+                                                    <button type="button" class="quantity-block__down icon-minus"></button>
+                                                    <input type="text" name="product-quantity" maxlength="3" class="quantity-block__input" value="1">
+                                                    <button type="button" class="quantity-block__up icon-plus"></button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-actions">
+                                                    <div class="order__cart-price">
+                                                        <div class="order__cart-price-old">
+                                                            <div class="order__cart-price-old-value">1 689 ₽</div>
+                                                            <div class="order__cart-price-old-sale">-30%</div>
+                                                        </div>
+                                                        <div class="order__cart-price-current">1198 ₽</div>
+                                                    </div>
+                                                    <button type="button" class="order__cart-remove icon-cross"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="order__cart-main">
+                                                    <label class="order__cart-checkbox form__checkbox">
+                                                        <input type="checkbox" name="product" checked data-required class="form__checkbox-input" hidden>
+                                                        <span class="form__checkbox-text"></span>
+                                                    </label>
+                                                    <div class="order__cart-thumb">
+                                                        <img src="@img/goods/09.jpg" class="cover-image" alt="Фото товара">
+                                                    </div>
+                                                    <div class="order__cart-body">
+                                                        <div class="order__cart-sku">180904</div>
+                                                        <div class="order__cart-name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-quantity quantity-block">
+                                                    <button type="button" class="quantity-block__down icon-minus"></button>
+                                                    <input type="text" name="product-quantity" maxlength="3" class="quantity-block__input" value="1">
+                                                    <button type="button" class="quantity-block__up icon-plus"></button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-actions">
+                                                    <div class="order__cart-price">
+                                                        <div class="order__cart-price-current">799 ₽</div>
+                                                    </div>
+                                                    <button type="button" class="order__cart-remove icon-cross"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="order__cart-main">
+                                                    <label class="order__cart-checkbox form__checkbox">
+                                                        <input type="checkbox" name="product" checked data-required class="form__checkbox-input" hidden>
+                                                        <span class="form__checkbox-text"></span>
+                                                    </label>
+                                                    <div class="order__cart-thumb">
+                                                        <img src="@img/goods/10.jpg" class="cover-image" alt="Фото товара">
+                                                    </div>
+                                                    <div class="order__cart-body">
+                                                        <div class="order__cart-sku">180905</div>
+                                                        <div class="order__cart-name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку, чавычу, семгу, кету Herring 45g, цвет 19</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-quantity quantity-block">
+                                                    <button type="button" class="quantity-block__down icon-minus"></button>
+                                                    <input type="text" name="product-quantity" maxlength="3" class="quantity-block__input" value="1">
+                                                    <button type="button" class="quantity-block__up icon-plus"></button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-actions">
+                                                    <div class="order__cart-price">
+                                                        <div class="order__cart-price-old">
+                                                            <div class="order__cart-price-old-value">1 356 ₽</div>
+                                                            <div class="order__cart-price-old-sale">-25%</div>
+                                                        </div>
+                                                        <div class="order__cart-price-current">876 ₽</div>
+                                                    </div>
+                                                    <button type="button" class="order__cart-remove icon-cross"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="order__cart-main">
+                                                    <label class="order__cart-checkbox form__checkbox">
+                                                        <input type="checkbox" name="product" checked data-required class="form__checkbox-input" hidden>
+                                                        <span class="form__checkbox-text"></span>
+                                                    </label>
+                                                    <div class="order__cart-thumb">
+                                                        <img src="@img/goods/06.png" class="cover-image" alt="Фото товара">
+                                                    </div>
+                                                    <div class="order__cart-body">
+                                                        <div class="order__cart-sku">180901</div>
+                                                        <div class="order__cart-name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 37g , цвет 05</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-quantity quantity-block">
+                                                    <button type="button" class="quantity-block__down icon-minus"></button>
+                                                    <input type="text" name="product-quantity" maxlength="3" class="quantity-block__input" value="1">
+                                                    <button type="button" class="quantity-block__up icon-plus"></button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="order__cart-actions">
+                                                    <div class="order__cart-price">
+                                                        <div class="order__cart-price-current">934 ₽</div>
+                                                    </div>
+                                                    <button type="button" class="order__cart-remove icon-cross"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <aside class="order__side">
+                                <form action="#" class="order__form">
+                                    <div class="order__form-title">Итого</div>
+                                    <div class="order__form-body">
+                                        <div class="order__form-rows">
+                                            <div class="order__form-row">
+                                                <div class="order__form-name">Товары:</div>
+                                                <div class="order__form-value">6 штук</div>
+                                            </div>
+                                        </div>
+                                        <div class="order__form-rows">
+                                            <div class="order__form-row">
+                                                <div class="order__form-name">Сумма:</div>
+                                                <div class="order__form-value">7 236 ₽</div>
+                                            </div>
+                                            <div class="order__form-row">
+                                                <div class="order__form-name">Скидка:</div>
+                                                <div class="order__form-value">1 385 ₽</div>
+                                            </div>
+                                            <div class="order__form-row">
+                                                <div class="order__form-name">НДС:</div>
+                                                <div class="order__form-value">0 ₽</div>
+                                            </div>
+                                            <div class="order__form-row">
+                                                <div class="order__form-name">Кэшбэк:</div>
+                                                <div class="order__form-value">0 ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class="order__form-rows">
+                                            <div class="order__form-row">
+                                                <div class="order__form-name">Всего без учёта доставки:</div>
+                                                <div class="order__form-value order__form-value--large">5 851 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order__form-footer">
+                                        <label class="form__checkbox">
+                                            <input type="checkbox" name="agree" checked data-required class="form__checkbox-input" hidden>
+                                            <span class="form__checkbox-text">
+                                                Нажимая на кнопку, вы соглашаетесь на <a href="">обработку персональных данных</a> а также с <a href="">политикой конфиденциальности</a>
+                                            </span>
+                                        </label>
+                                        <button type="submit" class="form__btn btn btn-primary btn-sm">оформить заказ</button>
+                                    </div>
+                                </form>
+                            </aside>
+                        </div>
+                    </div>
+                </section>
+                <div class="shop">
+                    <div class="shop__container">
+                        <h2 class="shop__title">Добавить к заказу</h2>
+                        <div class="shop__slider">
+                            <div class="shop__slider-block swiper">
+                                <div class="swiper-wrapper">
+                                    @@loop('./html/templates/_shop-item.html', './html/json/_catalog-more.json')
+                                </div>
+                            </div>
+                            <div class="shop__footer">
+                                <div class="shop__slider-pagination swiper-pagination"></div>
+                                <div class="shop__controls">
+                                    <button type="button" class="shop__prev swiper-button-prev swiper-button--grey"></button>
+                                    <button type="button" class="shop__next swiper-button-next swiper-button--grey"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @@include('html/_footer.html', {
+            "active": 0
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_color-picker.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

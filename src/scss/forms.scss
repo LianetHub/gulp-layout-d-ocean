@@ -121,6 +121,7 @@
 		user-select: none;
 		font-size: 0.875rem;
 		line-height: math.div(1.125, 0.875);
+		min-height: rem(20);
 		&::before {
 			content: "";
 			position: absolute;

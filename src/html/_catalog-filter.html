@@ -1,13 +1,13 @@
 <aside class="shop__sidebar">
-    <div class="shop__sidebar-header">
-        <button type="button" class="shop__toggler-filters icon-filter-funnel"></button>
-        <div class="shop__title">
-            Фильтры
-            <span class="shop__title-quantity quantity">5</span>
-        </div>
-        <button type="reset" class="shop__reset-filters">Очистить</button>
-    </div>
     <form action="#" id="filter" class="shop__filter filter">
+        <div class="filter__header">
+            <div class="filter__header-title">
+                Фильтры
+                <span class="filter__header-quantity quantity">5</span>
+            </div>
+            <button type="reset" class="filter__header-reset">Очистить</button>
+            <button type="button" aria-label="Закрыть фильтр" class="filter__close icon-cross"></button>
+        </div>
         <div class="filter__blocks">
             <div class="filter__block">
                 <div class="filter__block-title icon-chevron-down active">
@@ -1030,10 +1030,9 @@
                 </div>
             </div>
         </div>
-
         <div class="filter__footer">
-            <button type="submit" class="filter__submit btn btn-primary">Применить фильтры</button>
-            <button type="reset" class="filter__reser btn btn-white">Очистить</button>
+            <button type="submit" class="filter__submit btn btn-sm btn-primary">Применить фильтры</button>
+            <button type="reset" class="filter__reset btn btn-sm btn-white">Очистить</button>
         </div>
     </form>
 </aside>

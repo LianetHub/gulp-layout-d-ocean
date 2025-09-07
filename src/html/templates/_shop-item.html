@@ -27,51 +27,53 @@
                     </span>
                 </a>
         </div>
-        <div class="shop-item__actions">
-            <button type="button" class="shop-item__favorite favorite-btn"></button>
-            <button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-            <div class="shop-item__pagination swiper-pagination"></div>
-            <div class="shop-item__sku">@@id</div>
-        </div>
-        <a href="" class="shop-item__name">@@name</a>
-        <div class="shop-item__footer">
-            <ul class="shop-item__props">
-                <li class="shop-item__prop">
-                    <div class="shop-item__prop-name">Длина, мм:</div>
-                    <div class="shop-item__prop-value">90 (девяностик)</div>
-                </li>
-                <li class="shop-item__prop">
-                    <div class="shop-item__prop-name">Вес, г:</div>
-                    <div class="shop-item__prop-value">10.2</div>
-                </li>
-                <li class="shop-item__prop">
-                    <div class="shop-item__prop-name">Плавучесть:</div>
-                    <div class="shop-item__prop-value">Тонущий</div>
-                </li>
-                <li class="shop-item__prop">
-                    <div class="shop-item__prop-name">Заглубление, м:</div>
-                    <div class="shop-item__prop-value">0,8–1,0</div>
-                </li>
-                <li class="shop-item__prop">
-                    <div class="shop-item__prop-name">Вид ловли:</div>
-                    <div class="shop-item__prop-value">на щуку</div>
-                </li>
-            </ul>
-            <div class="shop-item__main">
-                <div class="shop-item__price">
-                    @@if (typeof oldPrice !== 'undefined') {
-                    <div class="shop-item__price-old">
-                        <span class="shop-item__price-old-value">@@oldPrice</span>
-                        @@if (typeof sale !== 'undefined') {
-                        <span class="shop-item__price-sale">@@sale</span>
+        <div class="shop-item__body">
+            <div class="shop-item__actions">
+                <button type="button" class="shop-item__favorite favorite-btn"></button>
+                <button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+                <div class="shop-item__pagination swiper-pagination"></div>
+                <div class="shop-item__sku">@@id</div>
+            </div>
+            <a href="" class="shop-item__name">@@name</a>
+            <div class="shop-item__footer">
+                <ul class="shop-item__props">
+                    <li class="shop-item__prop">
+                        <div class="shop-item__prop-name">Длина, мм:</div>
+                        <div class="shop-item__prop-value">90 (девяностик)</div>
+                    </li>
+                    <li class="shop-item__prop">
+                        <div class="shop-item__prop-name">Вес, г:</div>
+                        <div class="shop-item__prop-value">10.2</div>
+                    </li>
+                    <li class="shop-item__prop">
+                        <div class="shop-item__prop-name">Плавучесть:</div>
+                        <div class="shop-item__prop-value">Тонущий</div>
+                    </li>
+                    <li class="shop-item__prop">
+                        <div class="shop-item__prop-name">Заглубление, м:</div>
+                        <div class="shop-item__prop-value">0,8–1,0</div>
+                    </li>
+                    <li class="shop-item__prop">
+                        <div class="shop-item__prop-name">Вид ловли:</div>
+                        <div class="shop-item__prop-value">на щуку</div>
+                    </li>
+                </ul>
+                <div class="shop-item__main">
+                    <div class="shop-item__price">
+                        @@if (typeof oldPrice !== 'undefined') {
+                        <div class="shop-item__price-old">
+                            <span class="shop-item__price-old-value">@@oldPrice</span>
+                            @@if (typeof sale !== 'undefined') {
+                            <span class="shop-item__price-sale">@@sale</span>
+                            }
+                        </div>
                         }
+                        <div class="shop-item__price-current">@@price</div>
                     </div>
-                    }
-                    <div class="shop-item__price-current">@@price</div>
+                    <button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+                        <span>в корзину</span>
+                    </button>
                 </div>
-                <button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-                    <span>в корзину</span>
-                </button>
             </div>
         </div>
     </div>

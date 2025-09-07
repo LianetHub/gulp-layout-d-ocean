@@ -158,6 +158,18 @@ $(function () {
             }
         }
 
+        // Close filter on button click or outside click
+        if ($target.is(".filter__close") || (!$target.closest(".filter").length && $(".filter").hasClass("filter--open"))) {
+            $(".filter").removeClass("filter--open");
+            $("body").removeClass("filters-lock");
+        }
+
+        //  open filter on mobile directions
+        if ($target.is('.shop__toggler-filters')) {
+            $(".filter").addClass("filter--open");
+            $("body").addClass("filters-lock");
+        }
+
     });
 
 
@@ -264,6 +276,19 @@ $(function () {
         $content.slideDown(0);
     });
 
+
+    // "grid" или "rows" в Каталоге
+
+    $('.shop__grid-input').on('change', function () {
+        const gridType = $(this).val();
+        const $shopItems = $('.shop__items');
+
+        if (gridType === 'rows') {
+            $shopItems.addClass('shop__items--row');
+        } else {
+            $shopItems.removeClass('shop__items--row');
+        }
+    });
 
 
     /* =========== Event Handlers ============== */
@@ -1194,7 +1219,8 @@ $(function () {
             const inputs = [startInput, endInput];
             const form = $(this).closest('form');
             const resetButton = form.find('button[type="reset"]');
-
+            const externalResetButton = $(`button[type="reset"][form="${form.attr('id')}"]`);
+            const allResetButtons = $.merge(resetButton, externalResetButton);
             const min = parseInt(startInput.attr('min'));
             const max = parseInt(endInput.attr('max')) || 1000000;
             const margin = Math.round((max - min) * 0.05);
@@ -1230,17 +1256,13 @@ $(function () {
                 const $input = $(input);
                 const $units = $input.siblings(".range__unit");
                 if ($units.length === 0) return;
-
                 const cs = window.getComputedStyle(input);
                 const value = $input.val();
                 const textWidth = getTextWidth(value, input);
-
                 const paddingLeft = parseFloat(cs.paddingLeft) || 0;
                 const paddingRight = parseFloat(cs.paddingRight) || 0;
                 const clientWidth = input.clientWidth;
                 const contentWidth = Math.max(0, clientWidth - paddingLeft - paddingRight);
-
-
                 let textStartX;
                 const ta = cs.textAlign;
                 if (ta === "center") {
@@ -1250,30 +1272,23 @@ $(function () {
                 } else {
                     textStartX = paddingLeft;
                 }
-
                 const gap = 4;
-
                 const $currency = $units.last();
                 const currencyWidth = $currency.outerWidth();
                 const desiredCurrencyLeft = textStartX + textWidth + gap;
                 const maxCurrencyLeft = clientWidth - paddingRight - currencyWidth;
                 const currencyLeft = Math.min(desiredCurrencyLeft, maxCurrencyLeft);
                 $currency.css("left", currencyLeft + "px");
-
                 const $label = $units.first();
                 const labelWidth = $label.outerWidth();
                 let desiredLabelLeft = textStartX - labelWidth - gap;
                 const minLabelLeft = paddingLeft;
                 let labelLeft = Math.max(minLabelLeft, desiredLabelLeft);
-
                 const labelRight = labelLeft + labelWidth;
                 if (labelRight + gap > currencyLeft) {
-
                     labelLeft = Math.max(minLabelLeft, currencyLeft - labelWidth - gap);
                 }
                 $label.css("left", labelLeft + "px");
-
-
                 $units.addClass("ready");
             }
 
@@ -1323,30 +1338,23 @@ $(function () {
                 });
                 updateUnitPosition(input[0]);
             });
-
             const ro = new ResizeObserver(() => {
                 updateUnitPosition(startInput[0]);
                 updateUnitPosition(endInput[0]);
             });
             ro.observe(startInput[0]);
             ro.observe(endInput[0]);
-
-
-            if (resetButton.length > 0) {
-                resetButton.on('click', function () {
+            if (allResetButtons.length > 0) {
+                allResetButtons.on('click', function () {
                     setTimeout(function () {
-
                         startInput.val(startInput[0].defaultValue);
                         endInput.val(endInput[0].defaultValue);
-
                         rangeSlider.noUiSlider.set([parseNumber(startInput[0].defaultValue), parseNumber(endInput[0].defaultValue)]);
-
                     }, 0);
                 });
             }
         });
     }
-
 });
 
 

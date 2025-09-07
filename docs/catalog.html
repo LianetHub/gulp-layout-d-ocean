@@ -29,12 +29,12 @@
     <link rel="manifest" href="/site.webmanifest" > -->
 	<!-- favicon -->
 	<!-- plugins -->
-	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250906171624">
-	<link rel="stylesheet" href="css/libs/fancybox.min.css?_v=20250906171624">
-	<link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250906171624">
+	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250907104610">
+	<link rel="stylesheet" href="css/libs/fancybox.min.css?_v=20250907104610">
+	<link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250907104610">
 	<!-- plugins -->
-	<link rel="stylesheet" href="css/reset.min.css?_v=20250906171624">
-	<link rel="stylesheet" href="css/style.min.css?_v=20250906171624">
+	<link rel="stylesheet" href="css/reset.min.css?_v=20250907104610">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250907104610">
 </head>
 
 <body class="preloading">
@@ -605,14 +605,19 @@
 						</div>
 					</div>
 					<div class="shop__body">
+						<div class="shop__mobile-filter">
+							<button type="button" class="shop__toggler-filters icon-filter-funnel"> Фильтры <span class="quantity">5</span>
+							</button>
+							<button type="reset" form="filter" class="shop__filter-reset">Очистить</button>
+						</div>
 						<aside class="shop__sidebar">
-							<div class="shop__sidebar-header">
-								<button type="button" class="shop__toggler-filters icon-filter-funnel"></button>
-								<div class="shop__title"> Фильтры <span class="shop__title-quantity quantity">5</span>
-								</div>
-								<button type="reset" class="shop__reset-filters">Очистить</button>
-							</div>
 							<form action="#" id="filter" class="shop__filter filter">
+								<div class="filter__header">
+									<div class="filter__header-title"> Фильтры <span class="filter__header-quantity quantity">5</span>
+									</div>
+									<button type="reset" class="filter__header-reset">Очистить</button>
+									<button type="button" aria-label="Закрыть фильтр" class="filter__close icon-cross"></button>
+								</div>
 								<div class="filter__blocks">
 									<div class="filter__block">
 										<div class="filter__block-title icon-chevron-down active"> Цена </div>
@@ -1523,8 +1528,8 @@
 									</div>
 								</div>
 								<div class="filter__footer">
-									<button type="submit" class="filter__submit btn btn-primary">Применить фильтры</button>
-									<button type="reset" class="filter__reser btn btn-white">Очистить</button>
+									<button type="submit" class="filter__submit btn btn-sm btn-primary">Применить фильтры</button>
+									<button type="reset" class="filter__reset btn btn-sm btn-white">Очистить</button>
 								</div>
 							</form>
 						</aside>
@@ -1592,47 +1597,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180900</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку, чавычу, семгу, кету Herring 45g, цвет 19</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 644 ₽</span>
-													<span class="shop-item__price-sale">-55%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180900</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку, чавычу, семгу, кету Herring 45g, цвет 19</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 644 ₽</span>
+														<span class="shop-item__price-sale">-55%</span>
+													</div>
+													<div class="shop-item__price-current">799 ₽</div>
 												</div>
-												<div class="shop-item__price-current">799 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -1658,43 +1665,45 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180901</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 37g , цвет 05</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-current">867 ₽</div>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180901</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 37g , цвет 05</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-current">867 ₽</div>
+												</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -1726,47 +1735,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180902</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 834 ₽</span>
-													<span class="shop-item__price-sale">-25%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180902</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 834 ₽</span>
+														<span class="shop-item__price-sale">-25%</span>
+													</div>
+													<div class="shop-item__price-current">1245 ₽</div>
 												</div>
-												<div class="shop-item__price-current">1245 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -1798,43 +1809,45 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180903</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean Salmon Marine 37g колеблющаяся, колебалка на форель, цвет 198</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-current">799 ₽</div>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180903</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean Salmon Marine 37g колеблющаяся, колебалка на форель, цвет 198</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-current">799 ₽</div>
+												</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -1860,43 +1873,45 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180904</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-current">673 ₽</div>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180904</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-current">673 ₽</div>
+												</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -1923,47 +1938,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180905</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 577 ₽</span>
-													<span class="shop-item__price-sale">-45%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180905</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 577 ₽</span>
+														<span class="shop-item__price-sale">-45%</span>
+													</div>
+													<div class="shop-item__price-current">748 ₽</div>
 												</div>
-												<div class="shop-item__price-current">748 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -1995,47 +2012,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180906</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 644 ₽</span>
-													<span class="shop-item__price-sale">-55%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180906</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 644 ₽</span>
+														<span class="shop-item__price-sale">-55%</span>
+													</div>
+													<div class="shop-item__price-current">803 ₽</div>
 												</div>
-												<div class="shop-item__price-current">803 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2061,47 +2080,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180907</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 834 ₽</span>
-													<span class="shop-item__price-sale">-25%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180907</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 834 ₽</span>
+														<span class="shop-item__price-sale">-25%</span>
+													</div>
+													<div class="shop-item__price-current">1245 ₽</div>
 												</div>
-												<div class="shop-item__price-current">1245 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2128,47 +2149,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180908</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку, чавычу, семгу, кету Herring 45g, цвет 19</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 257 ₽</span>
-													<span class="shop-item__price-sale">-40%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180908</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку, чавычу, семгу, кету Herring 45g, цвет 19</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 257 ₽</span>
+														<span class="shop-item__price-sale">-40%</span>
+													</div>
+													<div class="shop-item__price-current">877 ₽</div>
 												</div>
-												<div class="shop-item__price-current">877 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2191,43 +2214,45 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180909</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 37g , цвет 05</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-current">867 ₽</div>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180909</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 37g , цвет 05</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-current">867 ₽</div>
+												</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2259,47 +2284,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180910</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 834 ₽</span>
-													<span class="shop-item__price-sale">-25%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180910</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 834 ₽</span>
+														<span class="shop-item__price-sale">-25%</span>
+													</div>
+													<div class="shop-item__price-current">1245 ₽</div>
 												</div>
-												<div class="shop-item__price-current">1245 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2322,43 +2349,45 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180911</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean Salmon Marine 37g колеблющаяся, колебалка на форель, цвет 198</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-current">799 ₽</div>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180911</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean Salmon Marine 37g колеблющаяся, колебалка на форель, цвет 198</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-current">799 ₽</div>
+												</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2390,47 +2419,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180912</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 644 ₽</span>
-													<span class="shop-item__price-sale">-55%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180912</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 644 ₽</span>
+														<span class="shop-item__price-sale">-55%</span>
+													</div>
+													<div class="shop-item__price-current">803 ₽</div>
 												</div>
-												<div class="shop-item__price-current">803 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2457,43 +2488,45 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180913</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 37g , цвет 05</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-current">867 ₽</div>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180913</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку,чавычу,семгу,кету Herring 37g , цвет 05</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-current">867 ₽</div>
+												</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2519,47 +2552,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180914</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 834 ₽</span>
-													<span class="shop-item__price-sale">-25%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180914</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 834 ₽</span>
+														<span class="shop-item__price-sale">-25%</span>
+													</div>
+													<div class="shop-item__price-current">1245 ₽</div>
 												</div>
-												<div class="shop-item__price-current">1245 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2585,43 +2620,45 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180915</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean Salmon Marine 37g колеблющаяся, колебалка на форель, цвет 198</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-current">799 ₽</div>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180915</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean Salmon Marine 37g колеблющаяся, колебалка на форель, цвет 198</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-current">799 ₽</div>
+												</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2647,43 +2684,45 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180916</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-current">673 ₽</div>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180916</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-current">673 ₽</div>
+												</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2706,47 +2745,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180917</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 577 ₽</span>
-													<span class="shop-item__price-sale">-45%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180917</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 577 ₽</span>
+														<span class="shop-item__price-sale">-45%</span>
+													</div>
+													<div class="shop-item__price-current">748 ₽</div>
 												</div>
-												<div class="shop-item__price-current">748 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2769,47 +2810,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180918</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 644 ₽</span>
-													<span class="shop-item__price-sale">-55%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180918</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 644 ₽</span>
+														<span class="shop-item__price-sale">-55%</span>
+													</div>
+													<div class="shop-item__price-current">803 ₽</div>
 												</div>
-												<div class="shop-item__price-current">803 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -2835,47 +2878,49 @@
 											</span>
 										</a>
 									</div>
-									<div class="shop-item__actions">
-										<button type="button" class="shop-item__favorite favorite-btn"></button>
-										<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
-										<div class="shop-item__pagination swiper-pagination"></div>
-										<div class="shop-item__sku">180919</div>
-									</div>
-									<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
-									<div class="shop-item__footer">
-										<ul class="shop-item__props">
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Длина, мм:</div>
-												<div class="shop-item__prop-value">90 (девяностик)</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вес, г:</div>
-												<div class="shop-item__prop-value">10.2</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Плавучесть:</div>
-												<div class="shop-item__prop-value">Тонущий</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Заглубление, м:</div>
-												<div class="shop-item__prop-value">0,8–1,0</div>
-											</li>
-											<li class="shop-item__prop">
-												<div class="shop-item__prop-name">Вид ловли:</div>
-												<div class="shop-item__prop-value">на щуку</div>
-											</li>
-										</ul>
-										<div class="shop-item__main">
-											<div class="shop-item__price">
-												<div class="shop-item__price-old">
-													<span class="shop-item__price-old-value">1 834 ₽</span>
-													<span class="shop-item__price-sale">-25%</span>
+									<div class="shop-item__body">
+										<div class="shop-item__actions">
+											<button type="button" class="shop-item__favorite favorite-btn"></button>
+											<button type="button" class="shop-item__compare compare-btn icon-compare"></button>
+											<div class="shop-item__pagination swiper-pagination"></div>
+											<div class="shop-item__sku">180919</div>
+										</div>
+										<a href="" class="shop-item__name">Блесна для рыбалки D-Ocean PROKHOROVKA 22g колеблющаяся, колебалка на форель, цвет 120</a>
+										<div class="shop-item__footer">
+											<ul class="shop-item__props">
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Длина, мм:</div>
+													<div class="shop-item__prop-value">90 (девяностик)</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вес, г:</div>
+													<div class="shop-item__prop-value">10.2</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Плавучесть:</div>
+													<div class="shop-item__prop-value">Тонущий</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Заглубление, м:</div>
+													<div class="shop-item__prop-value">0,8–1,0</div>
+												</li>
+												<li class="shop-item__prop">
+													<div class="shop-item__prop-name">Вид ловли:</div>
+													<div class="shop-item__prop-value">на щуку</div>
+												</li>
+											</ul>
+											<div class="shop-item__main">
+												<div class="shop-item__price">
+													<div class="shop-item__price-old">
+														<span class="shop-item__price-old-value">1 834 ₽</span>
+														<span class="shop-item__price-sale">-25%</span>
+													</div>
+													<div class="shop-item__price-current">1245 ₽</div>
 												</div>
-												<div class="shop-item__price-current">1245 ₽</div>
+												<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+													<span>в корзину</span>
+												</button>
 											</div>
-											<button type="button" class="shop-item__add-to-cart icon-shopping-cart">
-												<span>в корзину</span>
-											</button>
 										</div>
 									</div>
 								</div>
@@ -3150,13 +3195,13 @@
         <button type="submit" class="form__btn btn btn-secondary">Оставить запрос</button>
     </form>
 </div> --> <!-- plugins -->
-		<script src="js/libs/jquery-3.7.1.min.js?_v=20250906171624"></script>
-		<script src="js/libs/fancybox.umd.js?_v=20250906171624"></script>
-		<script src="js/libs/swiper-bundle.min.js?_v=20250906171624"></script>
-		<script src="js/libs/nouislider.min.js?_v=20250906171624"></script>
-		<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ВАШ_API_КЛЮЧ&_v=20250906171624"></script>
+		<script src="js/libs/jquery-3.7.1.min.js?_v=20250907104610"></script>
+		<script src="js/libs/fancybox.umd.js?_v=20250907104610"></script>
+		<script src="js/libs/swiper-bundle.min.js?_v=20250907104610"></script>
+		<script src="js/libs/nouislider.min.js?_v=20250907104610"></script>
+		<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ВАШ_API_КЛЮЧ&_v=20250907104610"></script>
 		<!-- plugins -->
-		<script src="js/app.min.js?_v=20250906171624"></script>
+		<script src="js/app.min.js?_v=20250907104610"></script>
 	</div>
 </body>
 

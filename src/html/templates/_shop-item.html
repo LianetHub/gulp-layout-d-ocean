@@ -1,7 +1,7 @@
 <div class="shop-item" id="product-@@id">
     <div class="shop-item__header">
         @@if(typeof labels !== 'undefined' && labels.length > 0){<div class="shop-item__labels">@@for (var i = 0; i < labels.length; i++) { `+(labels[i]==="new" ? '<div class="label label--small label--violet">Новинка</div>' : '' )+` `+(labels[i]==="360" ? '<div class="label label--small label--black icon-cube">360°</div>' : '' )+` `+(labels[i]==="video" ? '<div class="label label--small label--black icon-play-square">Видеообзор</div>' : '' )+` `+(labels[i]==="cashback" ? '<div class="label label--small label--gradient icon-energy">Кэшбэк 10%</div>' : '' )+` `+(labels[i]==="sale" ? '<div class="label label--small label--yellow">Акция</div>' : '' )+` `+(labels[i]==="discount" ? '<div class="label label--small label--pink">@@sale</div>' : '' )+` } </div>}
-                <a href="" class="shop-item__slider swiper">
+                <a href="product.html" class="shop-item__slider swiper">
                     <span class="swiper-wrapper">
                         <span class="shop-item__slide swiper-slide">
                             <img src="@@image" loading="lazy" alt="Фото товара">
@@ -34,7 +34,7 @@
                 <div class="shop-item__pagination swiper-pagination"></div>
                 <div class="shop-item__sku">@@id</div>
             </div>
-            <a href="" class="shop-item__name">@@name</a>
+            <a href="product.html" class="shop-item__name">@@name</a>
             <div class="shop-item__footer">
                 <ul class="shop-item__props">
                     <li class="shop-item__prop">
@@ -70,7 +70,7 @@
                         }
                         <div class="shop-item__price-current">@@price</div>
                     </div>
-                    <button type="button" class="shop-item__add-to-cart icon-shopping-cart">
+                    <button type="button" class="shop-item__add-to-cart cart-btn">
                         <span>в корзину</span>
                     </button>
                 </div>

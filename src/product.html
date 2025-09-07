@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Страница товара'
+    })
+    <body class="preloading">
+        @@include('html/_preloader.html', {})
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 0
+            })
+            <main class="page">
+                <section class="promo-banner" style="--background-image: url(../img/decor/banner-catalog.jpg)">
+                    <div class="promo-banner__container">
+                        <h2 class="promo-banner__title title-sm">Каталог товаров</h2>
+                        <nav aria-label="Хлебные крошки" class="breadcrumbs">
+                            <ul class="breadcrumbs__list">
+                                <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                                <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Каталог</a></li>
+                                <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Блесны</a></li>
+                                <li class="breadcrumbs__item">
+                                    <span class="breadcrumbs__link active">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку, чавычу, семгу, кету Herring 45g, цвет 19</span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+                <section class="goods-item">
+                    <div class="goods-item__container">
+                        <div class="goods-item__header">
+                            <div class="goods-item__slider">
+                                <div class="goods-item__main">
+                                    <div class="goods-item__main-slider swiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="goods-item__slide swiper-slide">
+                                                <img src="@img/goods/herring-45g/01.jpg" class="cover-image" alt="Фото товара">
+                                            </div>
+                                            <div class="goods-item__slide swiper-slide">
+                                                <img src="@img/goods/herring-45g/02.jpg" class="cover-image" alt="Фото товара">
+                                            </div>
+                                            <div class="goods-item__slide swiper-slide">
+                                                <img src="@img/goods/herring-45g/03.jpg" class="cover-image" alt="Фото товара">
+                                            </div>
+                                            <div class="goods-item__slide swiper-slide">
+                                                <video class="cover-image" playsinline autoplay muted loop preload="metadata">
+                                                    <source src="files/herring-45g.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="goods-item__labels">
+                                        <div class="label label--small label--violet">
+                                            Новинка
+                                        </div>
+                                        <div class="label label--small label--yellow">
+                                            Акция
+                                        </div>
+                                        <div class="label label--small label--pink">
+                                            -55%
+                                        </div>
+                                        <div class="label label--small label--gradient icon-energy">
+                                            Кэшбэк 10%
+                                        </div>
+                                        <div class="label label--small label--black icon-cube">
+                                            360°
+                                        </div>
+                                        <div class="label label--small label--black icon-play-square">
+                                            Видеообзор
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="goods-item__thumbs swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="goods-item__thumb swiper-slide">
+                                            <img src="@img/goods/herring-45g/01.jpg" class="cover-image" alt="Фото товара">
+                                        </div>
+                                        <div class="goods-item__thumb swiper-slide">
+                                            <img src="@img/goods/herring-45g/02.jpg" class="cover-image" alt="Фото товара">
+                                        </div>
+                                        <div class="goods-item__thumb swiper-slide">
+                                            <img src="@img/goods/herring-45g/03.jpg" class="cover-image" alt="Фото товара">
+                                        </div>
+                                        <div class="goods-item__thumb swiper-slide">
+                                            <video class="cover-image" playsinline autoplay muted loop preload="metadata">
+                                                <source src="files/herring-45g.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="goods-item__body">
+                                <div class="goods-item__row">
+                                    <div class="goods-item__sku">
+                                        Артикул
+                                        <button type="button" class="copy-btn icon-copy">
+                                            180900
+                                        </button>
+                                    </div>
+                                    <div class="goods-item__actions">
+                                        <button type="button" class="goods-item__favorite favorite-btn"><span>Избранное</span></button>
+                                        <button type="button" class="goods-item__compare compare-btn icon-compare"><span>Сравнить</span></button>
+                                    </div>
+                                </div>
+                                <h1 class="goods-item__name">Блесна D-Ocean для рыбалки колеблющаяся, колебалка на крупную щуку, чавычу, семгу, Herring 45g, цвет 19</h1>
+                                <div class="goods-item__options">
+                                    <div class="goods-item__options-block">
+                                        <div class="goods-item__options-header">
+                                            <div class="goods-item__options-caption">
+                                                Вес, г.:
+                                            </div>
+                                        </div>
+                                        <div class="goods-item__options-items">
+                                            <label class="goods-item__option option">
+                                                <input type="radio" name="weight" value="37" checked class="option__input hidden" hidden>
+                                                <span class="option__btn">37</span>
+                                            </label>
+                                            <label class="goods-item__option option">
+                                                <input type="radio" name="weight" value="45" class="option__input hidden" hidden>
+                                                <span class="option__btn">45</span>
+                                            </label>
+                                            <label class="goods-item__option option">
+                                                <input type="radio" name="weight" value="60" class="option__input hidden" hidden>
+                                                <span class="option__btn">60</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="goods-item__options-block">
+                                        <div class="goods-item__options-header">
+                                            <div class="goods-item__options-caption">
+                                                Цвет: <span>19</span>
+                                            </div>
+                                            <a href="#color-picker" data-fancybox class="goods-item__options-link">Все 120 цветов</a>
+                                        </div>
+                                        <div class="goods-item__options-items">
+                                            @@loop('./html/templates/_color-item.html', './html/json/_colors-product.json')
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="goods-item__description">
+                                    <div class="goods-item__description-header">
+                                        <div class="goods-item__description-caption">О товаре</div>
+                                        <a href="#props" class="goods-item__description-link icon-chevron-right">характеристики</a>
+                                    </div>
+                                    <div class="goods-item__description-body">
+                                        Блесна колеблющаяся ( колебалка ) D-Ocean Herring - тяжелая колеблющаяся блесна , предназначенная для ловли в первую очередь чавычи, симы, семги, а также щук и судаков. Покрытие блесны износостойкое: не боится ударов о каменистое дно и зубов хищника. На блесне присутствует детализация: имитация чешуи. Крючок блесны крупный , японской компании Owner, и рассчитан на большую рыбу. Главным достоинством данной модели является высочайшее качество и прочность покрытия . В линейке представлены модели разных цветов, позволяющие подобрать оптимальный вариант под определенные условия ловли.
+                                    </div>
+                                </div>
+                                <div class="goods-item__footer">
+                                    <div class="goods-item__price">
+                                        <div class="goods-item__price-current">
+                                            <span>799</span>&nbsp;₽
+                                        </div>
+                                        <div class="goods-item__price-old">
+                                            <div class="goods-item__price-old-value"><span>1 644</span>&nbsp;₽</div>
+                                            <div class="goods-item__price-old-sale">-55%</div>
+                                        </div>
+                                    </div>
+                                    <div class="goods-item__quantity quantity-block">
+                                        <button type="button" class="quantity-block__down icon-minus"></button>
+                                        <input type="text" name="product-quantity" maxlength="3" class="quantity-block__input" value="1">
+                                        <button type="button" class="quantity-block__up icon-plus"></button>
+                                    </div>
+                                    <button type="button" class="goods-item__add-to-cart cart-btn">
+                                        <span>в корзину</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goods-item__bottom">
+                            <nav class="goods-item__tabs nav-slider swiper">
+                                <ul class="swiper-wrapper">
+                                    <li class="nav-slider__item swiper-slide">
+                                        <button type="button" class="nav-slider__link goods-item__tab active">Характеристики</button>
+                                    </li>
+                                    <li class="nav-slider__item swiper-slide">
+                                        <button type="button" class="nav-slider__link goods-item__tab">Описание</button>
+                                    </li>
+                                    <li class="nav-slider__item swiper-slide">
+                                        <button type="button" class="nav-slider__link goods-item__tab">Оплата</button>
+                                    </li>
+                                    <li class="nav-slider__item swiper-slide">
+                                        <button type="button" class="nav-slider__link goods-item__tab">Доставка</button>
+                                    </li>
+                                    <li class="nav-slider__item swiper-slide">
+                                        <button type="button" class="nav-slider__link goods-item__tab">Возврат товара</button>
+                                    </li>
+                                    <li class="nav-slider__item swiper-slide">
+                                        <button type="button" class="nav-slider__link goods-item__tab">Отзывы</button>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="goods-item__tabs-body">
+                                <div class="goods-item__tabs-content active">
+                                    <div id="props" class="goods-item__props">
+                                        <div class="goods-item__props-block">
+                                            <div class="goods-item__props-caption">Основные</div>
+                                            <ul class="goods-item__props-list">
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Вид блесны</div>
+                                                    <div class="goods-item__props-value">Колеблющаяся</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Вид крючка</div>
+                                                    <div class="goods-item__props-value">Одинарный</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Размер крючка, N</div>
+                                                    <div class="goods-item__props-value">5/0</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Единиц в одном товаре</div>
+                                                    <div class="goods-item__props-value">1</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Страна-изготовитель</div>
+                                                    <div class="goods-item__props-value">Россия</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="goods-item__props-block">
+                                            <div class="goods-item__props-caption">Размеры</div>
+                                            <ul class="goods-item__props-list">
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Длина, мм</div>
+                                                    <div class="goods-item__props-value">90 (девяностик)</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Вес (г)</div>
+                                                    <div class="goods-item__props-value">37</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="goods-item__props-block">
+                                            <div class="goods-item__props-caption">Дополнительные</div>
+                                            <ul class="goods-item__props-list">
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Артикул</div>
+                                                    <div class="goods-item__props-value">1581854684</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Тип</div>
+                                                    <div class="goods-item__props-value">Блесна</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Цвет</div>
+                                                    <div class="goods-item__props-value">19</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Гарантийный срок</div>
+                                                    <div class="goods-item__props-value">12 мес.</div>
+                                                </li>
+                                                <li class="goods-item__props-item">
+                                                    <div class="goods-item__props-name">Упаковка</div>
+                                                    <div class="goods-item__props-value">Блистер</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="goods-item__tabs-content">
+                                    <div class="goods-item__text">
+                                        <p>
+                                            Блесна колеблющаяся ( колебалка ) D-Ocean Herring - тяжелая колеблющаяся блесна , предназначенная для ловли в первую очередь чавычи, симы, семги, а также щук и судаков. Покрытие блесны износостойкое: не боится ударов о каменистое дно и зубов хищника. На блесне присутствует детализация: имитация чешуи. Крючок блесны крупный , японской компании Owner, и рассчитан на большую рыбу. Главным достоинством данной модели является высочайшее качество и прочность покрытия . В линейке представлены модели разных цветов, позволяющие подобрать оптимальный вариант под определенные условия ловли. 
+                                        </p>
+                                        <p>
+                                            <strong>Комплектация</strong> <br>
+                                            Упаковка, блесна
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="goods-item__tabs-content">
+                                    <ul class="goods-item__cards about__list">
+                                        @@loop('./html/templates/_about-item.html', './html/json/_payment.json')
+                                    </ul>
+                                </div>
+                                <div class="goods-item__tabs-content">
+                                    <div class="support__block">
+                                        <h3 class="support__caption title-sm">Самовывоз</h3>
+                                        <ul class="support__cards about__list">
+                                            @@loop('./html/templates/_about-item.html', './html/json/_delivery.json')
+                                        </ul>
+                                    </div>
+                                    <div class="support__block">
+                                        <h3 class="support__caption title-sm">Курьерская доставка</h3>
+                                        <div class="support__columns">
+                                            <div class="support__column">
+                                                <div class="support__column-thumb">
+                                                    <img src="@img/support/courier.jpg" class="cover-image" alt="Фото">
+                                                </div>
+                                                <div class="support__column-caption">Доставка курьером СДЭК</div>
+                                                <div class="support__column-desc">
+                                                    <p>Стоимость услуги рассчитывается согласно тарифам компании СДЭК. Расчет производится при оформлении заказа. Срок зависит от адреса доставки в соответствии с условиями СДЭК. Ориентировочный срок рассчитывается при оформлении заказа в рабочих днях. Ориентировочный срок доставки службой доставки указывается при оформлении заказа в рабочих днях, считая с момента передачи заказа в службу доставки.</p>
+                                                </div>
+                                            </div>
+                                            <div class="support__column">
+                                                <div class="support__column-thumb">
+                                                    <img src="@img/support/express.jpg" class="cover-image" alt="Фото">
+                                                </div>
+                                                <div class="support__column-caption">Экспресс-доставка</div>
+                                                <div class="support__column-desc">
+                                                    <p>
+                                                        Экспресс-доставка осуществляется в течение 4 часов с момента подтверждения заказа, в пределах МКАД с 9:00 до 20:00. В период доставки вам следует быть на связи по указанным в заказе контактным телефонам. При оформлении заказа рассчитывается ориентировочное время доставки, точное время будет указано в письме с подтверждением заказа. <br>
+                                                        Наши курьеры стараются успеть к каждому клиенту, чтобы все заказы были доставлены вовремя. Старайтесь не задерживать курьера более 15 минут для проверки заказа, это позволит нам осуществлять доставку быстро и в срок. В случае отказа от товара, независимо от причины, вы оплачиваете полную стоимость доставки (на основании п.п. 3,4 ст. 497 ГК РФ и договора <a href="">публичной оферты</a>)
+                                                    </p>
+                                                </div>
+                                                <div class="support__baloon">
+                                                    <div class="support__baloon-title">Условия доставки</div>
+                                                    <ul class="support__baloon-list">
+                                                        <li>Стоимость экспресс-доставки 1000 рублей.</li>
+                                                        <li>Экспресс-доставка осуществляется при 100% оплате онлайн.</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="support__baloon support__baloon--yellow">
+                                                    <div class="support__baloon-title">Срок доставки</div>
+                                                    <ul class="support__baloon-list">
+                                                        <li>Экспресс-доставка производится в течение 4 часов.</li>
+                                                        <li>Если заказ подтвержден до 15.30, доставка осуществляется в этот же день</li>
+                                                        <li>Если заказ подтвержден после 15.30, доставка осуществляется на следующий день, начиная с 10:00</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="goods-item__tabs-content">
+                                    <div class="support__block">
+                                        <h3 class="support__caption title-sm">Возврат товара надлежащего качества</h3>
+                                        <div class="support__content">
+                                            <div class="support__column">
+                                                <div class="support__column-desc">
+                                                    <h3>Возврат надлежащего товара осуществляется после его получения в течение 14 календарных дней. Возврат товара возможен в случае, если:</h3>
+                                                    <ul>
+                                                        <li>Сохранены его товарный вид (упаковка, пломбы, ярлыки)</li>
+                                                        <li>Потребительские свойства</li>
+                                                        <li>Документ, подтверждающий факт и условия покупки указанного товара (товарный/кассовый чек или распечатку из личного кабинета соответствующей платежной системы с детализацией платежа)</li>
+                                                    </ul>
+                                                    <h3>Для возврата товара также необходим документ, удостоверяющий личность (паспорт гражданина РФ/загранпаспорт).</h3>
+                                                    <p>При возврате товара надлежащего качества, мы вернем его стоимость не позднее, чем через 10 дней с момента получения товара и вашего письменного заявления, однако в пределах указанного срока мы вправе провести экспертизу товара с целью определения его качества и сохранности потребительских свойств. Сроки зачисления денежных средств на расчетный счет получателя зависят от внутреннего регламента банка-получателя. Оплата доставки товара продавцу осуществляется за счет покупателя.</p>
+                                                </div>
+                                                <div class="support__baloon support__baloon--yellow">
+                                                    <div class="support__baloon-title">Порядок возврата товара:</div>
+                                                    <ul class="support__baloon-list">
+                                                        <li>1. Заполнить заявление на возврат. Вы можете распечатать форму и заполнить её вручную или воспользоваться он-лайн сервисом возврата товаров.</li>
+                                                        <li>2. Приложить копию паспорта, чек/распечатку из личного кабинета соответствующей платежной системы с детализацией платежа.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="support__image">
+                                                <img src="@img/return-1.jpg" class="cover-image" alt="Фото товара">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="support__block">
+                                        <h3 class="support__caption title-sm"><span>Возврат товара <span class="color-red">не</span>надлежащего качества</span></h3>
+                                        <div class="support__content">
+                                            <div class="support__image">
+                                                <img src="@img/return-2.jpg" class="cover-image" alt="Фото товара">
+                                            </div>
+                                            <div class="support__column">
+                                                <div class="support__column-desc">
+                                                    <h3>Под товаром ненадлежащего качества подразумевается товар, который неисправен и не может обеспечить исполнение своих функциональных качеств. Отличие элементов дизайна или оформления от заявленных в описании на сайте не является неисправностью или нефункциональностью товара.</h3>
+                                                </div>
+
+                                                <div class="support__baloon">
+                                                    <div class="support__baloon-title">Порядок возврата товара:</div>
+                                                    <ul class="support__baloon-list">
+                                                        <li>1. Заполнить заявление на возврат. Вы можете <a href="">распечатать форму</a> и заполнить её вручную или воспользоваться он-лайн сервисом возврата товаров.</li>
+                                                        <li>2. В заявлении просим Вас подробно указать, какой именно дефект содержит возвращаемый вами товар.</li>
+                                                        <li>3. Упаковать товар к возврату в фирменную коробку, вложить распечатку из личного кабинета соответствующей платежной системы с детализацией платежа, заполненное заявление, копию документа удостоверяющего личность.</li>
+                                                        <li>4. Товар необходимо передать в полной комплектации, со всеми комплектующими и полным комплектом принадлежностей в том виде, в котором была осуществлена доставка.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="goods-item__tabs-content">
+                                    <div class="goods-item__reviews">
+                                        @@loop('./html/templates/_review.html', './html/json/_product-reviews.json')
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_about.html')
+                @@include('./html/_contacts.html')
+            </main>
+            @@include('html/_footer.html', {
+            "active": 0
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_color-picker.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

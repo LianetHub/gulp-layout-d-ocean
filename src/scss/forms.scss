@@ -350,6 +350,50 @@
 	}
 }
 
+.option {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	text-align: center;
+	flex-shrink: 0;
+	// .option__input
+	&__input {
+		&:checked {
+			& + .option__btn {
+				border: rem(1) solid $pink;
+			}
+		}
+	}
+	// .option__btn
+	&__btn {
+		width: 3rem;
+		height: 3rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		color: #181d27;
+		text-align: center;
+		text-overflow: ellipsis;
+		font-size: 1.125rem;
+		font-weight: 500;
+		border-radius: 0.5rem;
+		border: rem(1) solid #e9eaeb;
+		user-select: none;
+		cursor: pointer;
+		transition: border-color 0.3s ease;
+	}
+	// .option__text
+	&__text {
+		font-size: 0.875rem;
+		min-height: 1.25rem;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+	}
+}
+
 // .iti__selected-flag {
 // 	background-color: rgba(0, 0, 0, 0.05);
 // }

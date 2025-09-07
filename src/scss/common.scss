@@ -5,6 +5,16 @@
 	}
 }
 
+* {
+	scroll-margin-top: 4rem;
+	@media (min-width: $md3) {
+		scroll-margin-top: 5rem;
+	}
+	@media (min-width: $md2) {
+		scroll-margin-top: 7rem;
+	}
+}
+
 body {
 	font-family: $fontfamily, sans-serif;
 	font-size: 1rem;
@@ -83,7 +93,7 @@ body {
 		}
 	}
 	&.preloading {
-		overflow: hidden;
+		// overflow: hidden;
 	}
 }
 
@@ -143,6 +153,7 @@ body {
 @import "./modules/breads";
 @import "./modules/animation";
 @import "./modules/pagination";
+@import "./modules/popup";
 // =============== MODULES ====================
 
 .promo-banner {

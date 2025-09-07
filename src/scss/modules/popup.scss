@@ -26,7 +26,71 @@
 
 .popup {
 	display: none;
-	// .popup__catalog
-	&__catalog {
+	background: #fff;
+	max-width: rem(620);
+	width: 100%;
+	color: #242424;
+	padding: 1.5rem 2rem;
+	border-radius: 1.5rem;
+	// .popup__header
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	// .popup__title
+	&__title {
+		color: #242424;
+		font-size: 1.5rem;
+		font-weight: 600;
+		line-height: 120%;
+	}
+	// .popup__title-quantity
+	&__title-quantity {
+		color: #535862;
+		font-weight: 400;
+		font-size: 0.875rem;
+		line-height: 114.286%;
+		margin-left: 0.25rem;
+		display: inline-block;
+		margin-top: 0.15rem;
+	}
+	// .popup__close
+	&__close {
+		border-radius: 0.5rem;
+		background: #f5f5f5;
+		width: 2.625rem;
+		height: 2.625rem;
+		font-size: 1.25rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0.5rem;
+		transition: background-color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: darken($color: #f5f5f5, $amount: 10);
+			}
+		}
+	}
+	// .popup__search
+	&__search {
+		@extend .catalog__search;
+	}
+	// .popup__search-btn
+	&__search-btn {
+		@extend .catalog__search-btn;
+	}
+	// .popup__search-input
+	&__search-input {
+		@extend .catalog__search-input;
+	}
+	// .popup__colors
+	&__colors {
+		margin-top: 1.5rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+		gap: 0.5rem;
+		row-gap: 0.25rem;
 	}
 }

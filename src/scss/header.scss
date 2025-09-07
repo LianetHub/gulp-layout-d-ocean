@@ -100,39 +100,15 @@
 	}
 	// .header__switch
 	&__switch {
-		border-radius: 0.75rem;
-		background: #000;
-		padding: 0.25rem;
-		display: flex;
-		gap: 0.25rem;
 	}
 	// .header__switch-item
 	&__switch-item {
-		display: block;
-		position: relative;
-		z-index: 2;
 	}
 	// .header__switch-input
 	&__switch-input {
-		&:checked {
-			& + .header__switch-btn {
-				background: #ff7dbc;
-				color: #181d27;
-			}
-		}
 	}
 	// .header__switch-btn
 	&__switch-btn {
-		font-size: 1.125rem;
-		line-height: 144.444%;
-		border-radius: 0.5rem;
-		display: block;
-		cursor: pointer;
-		transition: color 0.3s ease, background-color 0.3s ease;
-		padding: 0.25rem 0.5rem;
-		@media (min-width: $md4) {
-			padding: 0.375rem 0.75rem;
-		}
 	}
 	// .header__cart
 	&__cart {

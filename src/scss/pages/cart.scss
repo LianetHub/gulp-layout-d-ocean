@@ -1,7 +1,13 @@
 .order {
 	padding: rem(88) 0 rem(58);
+	&:last-child {
+		padding-bottom: 5rem;
+	}
 	@media (min-width: $md4) {
 		padding: 7.75rem 0 4rem;
+		&:last-child {
+			padding-bottom: 6.25rem;
+		}
 	}
 	// .order__container
 	&__container {
@@ -13,6 +19,12 @@
 		font-size: 2rem;
 		@media (min-width: $md4) {
 			font-size: 2.625rem;
+		}
+		& + .order__content {
+			margin-top: 2rem;
+			@media (min-width: $md4) {
+				margin-top: 2.5rem;
+			}
 		}
 	}
 	// .order__quantity
@@ -357,5 +369,312 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+	}
+	// .order__form-notify
+	&__form-notify {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+	// .order__form-notify-icon
+	&__form-notify-icon {
+		width: 2rem;
+		height: 2rem;
+		flex-shrink: 0;
+	}
+	// .order__form-notify-text
+	&__form-notify-text {
+		color: #d5d7da;
+		font-size: 1rem;
+		line-height: 137.5%;
+	}
+	// .order__steps
+	&__steps {
+		position: relative;
+		max-width: rem(1112);
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			width: rem(1);
+			height: 100%;
+			background: #d5d7da;
+			left: 0.75rem;
+			@media (min-width: $md4) {
+				left: 1rem;
+			}
+		}
+	}
+	// .order__step
+	&__step {
+		position: relative;
+		padding-left: 2.25rem;
+		@media (min-width: $md4) {
+			padding-left: 4rem;
+		}
+		&.order__step--done {
+			&::before {
+				background: $pink;
+				border-color: $pink;
+				@extend %ic, .icon-check;
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			border-radius: 50%;
+			border-radius: 6.25rem;
+			border: rem(1) solid #d5d7da;
+			background: #f5f5f5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 1.5rem;
+			height: 1.5rem;
+			@media (min-width: $md4) {
+				width: 2rem;
+				height: 2rem;
+				font-size: 1.25rem;
+			}
+		}
+		&:not(.hidden) {
+			&:not(:first-child) {
+				margin-top: 2.69rem;
+				@media (min-width: $md4) {
+					margin-top: 4.56rem;
+				}
+			}
+		}
+	}
+	// .order__step-title
+	&__step-title {
+		&:not(:first-child) {
+			margin-top: 2rem;
+		}
+		font-weight: 600;
+		line-height: 120%;
+		font-size: 1.125rem;
+		@media (min-width: $md4) {
+			font-size: 1.5rem;
+		}
+		& span {
+			color: $pink;
+		}
+	}
+	// .order__step-fields
+	&__step-fields {
+		margin-top: 2.75rem;
+		display: grid;
+		gap: 2rem;
+		row-gap: 0.75rem;
+		@media (min-width: $md4) {
+			row-gap: 1.5rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.form__field {
+			&:first-child:last-child {
+				grid-column: span 2;
+			}
+		}
+	}
+	// .order__step-caption
+	&__step-caption {
+		border-radius: 0.5rem;
+		background: #f5f5f5;
+		padding: 0.375rem;
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		line-height: 144.444%;
+		margin-top: 1.56rem;
+		font-size: 1rem;
+		@media (min-width: $md4) {
+			font-size: 1.125rem;
+			margin-top: 2.72rem;
+		}
+		& + .order__step-fields,
+		& + .order__step-options {
+			margin-top: 1rem;
+		}
+	}
+	// .order__step-caption-label
+	&__step-caption-label {
+		background: #181d27;
+		color: #fff;
+		border-radius: 0.375rem;
+		font-weight: 500;
+		line-height: 122.222%;
+		padding: 0.25rem 0.375rem;
+		font-size: 0.875rem;
+		@media (min-width: $md4) {
+			font-size: 1.125rem;
+		}
+	}
+	// .order__step-caption-text
+	&__step-caption-text {
+	}
+	// .order__step-options
+	&__step-options {
+		margin-top: 2.75rem;
+		display: grid;
+		gap: rem(12);
+		@media (min-width: $md4) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md1) {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+	// .order__step-option
+	&__step-option {
+		@media (min-width: $md1) {
+			grid-column: span 2;
+			&.order__step-option--large {
+				grid-column: span 3;
+			}
+		}
+	}
+	// .order__step-input
+	&__step-input {
+		&:checked {
+			& + .order__card {
+				border: rem(1) solid $pink;
+				.order__card-header {
+					&::before {
+						border-color: $pink;
+						box-shadow: inset 0 0 0 0.2rem #fff;
+						background: $pink;
+					}
+				}
+			}
+		}
+	}
+	// .order__card
+	&__card {
+		border-radius: 1rem;
+		border: rem(1) solid #d5d7da;
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		cursor: pointer;
+		transition: border-color 0.3s ease;
+		gap: 0.5rem;
+		@media (min-width: $md4) {
+			gap: 0.88rem;
+		}
+	}
+	// .order__card-header
+	&__card-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		&::before {
+			content: "";
+			flex-shrink: 0;
+			width: 1rem;
+			height: 1rem;
+			border-radius: 50%;
+			border: rem(1) solid #d5d7da;
+		}
+	}
+	// .order__step-header-title
+	&__step-header-title {
+		font-size: 1.125rem;
+		font-weight: 500;
+		line-height: 144.444%;
+		letter-spacing: 0.0225rem;
+	}
+	// .order__step-logo
+	&__step-logo {
+		height: 2.625rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto;
+		border-radius: 0.5rem;
+		overflow: hidden;
+		& img {
+			height: 100%;
+			width: auto;
+		}
+	}
+	// .order__card-body
+	&__card-body {
+		color: #535862;
+		font-size: 0.875rem;
+		line-height: 142.857%;
+		@media (min-width: $md4) {
+			line-height: 157.143%;
+		}
+		& a {
+			color: #1570ef;
+			text-decoration: underline;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		& strong {
+			color: #181d27;
+			font-weight: 600;
+		}
+	}
+	// .order__card-info
+	&__card-info {
+		margin-top: auto;
+		align-self: flex-start;
+		color: #181d27;
+		border-radius: 0.375rem;
+		background: #e9eaeb;
+		font-size: 1rem;
+		line-height: 150%;
+		padding: 0.125rem 0.375rem;
+	}
+	// .order__switch
+	&__switch {
+		margin-top: 1rem;
+	}
+	// .order__step-footer
+	&__step-footer {
+		border-radius: 1rem;
+		background: #f5f5f5;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+		margin-left: -2.25rem;
+		padding: 1rem;
+		margin-top: 2.62rem;
+		@media (min-width: $md4) {
+			margin-top: rem(72);
+			padding: 1rem 1.5rem;
+			margin-left: 0;
+		}
+	}
+	// .order__step-title
+	&__step-title {
+	}
+	// .order__step-desc
+	&__step-desc {
+		font-size: 0.875rem;
+		line-height: 142.857%;
+		@media (min-width: $md4) {
+			font-size: 1.125rem;
+			line-height: 133.333%;
+		}
+		& a {
+			color: #1570ef;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Каталог товаров | Страница категории'
+    })
+    <body class="preloading">
+        @@include('html/_preloader.html', {})
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 0
+            })
+            <main class="page">
+                <section class="promo-banner" style="--background-image: url(../img/decor/banner-catalog.jpg)">
+                    <div class="promo-banner__container">
+                        <h1 class="promo-banner__title title-sm">Каталог товаров</h1>
+                        <nav aria-label="Хлебные крошки" class="breadcrumbs">
+                            <ul class="breadcrumbs__list">
+                                <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                                <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Каталог</a></li>
+                                <li class="breadcrumbs__item">
+                                    <span class="breadcrumbs__link active">Блесны</span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+                <section class="shop">
+                    <div class="shop__container">
+                        <div class="shop__section">
+                            <a href="" class="shop__back icon-prev"></a>
+                            <h2 class="shop__section-title">Блесны</h2>
+                            <div class="shop__section-quantity">456 товаров</div>
+                        </div>
+                        <div class="shop__body">
+                            <div class="shop__mobile-filter">
+                                <button type="button" class="shop__toggler-filters icon-filter-funnel">
+                                    Фильтры
+                                    <span class="quantity">5</span>
+                                </button>
+                                <button type="reset" form="filter" class="shop__filter-reset">Очистить</button>
+                            </div>
+                            @@include('./html/_catalog-filter.html')
+                            <div class="shop__content">
+                                <div class="shop__header">
+                                    <div class="shop__select">
+                                        <div class="select">
+                                            <select name="sort_by">
+                                                <option selected value="popular">По популярности</option>
+                                                <option value="newest">Сначала новые</option>
+                                                <option value="oldest">Сначала старые</option>
+                                                <option value="default">По умолчанию</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="shop__select">
+                                        <div class="shop__select-text">Выводить:</div>
+                                        <div class="select">
+                                            <select name="items_per_page">
+                                                <option value="10">10</option>
+                                                <option selected value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option value="40">40</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="shop__grid">
+                                        <label class="shop__grid-item">
+                                            <input type="radio" name="grid" value="grid" checked class="shop__grid-input hidden" hidden>
+                                            <span class="shop__grid-btn icon-grid-thin"></span>
+                                        </label>
+                                        <label class="shop__grid-item">
+                                            <input type="radio" name="grid" value="rows" class="shop__grid-input hidden" hidden>
+                                            <span class="shop__grid-btn icon-rows"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="shop__items">
+                                    @@loop('./html/templates/_shop-item.html', './html/json/_catalog.json')
+                                </div>
+                                <div class="shop__pagination pagination">
+                                    <a href="" class="pagination__prev icon-prev">Назад</a>
+                                    <a href="" class="pagination__item active">1</a>
+                                    <a href="" class="pagination__item">2</a>
+                                    <a href="" class="pagination__item">3</a>
+                                    <span class="pagination__item">...</span>
+                                    <a href="" class="pagination__item">8</a>
+                                    <a href="" class="pagination__item">9</a>
+                                    <a href="" class="pagination__item">10</a>
+                                    <a href="" class="pagination__next icon-next">Вперед</a>
+                                </div>
+                                <div class="shop__loader loader">
+                                    <div class="loader__indicator">
+                                        <img src="@img/loading-circle.svg" alt="Иконка">
+                                    </div>
+                                    <div class="loader__text">Загрузка товаров...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_about.html')
+                @@include('./html/_contacts.html')
+            </main>
+            @@include('html/_footer.html', {
+            "active": 0
+            })
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

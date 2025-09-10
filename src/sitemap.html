@@ -60,11 +60,41 @@
                             <li>
                                 <a href="order.html" class="title-sm">Страница заказа</a>
                             </li>
+                            <li>
+                                <a href="catalog-category.html" class="title-sm">Страница категории товаров</a>
+                            </li>
+                        </ol>
+                        <br>
+                        <br>
+                        <h2 class="title">
+                            Модальные окна
+                        </h2>
+                        <ol style="display: flex; flex-direction: column; gap: 1rem;">
+                            <li>
+                                <a href="#color-picker" data-fancybox class="btn btn-primary">Выбор цвета товаров</a>
+                            </li>
+                            <li>
+                                <a href="#city-picker" data-fancybox class="btn btn-primary">Выбор города</a>
+                            </li>
+                            <li>
+                                <a href="#question" data-fancybox class="btn btn-primary">Задать вопрос</a>
+                            </li>
+                            <li>
+                                <a href="#callback" data-fancybox class="btn btn-primary">Заказать обратный звонок</a>
+                            </li>
+                            <li>
+                                <a href="#success" data-fancybox class="btn btn-primary">Успешная отправка</a>
+                            </li>
+                            <li>
+                                <a href="#order-success" data-fancybox class="btn btn-primary">Успешный заказ</a>
+                            </li>
                         </ol>
                     </div>
                 </div>
             </main>
             @@include('html/_footer.html', {})
+            @@include('html/_color-picker.html', {})
+            @@include('html/_city-picker.html', {})
             @@include('html/_modal.html', {})
             @@include('html/_js.html', {})
         </div>

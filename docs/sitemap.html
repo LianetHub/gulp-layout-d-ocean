@@ -29,12 +29,12 @@
     <link rel="manifest" href="/site.webmanifest" > -->
 	<!-- favicon -->
 	<!-- plugins -->
-	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250907221305">
-	<link rel="stylesheet" href="css/libs/fancybox.min.css?_v=20250907221305">
-	<link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250907221305">
+	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250910221044">
+	<link rel="stylesheet" href="css/libs/fancybox.min.css?_v=20250910221044">
+	<link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250910221044">
 	<!-- plugins -->
-	<link rel="stylesheet" href="css/reset.min.css?_v=20250907221305">
-	<link rel="stylesheet" href="css/style.min.css?_v=20250907221305">
+	<link rel="stylesheet" href="css/reset.min.css?_v=20250910221044">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250910221044">
 </head>
 
 <body>
@@ -68,7 +68,7 @@
 							</div>
 						</li>
 						<li class="menu__item">
-							<a href="/blog.html" class="menu__link">Блог</a>
+							<a href="blog.html" class="menu__link">Блог</a>
 						</li>
 					</ul>
 					<ul class="menu__list">
@@ -555,6 +555,32 @@
 						<li>
 							<a href="order.html" class="title-sm">Страница заказа</a>
 						</li>
+						<li>
+							<a href="catalog-category.html" class="title-sm">Страница категории товаров</a>
+						</li>
+					</ol>
+					<br>
+					<br>
+					<h2 class="title"> Модальные окна </h2>
+					<ol style="display: flex; flex-direction: column; gap: 1rem;">
+						<li>
+							<a href="#color-picker" data-fancybox class="btn btn-primary">Выбор цвета товаров</a>
+						</li>
+						<li>
+							<a href="#city-picker" data-fancybox class="btn btn-primary">Выбор города</a>
+						</li>
+						<li>
+							<a href="#question" data-fancybox class="btn btn-primary">Задать вопрос</a>
+						</li>
+						<li>
+							<a href="#callback" data-fancybox class="btn btn-primary">Заказать обратный звонок</a>
+						</li>
+						<li>
+							<a href="#success" data-fancybox class="btn btn-primary">Успешная отправка</a>
+						</li>
+						<li>
+							<a href="#order-success" data-fancybox class="btn btn-primary">Успешный заказ</a>
+						</li>
 					</ol>
 				</div>
 			</div>
@@ -671,28 +697,766 @@
 					</div>
 				</div>
 			</div>
-		</footer> <!-- <div id="callback" class="popup">
-    <button type="button" data-fancybox-close class="popup__close icon-close"></button>
-    <h2 class="popup__title">Остались вопросы?</h2>
-    <p class="popup__subtitle text-block-lg">Заполните форму, мы перезвоним и&nbsp;проконсультируем</p>
-    <form action="#" class="popup__form form">
-        <input type="text" name="name" class="form__control" placeholder="Имя">
-        <input type="tel" name="phone" class="form__control" placeholder="8-999-999-99-99">
-        <input type="email" name="email" class="form__control" placeholder="email@ru.ru">
-        <label class="form__checkbox">
-            <input type="checkbox" name="agree" class="form__checkbox-input hidden" hidden>
-            <span class="form__checkbox-text">Я соглашаюсь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
-        </label>
-        <button type="submit" class="form__btn btn btn-secondary">Оставить запрос</button>
-    </form>
-</div> --> <!-- plugins -->
-		<script src="js/libs/jquery-3.7.1.min.js?_v=20250907221305"></script>
-		<script src="js/libs/fancybox.umd.js?_v=20250907221305"></script>
-		<script src="js/libs/swiper-bundle.min.js?_v=20250907221305"></script>
-		<script src="js/libs/nouislider.min.js?_v=20250907221305"></script>
-		<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ВАШ_API_КЛЮЧ&_v=20250907221305"></script>
+		</footer>
+		<div id="color-picker" class="popup">
+			<div class="popup__header">
+				<div class="popup__title"> Цвета товаров <sup class="popup__title-quantity">87</sup>
+				</div>
+				<button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+			</div>
+			<form action="#" class="popup__search">
+				<button type="search" class="popup__search-btn icon-search"></button>
+				<input type="text" name="s" autocomplete="off" class="popup__search-input" placeholder="Поиск цвета...">
+			</form>
+			<div class="popup__colors">
+				<label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#FF7DBC;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#9B2D30;--color-2 :#287A41;--color-3 :#FFFF00;--color-4 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="101" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">101</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="002" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#FF0007;--color-2 :#2E90FA;--color-3 :#FF0;--color-4 :#0F0;">
+						</span>
+					</span>
+					<span class="option__text">002</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#98FF3C;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="079" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">079</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="009" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">009</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#fff;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="002" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#7C2D9B;--color-2 :#3ACD99;--color-3 :#FFFF00;--color-4 :#FF7700;">
+						</span>
+					</span>
+					<span class="option__text">002</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#17B26A;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#C0F;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#FF0007;--color-2 :#2E90FA;--color-3 :#FF0;--color-4 :#0F0;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="009" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#CC00FF;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">009</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="101" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">101</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#C0F;--color-2 :#FF0;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="079" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#C0F;--color-2 :#FF0;">
+						</span>
+					</span>
+					<span class="option__text">079</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#287A41;--color-2 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#FF7DBC;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#FF63EF;--color-2 :#287A41;--color-3 :#FF0;--color-4 :#00FFEA;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="002" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">002</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#287A41;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#1A00FF;--color-2 :#2E90FA;--color-3 :#FF0;--color-4 :#0F0;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#D444F1;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="079" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#287A41;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">079</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="009" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">009</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="101" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#FF0;--color-2 :#00F;">
+						</span>
+					</span>
+					<span class="option__text">101</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#FF7DBC;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#2970FF;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#9B2D30;--color-2 :#287A41;--color-3 :#FFFF00;--color-4 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="101" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#FF0007;--color-2 :#2E90FA;--color-3 :#FF0;--color-4 :#0F0;">
+						</span>
+					</span>
+					<span class="option__text">101</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="079" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#419772;">
+						</span>
+					</span>
+					<span class="option__text">079</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="009" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">009</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#F5E0C4;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#9B2D30;--color-2 :#287A41;--color-3 :#FFFF00;--color-4 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#FF0007;--color-2 :#2E90FA;--color-3 :#FF0;--color-4 :#0F0;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#7CD4FD;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="101" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">101</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="079" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">079</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#9B2D30;--color-2 :#287A41;--color-3 :#FFFF00;--color-4 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#FF7DBC;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="101" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#98FF3C;">
+						</span>
+					</span>
+					<span class="option__text">101</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="002" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#B692F6;">
+						</span>
+					</span>
+					<span class="option__text">002</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="079" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">079</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="009" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">009</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#9B2D30;--color-2 :#287A41;--color-3 :#FFFF00;--color-4 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="002" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#FF7700;">
+						</span>
+					</span>
+					<span class="option__text">002</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#D444F1;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#FF0007;--color-2 :#2E90FA;--color-3 :#FF0;--color-4 :#0F0;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="009" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">009</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="009" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#9B2D30;--color-2 :#287A41;--color-3 :#FFFF00;--color-4 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">009</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="079" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">079</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="019" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#3F8BEF;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">019</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#9B2D30;--color-2 :#287A41;--color-3 :#FFFF00;--color-4 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="002" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#FF0007;--color-2 :#2E90FA;--color-3 :#FF0;--color-4 :#0F0;">
+						</span>
+					</span>
+					<span class="option__text">002</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#17B26A;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="079" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">079</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="009" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F00;">
+						</span>
+					</span>
+					<span class="option__text">009</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="101" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#FF7DBC;">
+						</span>
+					</span>
+					<span class="option__text">101</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#FF7DBC;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="023" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#F0A;--color-2 :#6ECF18;">
+						</span>
+					</span>
+					<span class="option__text">023</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="122" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="3" style="--color-1 :#fff;--color-2 :#6C6DFF;--color-3 :#FF696B;">
+						</span>
+					</span>
+					<span class="option__text">122</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="097" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#9B2D30;--color-2 :#287A41;--color-3 :#FFFF00;--color-4 :#0000FF;">
+						</span>
+					</span>
+					<span class="option__text">097</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="007" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="2" style="--color-1 :#000;--color-2 :#F4D400;">
+						</span>
+					</span>
+					<span class="option__text">007</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="065" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="4" style="--color-1 :#FF0007;--color-2 :#2E90FA;--color-3 :#FF0;--color-4 :#0F0;">
+						</span>
+					</span>
+					<span class="option__text">065</span>
+				</label><label class="option">
+					<input type="radio" name="modal-color" value="002" class="option__input hidden" hidden>
+					<span class="option__btn">
+						<span class="color-block" data-count="1" style="--color-1 :#FF9C66;">
+						</span>
+					</span>
+					<span class="option__text">002</span>
+				</label>
+			</div>
+		</div>
+		<div id="city-picker" class="popup popup--small">
+			<div class="popup__header">
+				<div class="popup__title"> Выберите город </div>
+				<button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+			</div>
+			<form action="#" class="popup__search">
+				<button type="search" class="popup__search-btn icon-search"></button>
+				<input type="text" name="s" autocomplete="off" class="popup__search-input" placeholder="Поиск города...">
+			</form>
+			<div class="popup__cities">
+				<a href="" class="popup__city">Москва</a>
+				<a href="" class="popup__city">Краснодар</a>
+				<a href="" class="popup__city">Санкт-Петербург</a>
+				<a href="" class="popup__city">Красноярск</a>
+				<a href="" class="popup__city">Астрахань</a>
+				<a href="" class="popup__city">Липецк</a>
+				<a href="" class="popup__city">Балашиха</a>
+				<a href="" class="popup__city">Махачкала</a>
+				<a href="" class="popup__city">Барнаул</a>
+				<a href="" class="popup__city">Набережные Челны</a>
+				<a href="" class="popup__city">Владивосток</a>
+				<a href="" class="popup__city">Нижний Новгород</a>
+				<a href="" class="popup__city">Волгоград</a>
+				<a href="" class="popup__city">Новокузнецк</a>
+				<a href="" class="popup__city">Воронеж</a>
+				<a href="" class="popup__city">Новосибирск</a>
+				<a href="" class="popup__city">Екатеринбург</a>
+				<a href="" class="popup__city">Екатеринбург</a>
+				<a href="" class="popup__city">Ижевск</a>
+				<a href="" class="popup__city">Омск</a>
+				<a href="" class="popup__city">Иркутск</a>
+				<a href="" class="popup__city">Оренбург</a>
+				<a href="" class="popup__city">Казань</a>
+				<a href="" class="popup__city">Пенза</a>
+				<a href="" class="popup__city">Калининград</a>
+				<a href="" class="popup__city">Пермь</a>
+				<a href="" class="popup__city">Кемерово</a>
+				<a href="" class="popup__city">Ростов-на-Дону</a>
+			</div>
+		</div>
+		<div id="question" class="popup popup--large">
+			<div class="popup__content">
+				<div class="popup__image">
+					<img src="img/question-modal.jpg" class="cover-image" alt="Фото">
+				</div>
+				<form action="#" class="popup__form">
+					<h3 class="popup__form-title">Задать нам вопрос</h3>
+					<div class="popup__form-fields">
+						<label class="popup__form-field popup__form-field--large form__field">
+							<input type="text" name="name" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Ваше имя</span>
+						</label>
+						<label class="popup__form-field form__field">
+							<input type="tel" name="phone" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Телефон</span>
+						</label>
+						<label class="popup__form-field form__field">
+							<input type="email" name="email" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Email</span>
+						</label>
+						<label class="popup__form-field popup__form-field--large form__field">
+							<textarea name="message" class="form__control" placeholder=""></textarea>
+							<span class="form__field-placeholder">Ваш вопрос или предложение...</span>
+						</label>
+						<label class="form__file popup__form-field--large">
+							<input type="file" name="file" class="form__file-input" hidden>
+							<span class="form__file-btn icon-clip">Прикрепить (до 10 мб.)</span>
+						</label>
+					</div>
+					<div class="popup__form-footer">
+						<label class="form__checkbox">
+							<input type="checkbox" name="agree" data-required checked class="form__checkbox-input" hidden>
+							<span class="form__checkbox-text">Я даю согласие на <a href="">обработку персональных данных</a></span>
+						</label>
+						<button type="submit" class="form__btn btn btn-primary btn-sm icon-chevron-right">Отправить</button>
+					</div>
+				</form>
+				<button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+			</div>
+		</div>
+		<div id="callback" class="popup popup--large">
+			<div class="popup__content">
+				<div class="popup__image">
+					<img src="img/feedback-modal.jpg" class="cover-image" alt="Фото">
+				</div>
+				<form action="#" class="popup__form">
+					<h3 class="popup__form-title">Заказать обратный звонок</h3>
+					<p class="popup__form-subtitle">Наши специалисты свяжутся с вами в ближайшее время и&nbsp;ответят на вопросы, помогут решить вашу проблему</p>
+					<div class="popup__form-fields">
+						<label class="popup__form-field popup__form-field--large form__field">
+							<input type="text" name="name" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Ваше имя</span>
+						</label>
+						<label class="popup__form-field popup__form-field--large form__field">
+							<input type="tel" name="phone" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Телефон</span>
+						</label>
+					</div>
+					<div class="popup__form-footer">
+						<label class="form__checkbox">
+							<input type="checkbox" name="agree" data-required checked class="form__checkbox-input" hidden>
+							<span class="form__checkbox-text">Я даю согласие на <a href="">обработку персональных данных</a></span>
+						</label>
+						<button type="submit" class="form__btn btn btn-primary btn-sm icon-chevron-right">Отправить</button>
+					</div>
+				</form>
+				<button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+			</div>
+		</div>
+		<div id="success" class="popup popup--medium">
+			<div class="popup__success">
+				<div class="popup__success-icon">
+					<img src="img/tick-circle.svg" alt="Иконка">
+				</div>
+				<div class="popup__success-title">Готово!</div>
+				<p class="popup__success-subtitle">Вы успешно отправили заявку. Наши специалисты скоро свяжутся с вами и ответят на все вопросы.</p>
+				<button type="button" data-fancybox-close class="popup__success-btn btn btn-primary">ок, закрыть</button>
+			</div>
+		</div>
+		<div id="order-success" class="popup popup--medium">
+			<div class="popup__success">
+				<div class="popup__success-icon">
+					<img src="img/tick-circle.svg" alt="Иконка">
+				</div>
+				<div class="popup__success-title">Готово!</div>
+				<p class="popup__success-subtitle"> Заказ <a href="">№ 0012374 </a>успешно оплачен. Менеджер свяжется с вами в ближайшее время для подтверждения заказа. Вы можете отслеживать статусы заказа в своём <a href="">личном кабинете</a>. </p>
+				<button type="button" data-fancybox-close class="popup__success-btn btn btn-primary">ок, закрыть</button>
+			</div>
+		</div> <!-- plugins -->
+		<script src="js/libs/jquery-3.7.1.min.js?_v=20250910221044"></script>
+		<script src="js/libs/fancybox.umd.js?_v=20250910221044"></script>
+		<script src="js/libs/swiper-bundle.min.js?_v=20250910221044"></script>
+		<script src="js/libs/nouislider.min.js?_v=20250910221044"></script>
+		<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ВАШ_API_КЛЮЧ&_v=20250910221044"></script>
 		<!-- plugins -->
-		<script src="js/app.min.js?_v=20250907221305"></script>
+		<script src="js/app.min.js?_v=20250910221044"></script>
 	</div>
 </body>
 

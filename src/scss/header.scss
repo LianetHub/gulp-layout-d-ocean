@@ -86,10 +86,10 @@
 	}
 	// .header__actions
 	&__actions {
-		display: none;
+		visibility: hidden;
 		@media (min-width: $md4) {
+			visibility: visible;
 			margin-left: auto;
-			display: block;
 		}
 		@media (min-width: 1299.98px) {
 			display: flex;
@@ -112,6 +112,7 @@
 	}
 	// .header__cart
 	&__cart {
+		visibility: visible;
 		display: flex;
 		align-items: flex-start;
 		gap: 0.0625rem;

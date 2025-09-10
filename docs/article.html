@@ -29,12 +29,12 @@
     <link rel="manifest" href="/site.webmanifest" > -->
 	<!-- favicon -->
 	<!-- plugins -->
-	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250907221305">
-	<link rel="stylesheet" href="css/libs/fancybox.min.css?_v=20250907221305">
-	<link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250907221305">
+	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20250910221044">
+	<link rel="stylesheet" href="css/libs/fancybox.min.css?_v=20250910221044">
+	<link rel="stylesheet" href="css/libs/nouislider.min.css?_v=20250910221044">
 	<!-- plugins -->
-	<link rel="stylesheet" href="css/reset.min.css?_v=20250907221305">
-	<link rel="stylesheet" href="css/style.min.css?_v=20250907221305">
+	<link rel="stylesheet" href="css/reset.min.css?_v=20250910221044">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250910221044">
 </head>
 
 <body class="preloading">
@@ -82,7 +82,7 @@
 							</div>
 						</li>
 						<li class="menu__item">
-							<a href="/blog.html" class="menu__link">Блог</a>
+							<a href="blog.html" class="menu__link">Блог</a>
 						</li>
 					</ul>
 					<ul class="menu__list">
@@ -782,7 +782,12 @@
 							</div>
 						</div>
 					</article>
-					<aside class="article__sidebar sidebar">
+					<button type="button" class="article__nav-btn icon-chevron-down">Содержание статьи</button>
+					<aside id="article-nav" class="article__sidebar sidebar">
+						<div class="article__sidebar-header">
+							<div class="article__sidebar-caption">Содержание</div>
+							<button type="button" class="article__sidebar-close icon-cross"></button>
+						</div>
 						<ul class="sidebar__list">
 							<li class="sidebar__item">
 								<a href="#search_pike_in_summer" class="sidebar__link icon-chevron-right active">Где лучше искать щуку летом</a>
@@ -965,74 +970,6 @@
 					</div>
 				</div>
 			</section>
-			<section class="contacts">
-				<div class="contacts__container">
-					<div class="contacts__hint hint">Как нас найти?</div>
-					<h2 class="contacts__title title">Контакты</h2>
-					<div class="contacts__body">
-						<div class="contacts__map">
-							<div class="contacts__map-header">
-								<div id="map" class="contacts__map-block"></div>
-							</div>
-							<ul class="contacts__list">
-								<li class="contacts__list-item">
-									<div class="contacts__caption">Адрес</div>
-									<address class="contacts__text">г. Москва, Волоколамское&nbsp;ш., 114, к. 2, ст. 2, оф. 9/4</address>
-								</li>
-								<li class="contacts__list-item">
-									<div class="contacts__caption">Режим работы</div>
-									<div class="contacts__text">Ежедневно с 10:00 до 20:00</div>
-								</li>
-								<li class="contacts__list-item">
-									<div class="contacts__caption">Телефон</div>
-									<a href="tel:+79251398515" class="contacts__link">+7 (925) 139-85-15</a>
-									<div class="contacts__socials socials">
-										<a href="" aria-label="Следите за нами в Telegram" class="socials__link icon-telegram"></a>
-										<a href="" aria-label="Следите за нами в WhatsApp" class="socials__link icon-whatsapp"></a>
-									</div>
-								</li>
-								<li class="contacts__list-item">
-									<div class="contacts__caption">Email</div>
-									<a href="mailto:info@d-ocean.su" class="contacts__link">info@d-ocean.su</a>
-								</li>
-							</ul>
-						</div>
-						<form action="#" class="contacts__form form">
-							<div class="contacts__form-header">
-								<div class="contacts__form-caption">Остались вопросы?</div>
-								<div class="contacts__form-text">Напишите нам через форму обратной связи, мы ответим максимально оперативно на любой ваш вопрос.</div>
-							</div>
-							<div class="contacts__form-fields">
-								<label class="contacts__form-field contacts__form-field--large form__field">
-									<input type="text" name="name" data-required class="form__control" placeholder="">
-									<span class="form__field-placeholder">Ваше имя</span>
-								</label>
-								<label class="contacts__form-field form__field">
-									<input type="tel" name="phone" data-required class="form__control" placeholder="">
-									<span class="form__field-placeholder">Телефон</span>
-								</label>
-								<label class="contacts__form-field form__field">
-									<input type="email" name="email" data-required class="form__control" placeholder="">
-									<span class="form__field-placeholder">Email</span>
-								</label>
-								<label class="contacts__form-field contacts__form-field--large form__field">
-									<textarea name="message" class="form__control" placeholder=""></textarea>
-									<span class="form__field-placeholder">Ваш вопрос или предложение...</span>
-								</label>
-								<label class="form__file contacts__form-field--large">
-									<input type="file" name="file" class="form__file-input" hidden>
-									<span class="form__file-btn icon-clip">Прикрепить (до 10 мб.)</span>
-								</label>
-							</div>
-							<label class="form__checkbox">
-								<input type="checkbox" name="agree" data-required class="form__checkbox-input" hidden>
-								<span class="form__checkbox-text">Отправляя заявку, Вы даёте согласие на храниние и <a href="">обработку персональных данных</a></span>
-							</label>
-							<button type="submit" class="form__btn btn btn-primary icon-chevron-right">Отправить</button>
-						</form>
-					</div>
-				</div>
-			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__top">
@@ -1146,28 +1083,103 @@
 					</div>
 				</div>
 			</div>
-		</footer> <!-- <div id="callback" class="popup">
-    <button type="button" data-fancybox-close class="popup__close icon-close"></button>
-    <h2 class="popup__title">Остались вопросы?</h2>
-    <p class="popup__subtitle text-block-lg">Заполните форму, мы перезвоним и&nbsp;проконсультируем</p>
-    <form action="#" class="popup__form form">
-        <input type="text" name="name" class="form__control" placeholder="Имя">
-        <input type="tel" name="phone" class="form__control" placeholder="8-999-999-99-99">
-        <input type="email" name="email" class="form__control" placeholder="email@ru.ru">
-        <label class="form__checkbox">
-            <input type="checkbox" name="agree" class="form__checkbox-input hidden" hidden>
-            <span class="form__checkbox-text">Я соглашаюсь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
-        </label>
-        <button type="submit" class="form__btn btn btn-secondary">Оставить запрос</button>
-    </form>
-</div> --> <!-- plugins -->
-		<script src="js/libs/jquery-3.7.1.min.js?_v=20250907221305"></script>
-		<script src="js/libs/fancybox.umd.js?_v=20250907221305"></script>
-		<script src="js/libs/swiper-bundle.min.js?_v=20250907221305"></script>
-		<script src="js/libs/nouislider.min.js?_v=20250907221305"></script>
-		<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ВАШ_API_КЛЮЧ&_v=20250907221305"></script>
+		</footer>
+		<div id="question" class="popup popup--large">
+			<div class="popup__content">
+				<div class="popup__image">
+					<img src="img/question-modal.jpg" class="cover-image" alt="Фото">
+				</div>
+				<form action="#" class="popup__form">
+					<h3 class="popup__form-title">Задать нам вопрос</h3>
+					<div class="popup__form-fields">
+						<label class="popup__form-field popup__form-field--large form__field">
+							<input type="text" name="name" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Ваше имя</span>
+						</label>
+						<label class="popup__form-field form__field">
+							<input type="tel" name="phone" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Телефон</span>
+						</label>
+						<label class="popup__form-field form__field">
+							<input type="email" name="email" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Email</span>
+						</label>
+						<label class="popup__form-field popup__form-field--large form__field">
+							<textarea name="message" class="form__control" placeholder=""></textarea>
+							<span class="form__field-placeholder">Ваш вопрос или предложение...</span>
+						</label>
+						<label class="form__file popup__form-field--large">
+							<input type="file" name="file" class="form__file-input" hidden>
+							<span class="form__file-btn icon-clip">Прикрепить (до 10 мб.)</span>
+						</label>
+					</div>
+					<div class="popup__form-footer">
+						<label class="form__checkbox">
+							<input type="checkbox" name="agree" data-required checked class="form__checkbox-input" hidden>
+							<span class="form__checkbox-text">Я даю согласие на <a href="">обработку персональных данных</a></span>
+						</label>
+						<button type="submit" class="form__btn btn btn-primary btn-sm icon-chevron-right">Отправить</button>
+					</div>
+				</form>
+				<button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+			</div>
+		</div>
+		<div id="callback" class="popup popup--large">
+			<div class="popup__content">
+				<div class="popup__image">
+					<img src="img/feedback-modal.jpg" class="cover-image" alt="Фото">
+				</div>
+				<form action="#" class="popup__form">
+					<h3 class="popup__form-title">Заказать обратный звонок</h3>
+					<p class="popup__form-subtitle">Наши специалисты свяжутся с вами в ближайшее время и&nbsp;ответят на вопросы, помогут решить вашу проблему</p>
+					<div class="popup__form-fields">
+						<label class="popup__form-field popup__form-field--large form__field">
+							<input type="text" name="name" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Ваше имя</span>
+						</label>
+						<label class="popup__form-field popup__form-field--large form__field">
+							<input type="tel" name="phone" data-required class="form__control" placeholder="">
+							<span class="form__field-placeholder">Телефон</span>
+						</label>
+					</div>
+					<div class="popup__form-footer">
+						<label class="form__checkbox">
+							<input type="checkbox" name="agree" data-required checked class="form__checkbox-input" hidden>
+							<span class="form__checkbox-text">Я даю согласие на <a href="">обработку персональных данных</a></span>
+						</label>
+						<button type="submit" class="form__btn btn btn-primary btn-sm icon-chevron-right">Отправить</button>
+					</div>
+				</form>
+				<button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+			</div>
+		</div>
+		<div id="success" class="popup popup--medium">
+			<div class="popup__success">
+				<div class="popup__success-icon">
+					<img src="img/tick-circle.svg" alt="Иконка">
+				</div>
+				<div class="popup__success-title">Готово!</div>
+				<p class="popup__success-subtitle">Вы успешно отправили заявку. Наши специалисты скоро свяжутся с вами и ответят на все вопросы.</p>
+				<button type="button" data-fancybox-close class="popup__success-btn btn btn-primary">ок, закрыть</button>
+			</div>
+		</div>
+		<div id="order-success" class="popup popup--medium">
+			<div class="popup__success">
+				<div class="popup__success-icon">
+					<img src="img/tick-circle.svg" alt="Иконка">
+				</div>
+				<div class="popup__success-title">Готово!</div>
+				<p class="popup__success-subtitle"> Заказ <a href="">№ 0012374 </a>успешно оплачен. Менеджер свяжется с вами в ближайшее время для подтверждения заказа. Вы можете отслеживать статусы заказа в своём <a href="">личном кабинете</a>. </p>
+				<button type="button" data-fancybox-close class="popup__success-btn btn btn-primary">ок, закрыть</button>
+			</div>
+		</div> <!-- plugins -->
+		<script src="js/libs/jquery-3.7.1.min.js?_v=20250910221044"></script>
+		<script src="js/libs/fancybox.umd.js?_v=20250910221044"></script>
+		<script src="js/libs/swiper-bundle.min.js?_v=20250910221044"></script>
+		<script src="js/libs/nouislider.min.js?_v=20250910221044"></script>
+		<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ВАШ_API_КЛЮЧ&_v=20250910221044"></script>
 		<!-- plugins -->
-		<script src="js/app.min.js?_v=20250907221305"></script>
+		<script src="js/app.min.js?_v=20250910221044"></script>
 	</div>
 </body>
 

@@ -309,7 +309,12 @@
                                 </div>
                             </div>
                         </article>
-                        <aside class="article__sidebar sidebar">
+                        <button type="button" class="article__nav-btn icon-chevron-down">Содержание статьи</button>
+                        <aside id="article-nav" class="article__sidebar sidebar">
+                            <div class="article__sidebar-header">
+                                <div class="article__sidebar-caption">Содержание</div>
+                                <button type="button" class="article__sidebar-close icon-cross"></button>
+                            </div>
                             <ul class="sidebar__list">
                                 <li class="sidebar__item">
                                     <a href="#search_pike_in_summer" class="sidebar__link icon-chevron-right active">Где лучше искать щуку летом</a>
@@ -367,7 +372,7 @@
                         </div>
                     </div>
                 </section>
-                @@include('./html/_contacts.html')
+                <!-- @@include('./html/_contacts.html') -->
             </main>
             @@include('html/_footer.html', {
             "active": 8

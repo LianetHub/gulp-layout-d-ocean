@@ -37,7 +37,7 @@
 	// .pagination__next
 	&__next,
 	&__prev {
-		transition: color 0.3s ease 0s;
+		transition: color 0.3s ease;
 		display: flex;
 		align-items: center;
 		gap: rem(4);
@@ -52,7 +52,7 @@
 			justify-content: center;
 			align-items: center;
 			flex-shrink: 0;
-			transition: transform 0.3s ease;
+			transition: color 0.3s ease;
 		}
 		& span {
 			display: none;
@@ -70,8 +70,9 @@
 		margin-right: auto;
 		@media (any-hover: hover) {
 			&:hover {
+				color: #414651;
 				&::before {
-					transform: translateX(-0.5rem);
+					color: #717680;
 				}
 			}
 		}
@@ -83,8 +84,9 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
+				color: #414651;
 				&::before {
-					transform: translateX(0.5rem);
+					color: #717680;
 				}
 			}
 		}

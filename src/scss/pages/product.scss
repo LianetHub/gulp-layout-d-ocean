@@ -6,7 +6,9 @@
 	// .goods-item__container
 	&__container {
 		@media (min-width: 1245.98px) {
-			max-width: rem(1216);
+			&[class*="__container"] {
+				max-width: rem(1216);
+			}
 		}
 	}
 	// .goods-item__header

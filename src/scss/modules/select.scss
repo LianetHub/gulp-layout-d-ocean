@@ -135,6 +135,7 @@
 		padding: 0.375rem 0.5rem;
 		border-radius: 0.375rem;
 		min-height: 1.38rem;
+		font-weight: 400;
 		&:not(.active) {
 			@media (any-hover: hover) {
 				&:hover {
@@ -147,7 +148,7 @@
 		&[aria-checked="true"] {
 			color: #fff;
 			background: #252b37;
-			font-weight: 500;
+
 			&::before {
 				order: 1;
 				@extend %ic, .icon-check;

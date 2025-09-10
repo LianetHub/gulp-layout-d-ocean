@@ -30,7 +30,8 @@ $(function () {
         Fancybox.bind("[data-fancybox]", {
             dragToClose: false,
             closeButton: false,
-            closeClick: "outside"
+            closeClick: "outside",
+
         });
     }
 
@@ -195,6 +196,19 @@ $(function () {
             $target.closest('.notify').addClass('hidden')
         }
 
+        // close nav in article page on mobile
+        if ($target.is('.article__sidebar-close') || (!$target.closest(".article__sidebar").length && $(".article__sidebar").hasClass("article__sidebar--open")) || $target.is('.sidebar__link')) {
+            $('.article__sidebar').removeClass("article__sidebar--open");
+            $('body').removeClass('article-lock')
+        }
+
+
+
+        // open nav in article page on mobile
+        if ($target.is('.article__nav-btn')) {
+            $('.article__sidebar').addClass("article__sidebar--open");
+            $('body').addClass('article-lock')
+        }
     });
 
 

@@ -1,10 +1,81 @@
 .shop {
+	position: relative;
+	z-index: 1;
 	padding: rem(24) 0 rem(60);
 	@media (min-width: $md4) {
 		padding: rem(42) 0 rem(110);
 	}
 	// .shop__container
 	&__container {
+	}
+	// .shop__section
+	&__section {
+		border-bottom: rem(1) solid #d5d7da;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-bottom: 0.5rem;
+		@media (min-width: $md5) {
+			padding-bottom: 1rem;
+			margin-left: 0;
+			margin-right: 0;
+			padding-right: 0;
+			padding-left: 0;
+		}
+		& + .shop__body {
+			margin-top: 1.5rem;
+			@media (min-width: $md4) {
+				margin-top: 2.25rem;
+			}
+		}
+	}
+	// .shop__back
+	&__back {
+		width: 2.625rem;
+		height: 2.625rem;
+		font-size: 0.875rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		background: #e9eaeb;
+		align-self: flex-start;
+		flex-shrink: 0;
+		transition: background-color 0.3s ease;
+		margin-right: 0.25rem;
+		@media (min-width: $md4) {
+			margin-right: 1rem;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $pink;
+			}
+		}
+	}
+	// .shop__section-title
+	&__section-title {
+		font-weight: 500;
+		line-height: 140%;
+		font-size: 1.5rem;
+		@media (min-width: $md4) {
+			font-size: 2.25rem;
+		}
+	}
+	// .shop__section-quantity
+	&__section-quantity {
+		color: #535862;
+		line-height: 114.286%;
+		margin-top: 0.5rem;
+		align-self: flex-start;
+		font-size: 0.75rem;
+		@media (min-width: $md4) {
+			font-size: 0.875rem;
+		}
 	}
 	// .shop__title
 	&__title {

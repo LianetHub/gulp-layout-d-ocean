@@ -1,12 +1,4 @@
 @font-face {
-  font-family: "DelaGothicOne";
-  font-display: swap;
-  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Jost";
   font-display: swap;
   src: url("../fonts/Jost-Bold.woff2") format("woff2"), url("../fonts/Jost-Bold.woff") format("woff");
@@ -15,10 +7,18 @@
 }
 
 @font-face {
-  font-family: "Jost";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DelaGothicOne";
+  font-display: swap;
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -33,23 +33,7 @@
 @font-face {
   font-family: "Jost";
   font-display: swap;
-  src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
+  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
@@ -58,6 +42,14 @@
   font-family: "Manrope";
   font-display: swap;
   src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost";
+  font-display: swap;
+  src: url("../fonts/Jost-Regular.woff2") format("woff2"), url("../fonts/Jost-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -75,6 +67,14 @@
   font-display: swap;
   src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-display: swap;
+  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -413,6 +413,7 @@
   display: block;
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 .swiper-pagination .swiper-pagination-progress::after {
@@ -5337,8 +5338,6 @@ body.is-loaded .preloader {
 }
 
 .shop {
-  position: relative;
-  z-index: 1;
   padding: 1.5rem 0 3.75rem;
 }
 
@@ -5676,8 +5675,9 @@ body.is-loaded .preloader {
   margin-top: 1.5rem;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
   gap: 2rem;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .shop__items.shop__items--row {
@@ -5693,6 +5693,8 @@ body.is-loaded .preloader {
 }
 
 .shop-item {
+  position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5816,6 +5818,10 @@ body.is-loaded .preloader {
   font-size: 0.875rem;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
+}
+
+.shop-item__footer {
+  margin-top: auto;
 }
 
 .shop-item__props {
@@ -9216,6 +9222,10 @@ body.is-loaded .preloader {
     font-size: 1.5rem;
   }
 
+  .shop__items {
+    grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+  }
+
   .shop-item.swiper-slide {
     height: auto;
     width: 17.5rem;
@@ -11276,6 +11286,60 @@ body.is-loaded .preloader {
 
   .shop__next {
     background: #d5d7da;
+  }
+
+  .shop__items:not(.shop__items--row) {
+    gap: 1rem;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item {
+    padding-bottom: 0.625rem;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .label {
+    font-size: 0.625rem;
+    min-height: 1rem;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .label::before {
+    width: 0.75rem;
+    height: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .shop-item__pagination {
+    display: none;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .shop-item__name {
+    font-size: 0.75rem;
+    display: block;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .shop-item__sku {
+    font-size: 0.875rem;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .favorite-btn::before,
+  .shop__items:not(.shop__items--row) .shop-item .compare-btn::before {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.125rem;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .shop-item__price-current {
+    font-size: 1.25rem;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .shop-item__price-old-value,
+  .shop__items:not(.shop__items--row) .shop-item .shop-item__price-sale {
+    font-size: 0.75rem;
+  }
+
+  .shop__items:not(.shop__items--row) .shop-item .shop-item__add-to-cart {
+    width: 2.75rem;
+    height: 2.75rem;
+    min-height: 2.75rem;
   }
 
   .blog__slider .swiper-wrapper {

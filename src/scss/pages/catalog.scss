@@ -1,6 +1,4 @@
 .shop {
-	position: relative;
-	z-index: 1;
 	padding: rem(24) 0 rem(60);
 	@media (min-width: $md4) {
 		padding: rem(42) 0 rem(110);
@@ -406,8 +404,58 @@
 	&__items {
 		margin-top: rem(24);
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(rem(280), 1fr));
 		gap: rem(32);
+		grid-template-columns: repeat(2, 1fr);
+		@media (min-width: $md4) {
+			grid-template-columns: repeat(auto-fill, minmax(rem(280), 1fr));
+		}
+		&:not(.shop__items--row) {
+			@media (max-width: $md4) {
+				gap: 1rem;
+				.shop-item {
+					padding-bottom: rem(10);
+					.label {
+						font-size: 0.625rem;
+						min-height: 1rem;
+						&::before {
+							width: 0.75rem;
+							height: 0.75rem;
+							font-size: 0.75rem;
+						}
+					}
+					.shop-item__pagination {
+						display: none;
+					}
+					.shop-item__name {
+						font-size: 0.75rem;
+						display: block;
+					}
+					.shop-item__sku {
+						font-size: 0.875rem;
+					}
+					.favorite-btn,
+					.compare-btn {
+						&::before {
+							width: 1.125rem;
+							height: 1.125rem;
+							font-size: 1.125rem;
+						}
+					}
+					.shop-item__price-current {
+						font-size: 1.25rem;
+					}
+					.shop-item__price-old-value,
+					.shop-item__price-sale {
+						font-size: 0.75rem;
+					}
+					.shop-item__add-to-cart {
+						width: rem(44);
+						height: rem(44);
+						min-height: rem(44);
+					}
+				}
+			}
+		}
 		&.shop__items--row {
 			grid-template-columns: 1fr;
 			gap: 0.38rem;
@@ -422,6 +470,8 @@
 }
 
 .shop-item {
+	position: relative;
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
@@ -575,6 +625,7 @@
 	}
 	// .shop-item__footer
 	&__footer {
+		margin-top: auto;
 		.shop__items--row & {
 			@media (min-width: $md4) {
 				display: flex;

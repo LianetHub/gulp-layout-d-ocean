@@ -1124,34 +1124,22 @@ $(function () {
     if ($("#map").length) {
         ymaps.ready(function () {
             var coordinates = [55.83060906893058, 37.416250999999946];
-
             var myMap = new ymaps.Map('map', {
                 center: coordinates,
                 zoom: 16,
-                controls: []
+                controls: ['zoomControl']
             });
-
             var placemark = new ymaps.Placemark(coordinates, {}, {
                 iconLayout: 'default#image',
                 iconImageHref: 'img/placemark.svg',
                 iconImageSize: [73, 97],
                 iconImageOffset: [-36, -97]
             });
-
             myMap.geoObjects.add(placemark);
             if (window.innerWidth < 768) {
                 myMap.behaviors.disable('scrollZoom');
-            } else {
-                myMap.behaviors.disable('scrollZoom');
+                myMap.behaviors.disable('drag');
             }
-            myMap.events.add('mousedown', function (e) {
-                if (myMap.behaviors.isEnabled('drag')) {
-                    myMap.behaviors.disable('drag');
-                }
-            });
-            myMap.events.add('mouseup', function (e) {
-                myMap.behaviors.enable('drag');
-            });
             window.addEventListener('resize', function () {
                 myMap.container.fitToViewport();
             });
